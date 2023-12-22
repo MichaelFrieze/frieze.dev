@@ -60,6 +60,15 @@ const securityHeaders = [
 module.exports = () => {
   const plugins = [withContentlayer, withBundleAnalyzer]
   return plugins.reduce((acc, next) => next(acc), {
+    async redirects() {
+      return [
+        {
+          source: '/',
+          destination: '/about',
+          permanent: false,
+        },
+      ]
+    },
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {

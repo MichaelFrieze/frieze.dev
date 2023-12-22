@@ -1,22 +1,23 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
-  headerTitle: 'TailwindBlog',
-  description: 'A blog created with Next.js and Tailwind.css',
+  title: 'Michael Frieze | Developer',
+  author: 'Michael Frieze',
+  headerTitle: '@frieze.dev',
+  description:
+    'Welcome to my blog and portfolio. I am a frontend developer that loves all things javascript.',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://frieze.dev',
+  siteRepo: 'https://github.com/MichaelFrieze/frieze.dev',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
-  mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
+  // mastodon: '',
+  email: 'contact@michaelfrieze.dev',
+  github: 'https://github.com/MichaelFrieze',
+  twitter: 'https://twitter.com/michaelfrieze',
+  facebook: 'https://www.facebook.com/frieze.dev/',
+  // youtube: 'https://youtube.com',
+  linkedin: 'https://www.linkedin.com/in/michaelfrieze/',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
