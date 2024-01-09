@@ -1,19 +1,27 @@
 const projectsData = [
   {
-    title: 'A Search Engine',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    title: 'Taskify',
+    description: `Trello clone using Next.js, App Router, Server Actions, React, Prisma, Stripe, and Tailwind.`,
+    imgSrc: '/static/images/projects/taskify.png',
+    href: 'https://github.com/MichaelFrieze/taskify-nextjs',
   },
   {
-    title: 'The Time Machine',
-    description: `Imagine being able to travel back in time or to the future. Simple turn the knob
-    to the desired date and press "Go". No more worrying about lost keys or
-    forgotten headphones with this simple yet affordable solution.`,
-    imgSrc: '/static/images/time-machine.jpg',
-    href: '/blog/the-time-machine',
+    title: 'Jotion',
+    description: `Notion clone using Next.js, App Router, Convex, and Tailwind.`,
+    imgSrc: '/static/images/projects/jotion.png',
+    href: 'https://github.com/MichaelFrieze/notion-clone',
+  },
+  {
+    title: 'Discord Clone',
+    description: `Discord clone using Next.js App Router, Socket.io, UploadThing, Prisma, and Tailwind.`,
+    imgSrc: '/static/images/projects/discord-clone.png',
+    href: 'https://github.com/MichaelFrieze/discord-clone-nextjs',
+  },
+  {
+    title: 'Quill',
+    description: `A Modern SaaS-Platform Built With Next.js, App Router, tRPC, TypeScript, Prisma, and Tailwind.`,
+    imgSrc: '/static/images/projects/quill.png',
+    href: 'https://github.com/MichaelFrieze/quill',
   },
 ]
 
