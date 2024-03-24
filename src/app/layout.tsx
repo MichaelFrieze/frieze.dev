@@ -7,8 +7,8 @@ import "@/styles/tailwind.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Mike Frieze",
-    default: "Mike Frieze",
+    template: "Mike Frieze | %s",
+    default: "Mike Frieze | Developer",
   },
   description:
     "Hi, I’m Mike Frieze. I live in Detroit, where I develop UIs for the web.",
