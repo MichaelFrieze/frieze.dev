@@ -6,9 +6,10 @@ import clsx from "clsx";
 import { Container } from "@/components/Container";
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
   XIcon,
+  FacebookIcon,
+  RedditIcon,
 } from "@/components/SocialIcons";
 import portraitImage from "@/images/portrait.jpg";
 
@@ -28,6 +29,7 @@ function SocialLink({
       <Link
         href={href}
         className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        target="_blank"
       >
         <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
         <span className="ml-4">{children}</span>
@@ -63,21 +65,47 @@ export default function Home() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I’m Mike Frieze. I live in Detroit, where I develop UIs for the
-            web.
+            Hi, I’m Mike Frieze. I live in Metro Detroit, where I develop UIs
+            for the web.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               My journey into web development began with a spark of curiosity at
-              25, leading me on a path of continuous learning and growth. I went
-              to Oakland University and landed a job there working on the
-              student portal as a Java Developer.
+              24, leading me on a path of continuous learning and growth. I went
+              to Oakland University and eventually landed a job there working on
+              the student portal as a Java Developer.
             </p>
             <p>
               Having transitioned from Java to front-end development, I now
-              focus on leveraging React and cutting-edge technologies to design
-              intuitive interfaces and dynamic web solutions that stand out in
-              today&apos;s digital landscape.
+              focus on leveraging JavaScript and cutting-edge technologies like
+              React to design intuitive interfaces and dynamic web solutions
+              that stand out in today&apos;s digital landscape.
+            </p>
+            <p>
+              Outside of coding, my interests include{" "}
+              <a
+                target="_blank"
+                href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                playing guitar
+              </a>
+              , listening to a variety of music genres, engaging in PC gaming
+              with favorites like Star Citizen and Crusader Kings 3, and
+              cherishing moments with{" "}
+              <a
+                target="_blank"
+                href="https://kaylafoister.weebly.com/"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                my partner
+              </a>{" "}
+              since 2010.
+            </p>
+            <p>
+              Curious about how we can work together or just want to chat? Send
+              me an email or connect with me on platforms like X, Reddit, or
+              Facebook.
             </p>
           </div>
         </div>
@@ -94,7 +122,21 @@ export default function Home() {
               Follow on GitHub
             </SocialLink>
             <SocialLink
-              href="https://www.linkedin.com/in/michaelfrieze/"
+              href="https://www.reddit.com/user/michaelfrieze/"
+              icon={RedditIcon}
+              className="mt-4"
+            >
+              Follow on Reddit
+            </SocialLink>
+            <SocialLink
+              href="https://www.facebook.com/frieze.dev"
+              icon={FacebookIcon}
+              className="mt-4"
+            >
+              Follow on Facebook
+            </SocialLink>
+            <SocialLink
+              href="https://www.linkedin.com/in/michaelfrieze"
               icon={LinkedInIcon}
               className="mt-4"
             >
