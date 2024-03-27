@@ -1,4 +1,3 @@
-import { type Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
@@ -64,22 +63,38 @@ export default function Home() {
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Hi, I&apos;m Mike Frieze. I live in Metro Detroit, where I develop
+            UIs for the web.
+          </h1> */}
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Hi, I&apos;m Mike Frieze. I live in Metro Detroit, where I build
+            apps for the web.
+          </h1> */}
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Hi, I&apos;m Mike Frieze. Based in Metro Detroit, I develop UIs for
+            the web.
+          </h1> */}
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Hi, I&apos;m Mike Frieze. Web developer in Metro Detroit.
+          </h1> */}
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I’m Mike Frieze. I live in Metro Detroit, where I develop UIs
-            for the web.
+            Hi, I&apos;m Mike Frieze. Living and coding in Metro Detroit.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               My journey into web development began with a spark of curiosity at
-              24, leading me on a path of continuous learning and growth. I went
-              to Oakland University and eventually landed a job there working on
-              the student portal as a Java Developer.
+              the age of 23, leading me down an unexpected path that blossomed
+              into a fulfilling career. Eager to further develop my skills, I
+              decided to pursue a degree in Computer Science, which eventually
+              led to my first job as a Java developer working on the student
+              portal at Oakland University.
             </p>
             <p>
               Having transitioned from Java to front-end development, I now
-              focus on leveraging JavaScript and cutting-edge technologies like
-              React to design intuitive interfaces and dynamic web solutions
-              that stand out in today&apos;s digital landscape.
+              utilize JavaScript and innovative technologies such as React. My
+              focus is on building intuitive user interfaces and dynamic web
+              solutions that deliver exceptional user experiences.
             </p>
             <p>
               Outside of coding, my interests include{" "}
@@ -90,9 +105,9 @@ export default function Home() {
               >
                 playing guitar
               </a>
-              , listening to a variety of music genres, engaging in PC gaming
-              with favorites like Star Citizen and Crusader Kings 3, and
-              cherishing moments with{" "}
+              , listening to a variety of music genres, immersing myself in PC
+              games like &rdquo;Star Citizen&rdquo; and &rdquo;Crusader Kings
+              3&rdquo;, and cherishing moments with{" "}
               <a
                 target="_blank"
                 href="https://kaylafoister.weebly.com/"
@@ -135,13 +150,13 @@ export default function Home() {
             >
               Follow on Facebook
             </SocialLink>
-            <SocialLink
+            {/* <SocialLink
               href="https://www.linkedin.com/in/michaelfrieze"
               icon={LinkedInIcon}
               className="mt-4"
             >
               Follow on LinkedIn
-            </SocialLink>
+            </SocialLink> */}
             <SocialLink
               href="mailto:mike@frieze.dev"
               icon={MailIcon}
