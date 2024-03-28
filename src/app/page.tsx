@@ -67,19 +67,28 @@ export default function Home() {
             UIs for the web.
           </h1> */}
           {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. I live in Metro Detroit, where I build
+            Hi, I&apos;m Mike Frieze. I live in Metro Detroit, where I develop
             apps for the web.
           </h1> */}
           {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Hi, I&apos;m Mike Frieze. Based in Metro Detroit, I develop UIs for
             the web.
           </h1> */}
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. A developer based in Metro Detroit.
-          </h1>
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Hi, I&apos;m Mike Frieze 👋 A web developer based in Metro Detroit.
+          </h1> */}
           {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Hi, I&apos;m Mike Frieze. Living and coding in Metro Detroit.
           </h1> */}
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Hi, I&apos;m Mike Frieze
+          </h1>
+          <h2 className="text-2xl italic tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
+            Developer based in Metro Detroit
+          </h2>
+          {/* <h2 className="text-2xl italic tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
+            Living and coding in Metro Detroit
+          </h2> */}
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               My interest in web development began in high school, where I
