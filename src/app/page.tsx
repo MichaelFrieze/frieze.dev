@@ -76,7 +76,7 @@ export default function Home() {
             the web.
           </h1> */}
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. A web developer based in Metro Detroit.
+            Hi, I&apos;m Mike Frieze. A developer based in Metro Detroit.
           </h1>
           {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Hi, I&apos;m Mike Frieze. Living and coding in Metro Detroit.
@@ -84,9 +84,10 @@ export default function Home() {
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               My interest in web development began in high school, where I
-              taught myself enough PHP, HTML, and CSS to create a music forum.
-              Though I didn&apos;t pursue coding seriously at the time, this
-              early exposure laid the foundation for my future career path.
+              taught myself enough PHP, HTML, and CSS to create a music forum
+              using phpBB. Though I didn&apos;t pursue coding seriously at the
+              time, this early exposure laid the foundation for my future career
+              path.
             </p>
             <p>
               A transformative Python course at Macomb Community College
@@ -97,7 +98,8 @@ export default function Home() {
             </p>
             <p>
               Having transitioned from Java to front-end development, I now
-              utilize JavaScript and innovative technologies such as React. My
+              utilize JavaScript and innovative technologies such as React,
+              Next.js, Remix, Astro, TypeScript, Tailwind, Drizzle, etc. My
               focus is on building intuitive user interfaces and dynamic web
               solutions that deliver exceptional user experiences.
             </p>
@@ -112,15 +114,7 @@ export default function Home() {
               </a>
               , listening to a variety of music genres, immersing myself in PC
               games like &rdquo;Star Citizen&rdquo; and &rdquo;Crusader Kings
-              3&rdquo;, and cherishing moments with{" "}
-              <a
-                target="_blank"
-                href="https://kaylafoister.weebly.com/"
-                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-              >
-                my partner
-              </a>
-              .
+              3&rdquo;, and spending time with my family.
             </p>
             <p>
               Curious about how we can work together or just want to chat? Send
