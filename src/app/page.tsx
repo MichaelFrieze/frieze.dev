@@ -75,20 +75,26 @@ export default function Home() {
             Hi, I&apos;m Mike Frieze. Based in Metro Detroit, I develop UIs for
             the web.
           </h1> */}
-          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. Web developer in Metro Detroit.
-          </h1> */}
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. Living and coding in Metro Detroit.
+            Hi, I&apos;m Mike Frieze. A web developer based in Metro Detroit.
           </h1>
+          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
+            Hi, I&apos;m Mike Frieze. Living and coding in Metro Detroit.
+          </h1> */}
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              My journey into web development began with a spark of curiosity at
-              the age of 23, leading me down an unexpected path that blossomed
-              into a fulfilling career. Eager to further develop my skills, I
-              decided to pursue a degree in Computer Science, which eventually
-              led to my first job as a Java developer working on the student
-              portal at Oakland University.
+              My interest in web development can be traced back to my high
+              school years. Back then, I taught myself the basics of PHP, HTML,
+              and CSS to build a forum for my friends and I. While I didn&apos;t
+              pursue coding seriously at that time, this early exposure laid the
+              foundation for my future career path.
+            </p>
+            <p>
+              A transformative Python course at the local community college
+              reignited my passion for programming, leading me to pursue a
+              Computer Science degree. This journey culminated in my first job
+              as a Java developer, working on the student portal at Oakland
+              University.
             </p>
             <p>
               Having transitioned from Java to front-end development, I now
@@ -114,8 +120,8 @@ export default function Home() {
                 className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
               >
                 my partner
-              </a>{" "}
-              since 2010.
+              </a>
+              .
             </p>
             <p>
               Curious about how we can work together or just want to chat? Send
