@@ -83,14 +83,13 @@ export default function Home() {
           </h1> */}
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              My interest in web development can be traced back to my high
-              school years. Back then, I taught myself the basics of PHP, HTML,
-              and CSS to build a forum for my friends and I. While I didn&apos;t
-              pursue coding seriously at that time, this early exposure laid the
-              foundation for my future career path.
+              My interest in web development began in high school, where I
+              taught myself enough PHP, HTML, and CSS to create a music forum.
+              Though I didn&apos;t pursue coding seriously at the time, this
+              early exposure laid the foundation for my future career path.
             </p>
             <p>
-              A transformative Python course at the local community college
+              A transformative Python course at Macomb Community College
               reignited my passion for programming, leading me to pursue a
               Computer Science degree. This journey culminated in my first job
               as a Java developer, working on the student portal at Oakland
