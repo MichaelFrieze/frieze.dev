@@ -5,7 +5,6 @@ import clsx from "clsx";
 import { Container } from "@/components/Container";
 import {
   GitHubIcon,
-  LinkedInIcon,
   XIcon,
   FacebookIcon,
   RedditIcon,

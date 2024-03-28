@@ -10,8 +10,7 @@ export const metadata: Metadata = {
     template: "Mike Frieze | %s",
     default: "Mike Frieze | Developer",
   },
-  description:
-    "Hi, I’m Mike Frieze. I live in Detroit, where I develop UIs for the web.",
+  description: "Hi, I'm Mike Frieze. A web developer based in Metro Detroit.",
   alternates: {
     types: {
       "application/rss+xml": `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
