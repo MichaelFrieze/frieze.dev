@@ -10,13 +10,14 @@ export async function GET(req: Request) {
   }
 
   let author = {
-    name: "Michael Frieze",
-    email: "michael@frieze.dev",
+    name: "Mike Frieze",
+    email: "mike@frieze.dev",
   };
 
   let feed = new Feed({
     title: author.name,
-    description: "Your blog description",
+    description:
+      "My long-form thoughts on web development collected in chronological order.",
     author,
     id: siteUrl,
     link: siteUrl,

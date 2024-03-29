@@ -83,8 +83,8 @@ export default function Home() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Hi, I&apos;m Mike Frieze
           </h1>
-          <h2 className="text-2xl italic tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
-            Developer based in Metro Detroit
+          <h2 className="text-1xl italic tracking-tight text-zinc-600 sm:text-2xl dark:text-zinc-400">
+            Web developer based in Metro Detroit
           </h2>
           {/* <h2 className="text-2xl italic tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
             Living and coding in Metro Detroit

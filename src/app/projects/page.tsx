@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Featured Projects"
+      title="Projects"
       intro="I like to stay busy and keep learning, so I always have a project in the works. Explore my featured GitHub repositories showcasing the applications and websites I've been developing."
     >
       <ul
