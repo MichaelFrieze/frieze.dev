@@ -1,5 +1,10 @@
 import { ArticleLayout } from "@/components/ArticleLayout";
-import designSystem from "./OOPII.jpg";
+import designSystem from "./oop.jpg";
+import oldPC from "./old-pc.jpg";
+import buildPC from "./build-pc.jpg";
+import oakdlandUniversity from "./ou3.jpg";
+import programming from "./programming.jpg";
+import workingOU from "./working-ou.jpg";
 
 export const article = {
   author: "Michael Frieze",
@@ -14,9 +19,7 @@ export const metadata = {
   description: article.description,
 };
 
-export default (props) => <ArticleLayout article={article} {...props} /
-
->
+export default (props) => <ArticleLayout article={article} {...props} />;
 
 _How an after-school PC building program shaped my journey into web development._
 
@@ -24,7 +27,11 @@ _How an after-school PC building program shaped my journey into web development.
 
 Back in 8th grade, my school offered an after-school program that really sparked my interest in computers and technology. We had two options - build our own PC or learn Microsoft Office. I chose the computer building track, and that decision ended up shaping the course of my entire career.
 
-Building that first computer from scratch was such a rewarding experience. I loved learning about all the different hardware components and how they fit together. Once I got that machine home, I couldn't wait to start tinkering with it. I immediately began experimenting with different Linux distributions, seeing what I could customize and optimize. Upgrading the RAM from 256MB to 512MB felt like a major accomplishment back then.
+<Image src={oldPC} alt="Old PC I built, but not the first" />
+
+_This is not the first PC I've built, but it's the oldest one I have a photo of._
+
+Building that first computer from scratch was such a rewarding experience. I loved learning about all the different hardware components and how they fit together. Once I got that machine home, I couldn't wait to start tinkering with it. I immediately began experimenting with different Linux distributions, seeing what I could customize and optimize. Upgrading the RAM from 256MB to 512MB felt like a major upgrade back then.
 
 Having my own personal computer to play with was a game-changer. Up until that point, I had only used the family desktop in the living room. But now I had a machine that was truly mine, where I could explore and learn at my own pace. That sense of ownership and freedom to tinker was incredibly motivating.
 
@@ -32,12 +39,39 @@ Having my own personal computer to play with was a game-changer. Up until that p
 
 As I progressed through high school, I was getting interested in programming. I wanted to build a music forum for me and my friends, so I taught myself the basics of PHP, HTML, and CSS. I think the forum software I used back then was called phpBB. That project was a great introduction to coding, even if I didn't end up pursuing it seriously at the time.
 
-Instead, I was more into computer repair work, taking on jobs fixing up desktops and laptops. That hands-on technical experience was helpful and I enjoyed working as a computer repair technician, but I still felt like something was missing. It wasn't until I took a Python class at the local community college that I rediscovered my passion for programming. That course reignited my curiosity and made me realize that computer science was the path I wanted to pursue.
+<Image
+  src={programming}
+  alt="Working as a computer repair technician and delivering pizzas"
+/>
 
-## Transitioning to Web Development
+<Image src={buildPC} alt="Building a PC for a client" />
 
-After transferring to Oakland University, I landed my first job as a Java developer working on the student portal. Getting that real-world experience as part of a development team was incredibly rewarding. It solidified my decision to commit to a career in software development, and I haven't looked back since.
+After graduating from high school, I found myself working as a computer repair technician and delivering pizzas part-time. While the hands-on technical experience was valuable, I still felt like something was missing from my career path. It wasn't until I took a Python course at Macomb Community College that I rediscovered my true passion - programming.
 
-<Image src={designSystem} alt="" />
+## Committed to Code
 
-The lessons I learned and the skills I developed have been invaluable, and I'm grateful for the opportunities that set me on this fulfilling path.
+After my first semester at Macomb Community College (MCC), I had made up my mind - computer science was going to be my major, and I was determined to give it my all. I didn't start my college journey until I was around 22 years old, and I believe this slightly later start actually worked to my advantage. With a bit more maturity under my belt, I felt more focused and driven in my academic pursuits.
+
+My plan was to take as many relevant courses as I could at the community college before transferring to Oakland University. This strategy allowed me to get a strong foundation in the core concepts and fundamentals, all while keeping my costs down by taking the initial classes at the more affordable MCC.
+
+After spending a few years at MCC, I was ready to transfer to Oakland University.
+
+<Image src={oakdlandUniversity} alt="Oakland University" />
+
+My first semester at Oakland University was an incredibly rewarding experience. I thoroughly enjoyed every minute of being a student at this new school.
+
+<Image
+  src={designSystem}
+  alt="CSI 2300 - Object-Oriented Computing at Oakland University"
+/>
+
+Since I had already completed Object-Oriented Programming I at Macomb Community College, I was able to start at OU by taking OOP II. I had one of the best professors for this course, and I learned a tremendous amount about Java.
+
+<Image
+  src={workingOU}
+  alt="Working as a Java developer at Oakland University"
+/>
+
+By the time my second semester rolled around, I had landed my first job as a Java developer working on the student portal. This experience, as part of an active development team, was extremely rewarding. In fact, this was the first job I had ever held where I would find myself looking at the clock, wishing it would slow down. I thoroughly enjoyed being part of a team of hardworking and passionate individuals.
+
+This hands-on experience solidified my decision to commit to a career in software development. I found the work to be engaging, intellectually stimulating, and fulfilling. Since that formative experience, I have not looked back.
