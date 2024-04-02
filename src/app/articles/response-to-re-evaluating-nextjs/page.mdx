@@ -1,0 +1,243 @@
+import { ArticleLayout } from "@/components/ArticleLayout";
+
+export const article = {
+  author: "Michael Frieze",
+  date: "2024-04-01",
+  title: 'Response to "Re-evaluating Next.js" Article',
+  description: "",
+};
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+};
+
+export default (props) => <ArticleLayout article={article} {...props} />;
+
+_This is my response to ["Re-evaluating Next.js: Did it go the wrong path?""](https://blog.activenode.de/re-evaluating-nextjs-did-it-go-the-wrong-path) and a few digressions._
+
+---
+
+> Since v13, Next.js tries to push Server-Side-Rendering to the fullest but it doesn't feel complementary anymore but instead seems to wanting to replace frontend. I mean this is cool in the use-case where you actually want that, say a contentful news page or an e-commerce shop. But for an extremely fluid, reactive application with beautiful user interaction, things got way more complicated.
+
+First of all, I would just like to point out that React Server Components are not like SSR 2.0, but I will get to that later.
+
+The primary goal of Next.js is to offer a fullstack framework to support React and has alligned itself with React's vision. Next.js had nothing to do with the current direction that React is going in and React was never planning on being a client-only library. [The React team was inspired by XHP](https://twitter.com/dan_abramov2/status/1745856556053196890) which was a server component-oriented architecture used at Facebook. The people working on React were fullstack developers and Facebook was (and still is) a server-centric company.
+
+Next.js and React are not aiming to replace the frontend with the backend. Instead, they are complementing each other and serving different purposes. React Server Components (RSCs) serve client components by componentizing the request/response model. RSCs are not intended to replace client components, but rather to work alongside them as an additional layer. Client components will continue to play a crucial role in the development of React applications, and they work in the same way React components have always worked. If the React team didn't care about client components, they wouldn't be working on the React compiler.
+
+---
+
+> The problem isn't SSR, at all. SSR is lovely and important. The problem is, that we are hyperfocused on enforcing SSR and right now it doesn't seem quite reasonable anymore. If Next.js could trigger onClick on the server, they probably would. And this is where it gets ridicolous: Solving a problem that didn't want to be solved. But let's get into actual issues.
+
+As I mentioned, client components are not going anywhere. They will continue to play a crucial role in providing interactivity in React applications. The boundaries between server and client components are well-defined, with the client being the domain for interactivity.
+
+Your comment about server-side onClick is a baseless exaggeration, and implying that the React team, which includes some of the best engineers in the industry, is trying to "solve a problem that didn't want to be solved" is simply inaccurate. The React team is making thoughtful, reasonable decisions about how React should work on the server, as in a component-oriented architecture, the server is a crucial part of a component's concern.
+
+---
+
+## SSR vs RSC
+
+There seems to be some confusion in David's article about the differences between SSR and RSCs. I see a lot of this confusion on social media too. So, I think it's important to go over SSR and how it relates to RSCs, which are not like SSR 2.0.
+
+I recommend reading [Josh Comeau's article on RSCs and SSR](https://www.joshwcomeau.com/react/server-components/), but I will give a summary and use it to help support my thoughts.
+
+SSR generates the initial HTML so that users don't have to stare at an empty white page while the JS bundles are downloaded and parsed. Client-side React then picks up where server-side React left off.
+
+To further expand on SSR vs CSR (client-side rendering), we need to know a few concepts.
+
+- **First Paint** is when the user is no longer staring at a blank white screen. The general layout has been rendered, but the content is still missing.
+- **Page Interactive** is when React has been downloaded, and our application has been rendered/hydrated. Interactive elements are now fully responsive
+- **Content Paint** is when the page now includes the stuff the user cares about. We've pulled the data from the database and rendered it in the UI.
+
+The general flow is something like:
+
+- **CSR**
+
+  1. javascript is downloaded
+  2. shell is rendered
+  3. then, “first paint” and “page interactive” happen at about the same time.
+  4. A second round-trip network request for database query
+  5. Render content
+  6. Finally, “Content Painted”
+
+- **SSR**
+
+  1. Immediately get a rendered shell
+  2. “first paint”
+  3. download javascript
+  4. hydration
+  5. Page Interactive
+  6. A second round-trip network request for database query
+  7. Render content
+  8. Finally, “Content Painted”
+
+That should give you a good idea about the benefits of SSR over CSR.
+
+Furthermore, tools like `getServerSideProps` and Remix's loader function improved things even more. Instead of requiring a second round-trip network request, the database work can be done on the initial request.
+
+- SSR with `getServerSideProps`:
+
+  1. DB query
+  2. Render app
+  3. First Paint AND Content Painted
+  4. Download JavaScript
+  5. Hydrate
+  6. Page interactive
+
+- But these solutions have a few downsides:
+
+  - They only work at the route level.
+  - There is no standard.
+  - All React components will always hydrate on the client.
+
+This is where React Server Components (RSCs) come in to help solve those downsides. RSCs can fetch data at the component level and they do not need to hydrate on the client. It might take a while until RSCs are the standard since they are only really used in App Router, but Remix will have them soon. Also, there is a framework called [Waku](https://waku.gg/) that supports RSCs.
+
+Here are some of the differences between RSCs and client components:
+
+- **RSCs only render on the server**
+  - this is why react hooks don’t work in RSCs
+  - RSCs are just an additional layer, they do not change behavior of client components
+- **Client components render on the server and the client**
+  - Client components work the same way react components have always worked and that includes SSR
+  - Client components in app router work the same as components in pages router.
+
+RSCs are like the skeleton of an app and client components are like the interactive muscle that surrounds the skeleton. Interactivity like clicking a button happens on the client and this is why you don't have to worry about `onClick` on the server. As I said, RSCs and client components work alongside each other and serve different purposes. The purpose of RSCs is to server client components by componentizing the request/response model.
+
+Also, RSC’s are similar to HTMX but they return JSX instead of HTML. The initial RSC content is included in the HTML payload. But RSCs are about more than just returning JSX, RSCs allow for [components on both sides](https://twitter.com/dan_abramov2/status/1747407834751336613).
+
+React's focus on components has caused significant debate over the years. One of the first controversies was about JSX and "separation of concerns". While some developers initially struggled with JSX, many grew to appreciate it and were still able to look at React through an MVC perspective. However, with the introduction of RSCs, I think a shift towards a more component-centric mindset is necessary for developers to effectively adapt to these new changes.
+
+---
+
+> With v13, Next.js started caching your internal API requests implicitly. Means: If you use fetch for grabbing weather data, you'll get old weather data the next time you fetch it. Thanks to automatic caching. Sure, you can disable it. But this is a breaking change and React itself has a known guideline that it's tailored for enterprise not having breaking changes like that ([https://legacy.reactjs.org/docs/design-principles.html#stability](https://legacy.reactjs.org/docs/design-principles.html#stability)). So even though React and Next are extremely close, Next didn't seem to adhere to the same design principles. Having such a caching mechanism is surely awesome, if you can enable it - either globally or partially. But I'm confused that amongst all architects, no one said: it shouldn't be enabled by default changing the way your application works in a world where probably most API requests should not be cached.
+
+Wanting RSCs to be opt-in to caching (rather than opt-out) is a misunderstanding of how RSCs work in App Router. RSCs are prerendered by default and not dynamic, which I think is also the approach recommended by React. This is not agains React's design principles. This will become even more important when [partial prerendering](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model) comes out.
+
+RSCs are prerendered by default but if you use dynamic functions (`cookies()`, `header()`, and `searchParams`) in a server component, then it will automatically opt the whole route into dynamic rendering at request time. Also, you can manually opt-out with options like `noStore()`. Most of the time you won't want to opt-out and instead use something like `revalidatePath()`.
+
+I think most of the complaints about caching are related to the client-side router cache. Currently, staletime is automatically set to `30 seconds` for dynamic rendering and I think people expect it to update immediately. There is a proposal to give the option to set staletime to `0 seconds` and I think this will help solve a lot of the caching issues. Of course, wanting router to cache to be opt-in by default is a rediculous notion.
+
+It seems a lot of people want to use RSCs for purposes that are better suited to client components. If you need real-time updates, use client components. It's fine to use RSCs to preload the data for page load, but then client components should be used to resume the session and handle the real-time updates. This is how Convex is using RSCs and client components.
+
+On the link to react docs about stability, I think this is an important paragraph:
+"However we think stability in the sense of “nothing changes” is overrated. It quickly turns into stagnation. Instead, we prefer the stability in the sense of “It is heavily used in production, and when something changes, there is a clear (and preferably automated) migration path.”
+
+---
+
+> The whole thing lead to an answer in the form of explaining the caching ([https://www.youtube.com/watch?v=VBlSe8tvg4U](https://www.youtube.com/watch?v=VBlSe8tvg4U)). There's a saying though: If you need to explain it, it's not intuitive enough. But the thing is: it was explained in the docs (which makes sense) so rather the saying is: If you need to explain it over and over again, it's definitely not the best solution. (Still, thanks for the video, it's a good one!).
+
+Like you said, not only did Lee make a video explaining all of this, but it's also in the docs. However, I disagree that just because it needs to be explained means that it's not the best solution. I don't really know what "best solution" means. Web dev is complicated and there are many appropriate solutions depending on what problems you are trying to solve. React now just gives you an additional layer which is another tool to help solve some of these complex problems. In fact, RSCs (and the React compiler) should help reduce a lot of the client-side complexity in our React apps.
+
+There are many reasons why this stuff has to be explained. One reason is that it's new and people have a lot of preconceived notions about how this stuff works. Also, social media causes a lot of confusion. Someone will make a post complaining on Twitter, the post will go viral, and it turns out it was a misunderstanding. But now, thousands of people believe it.
+
+Another thing to consider is that RSCs require a shift towards a more component-centric mindset and I think this throws off a lot of developers. I think new developers will have an easier time adapting to these new changes.
+
+Despite the confusion surrounding RSCs, people like Dan Abramov have been actively engaged in explaining these concepts on social media. However, the reality is that RSCs can be a complex topic to discuss, and crafting a clear and concise response on the subject is challenging at times. Writing this response has been difficult for me, so I can only imagine how much effort Dan has put into it.
+
+---
+
+## Other controvsersial topics surrounding RSCs.
+
+A lot of people think the naming of React "Server" Components doesn't fit because RSCs can be prerendered at build time. Some developers seem to think RSCs should only be called server components if they only run dynamically at request time. But, this is a misunderstanding. RSC's are not called "server" components because of the machine they run on. [They refer to pieces of software — the server and the client of the React protocol](https://twitter.com/dan_abramov2/status/1746236615188459767).
+
+I think server components are probably the best name we have for this. From the perspective of the dev experience, they are React components on a server. You are always using a server for those components until the build. [The better way to think about RSCs is that they "serve" your regular client components](https://twitter.com/dan_abramov2/status/1745825325081039303). The request/response can run either at deploy/build or on an actual server.
+
+Then there is the confusion of `"use client"` and `"use server"`. A lot of people are thinking about these directives as a way to tell the compiler that "this is a server component" and "this is a client component". But that is not how these directives work. Instead, [they are entry points](https://twitter.com/dan_abramov2/status/1748764683115348184):
+
+- `“use client”` marks a door from server to client. like a `<script>` tag.
+- `“use server”` marks a door from client to server. like a REST endpoint.
+
+The misunderstanding around these directives also caused some complaints about server components being the "default". They think you should have to write `"use server"` for server components and not `"use client"` for client components. But again, this is just a misunderstanding of how these directive work.
+
+Server components have to be the default [because they are the "root"](https://twitter.com/dan_abramov2/status/1751659373414203644). It's part of the code that has to run earlier because it determines what is rendered next. It's the same reason HTML is the outer layer and the script tag is the inner layer. Then, `"use client"` marks the entry point where the data flows to the client.
+
+---
+
+> when I'm using Supabase and fetch data from it, it will always skip the cache - which usually makes sense but if Next had explicit caching, I could just put the result to the cache - oh well, in fact, you can, it's just hidden: [https://nextjs.org/docs/app/building-your-application/caching#react-cache-function](https://nextjs.org/docs/app/building-your-application/caching#react-cache-function) but, again, comes with pitfalls: [https://react.dev/reference/react/cache](https://react.dev/reference/react/cache) . So much to know for a rather simple thing to achieve.
+
+This is not hidden. Not only is it clearly in the docs but I believe it's also in Lee's video.
+
+Also, here is the example of the Pitfall mentioned:
+
+```js
+export function Temperature({ cityData }) {
+  // 🚩 Wrong: Calling `cache` in component creates new `getWeekReport` for each render
+  const getWeekReport = cache(calculateWeekReport);
+  const report = getWeekReport(cityData);
+  // ...
+}
+```
+
+We wouldn't want a new cache to get created on each rerender, but more importantly, we want that cache accessible outside of that component. For example, I would put `cache()` on a Prisma query in it's own separate file.
+
+> So much to know for a rather simple thing to achieve.
+
+I really don't find this pitfall to be that complicated and it's mostly obvious to anyone that has a basic understanding of React. Also, it's in the docs.
+
+---
+
+> The other problem about that caching is that there are a lot of additional things to consider. For example, if you want to force a page to refresh, you can actually call `router.refresh()` one the same page or `revalidatePath` . Unsure? Well that's easy, here's what the docs say:
+
+This is because `router.refresh()` only works on the client. `useRouter()` is a react hook and is meant to be used for the client-side router cache.
+
+On-demand revalidation using `revalidatePath` is server side. Also, since it runs on the server, it purges the server and the client. You use it in a server action or an API route.
+
+`router.refresh()` likely won't get used very often and isn't meant to be used interchangably with `revalidatePath`. I don't think it's something you will be unsure about.
+
+---
+
+> Again, Next.js "solved" this by allowing you to add a loader.js at the level of the page you are loading. The problem is though: The loader has to be loaded - for the sake of performance. I'm not sure if I should laugh about this. The loader's goal, UX-wise, is to be *instantaneous* to provide user-feedback. Period.
+
+Sure, we still load the loading UI, but I have not had this experience where `loading.tsx` isn't perceived as instant. I use both loading UI and suspense in server components and I don't have to wait around for loading skeletons.
+
+Whenever you have a server component that might take a while to fetch data, using `loading.tsx` or `<Suspense>` is going to give you a loading skeleton before the server component finishes. Do you still have to load the "loader", yes but that is a lot less to load than what you are likely fetching in the server component and that's just how servers work. In my experience, it's instant.
+
+Here is an example app: https://taskify-nextjs-nu.vercel.app/
+
+Sure, this isn't a huge dashboard with a lot of spinners, but it's an example of using suspense with server components. Also, this is using a `shadcn/ui` skeleton instead of a spinner.
+
+The ActivityList is a server component that is wrapped in suspense. You will see the loading skeleton is instant or at least, it's perceived as instant.
+
+`app/(platform)/(dashboard)/organization/[organizationId]/activity/page.tsx`
+
+```tsx
+import { redirect } from "next/navigation";
+
+import { getOrgById } from "@/lib/get-org-by-id";
+import { checkSubscription } from "@/lib/subscription";
+
+import { Info } from "../_components/info";
+import {
+  ActivityList,
+  ActivityListSkeleton,
+} from "./_components/activity-list";
+import { Separator } from "@/components/ui/separator";
+import { Suspense } from "react";
+
+const ActivityPage = async ({
+  params,
+}: {
+  params: { organizationId: string };
+}) => {
+  const org = await getOrgById(params.organizationId);
+
+  if (!org) {
+    redirect("/select-org");
+  }
+
+  const isPro = await checkSubscription(params.organizationId);
+
+  return (
+    <div className="w-full">
+      <Info org={org} isPro={isPro} />
+      <Separator className="my-4" />
+      <Suspense fallback={<ActivityListSkeleton />}>
+        <ActivityList orgId={org.id} />
+      </Suspense>
+    </div>
+  );
+};
+
+export default ActivityPage;
+```
