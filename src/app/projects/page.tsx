@@ -31,7 +31,7 @@ const projects = [
   {
     name: "MyDetails",
     description:
-      "Portlet using Java, Spring, and uPortal for the Oakland University student portal.  ",
+      "Portlet using Java, Spring, and uPortal for the Oakland University student portal.",
     link: {
       href: "https://github.com/MichaelFrieze/MyDetails",
       label: "GitHub",
