@@ -120,7 +120,7 @@ React's focus on components has caused significant debate over the years. One of
 
 ---
 
-> With v13, Next.js started caching your internal API requests implicitly. Means: If you use fetch for grabbing weather data, you'll get old weather data the next time you fetch it. Thanks to automatic caching. Sure, you can disable it. But this is a breaking change and React itself has a known guideline that it's tailored for enterprise not having breaking changes like that ([https://legacy.reactjs.org/docs/design-principles.html#stability](https://legacy.reactjs.org/docs/design-principles.html#stability)). So even though React and Next are extremely close, Next didn't seem to adhere to the same design principles. Having such a caching mechanism is surely awesome, if you can enable it - either globally or partially. But I'm confused that amongst all architects, no one said: it shouldn't be enabled by default changing the way your application works in a world where probably most API requests should not be cached.
+> With v13, Next.js started caching your internal API requests implicitly. Means: If you use fetch for grabbing weather data, you'll get old weather data the next time you fetch it. Thanks to automatic caching. Sure, you can disable it. But this is a breaking change and React itself has a known guideline that it's tailored for enterprise not having breaking changes like that ([link to react docs](https://legacy.reactjs.org/docs/design-principles.html#stability)). So even though React and Next are extremely close, Next didn't seem to adhere to the same design principles. Having such a caching mechanism is surely awesome, if you can enable it - either globally or partially. But I'm confused that amongst all architects, no one said: it shouldn't be enabled by default changing the way your application works in a world where probably most API requests should not be cached.
 
 Wanting RSCs to be opt-in to caching (rather than opt-out) is a misunderstanding of how RSCs work in App Router. RSCs are prerendered by default and not dynamic, which I think is also the approach recommended by React. This will become even more important when [partial prerendering](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model) comes out.
 
@@ -135,7 +135,7 @@ In the legacy React docs about stability, I think this is an important paragraph
 
 ---
 
-> The whole thing lead to an answer in the form of explaining the caching ([https://www.youtube.com/watch?v=VBlSe8tvg4U](https://www.youtube.com/watch?v=VBlSe8tvg4U)). There's a saying though: If you need to explain it, it's not intuitive enough. But the thing is: it was explained in the docs (which makes sense) so rather the saying is: If you need to explain it over and over again, it's definitely not the best solution. (Still, thanks for the video, it's a good one!).
+> The whole thing lead to an answer in the form of explaining the caching ([Vercel video on caching](https://www.youtube.com/watch?v=VBlSe8tvg4U)). There's a saying though: If you need to explain it, it's not intuitive enough. But the thing is: it was explained in the docs (which makes sense) so rather the saying is: If you need to explain it over and over again, it's definitely not the best solution. (Still, thanks for the video, it's a good one!).
 
 As David said in the quote above, not only is caching explained in the docs, but Lee also made a video about it. I think this is evidence that developers seem to be struggling with caching in app router. I see a lot of complaints on social media as well. However, I think it's important to keep in mind that caching is notoriously difficult and it doesn't help that we have to think about caching on the server and the client.
 
@@ -169,7 +169,7 @@ Server components have to be the default [because they are the "root"](https://t
 
 ---
 
-> when I'm using Supabase and fetch data from it, it will always skip the cache - which usually makes sense but if Next had explicit caching, I could just put the result to the cache - oh well, in fact, you can, it's just hidden: [https://nextjs.org/docs/app/building-your-application/caching#react-cache-function](https://nextjs.org/docs/app/building-your-application/caching#react-cache-function) but, again, comes with pitfalls: [https://react.dev/reference/react/cache](https://react.dev/reference/react/cache) . So much to know for a rather simple thing to achieve.
+> when I'm using Supabase and fetch data from it, it will always skip the cache - which usually makes sense but if Next had explicit caching, I could just put the result to the cache - oh well, in fact, you can, it's just hidden: [next docs: react-cache-function](https://nextjs.org/docs/app/building-your-application/caching#react-cache-function) but, again, comes with pitfalls: [react docs: cache](https://react.dev/reference/react/cache). So much to know for a rather simple thing to achieve.
 
 This is not hidden. Not only is it clearly in the docs but I believe it's also in Lee's video.
 
@@ -192,7 +192,7 @@ I think this should be obvious to anyone that has a basic understanding of React
 
 ---
 
-> The other problem about that caching is that there are a lot of additional things to consider. For example, if you want to force a page to refresh, you can actually call `router.refresh()` one the same page or `revalidatePath` . Unsure? Well that's easy, here's what the docs say:
+> The other problem about that caching is that there are a lot of additional things to consider. For example, if you want to force a page to refresh, you can actually call `router.refresh()` one the same page or `revalidatePath`. Unsure? Well that's easy, here's what the docs say:
 
 This is because `router.refresh()` only works on the client. `useRouter()` is a react hook and is meant to be used for the client-side router cache.
 
@@ -202,13 +202,13 @@ On-demand revalidation using `revalidatePath` is server side. Also, since it run
 
 ---
 
-> Again, Next.js "solved" this by allowing you to add a loader.js at the level of the page you are loading. The problem is though: The loader has to be loaded - for the sake of performance. I'm not sure if I should laugh about this. The loader's goal, UX-wise, is to be *instantaneous* to provide user-feedback. Period.
+> Again, Next.js "solved" this by allowing you to add a loader.js at the level of the page you are loading. The problem is though: The loader has to be loaded - for the sake of performance. I'm not sure if I should laugh about this. The loader's goal, UX-wise, is to be instantaneous to provide user-feedback. Period.
 
 Sure, we still load the loading UI, but I have not had this experience where `loading.tsx` isn't perceived as instant. I use both `loading.tsx` and suspense in server components and I don't have to wait around for loading skeletons.
 
 Also, it's unlikely that many spinners and skeletons would result in a large data load, as these are generally lightweight elements.
 
-Here is an example app: https://taskify-nextjs-nu.vercel.app/
+[Here is an example app](https://taskify-nextjs-nu.vercel.app/)
 
 Each organization in the Workspaces dashboard has an activity list. The `ActivityList` is a server component that is wrapped in suspense.
 
@@ -244,10 +244,9 @@ export default ActivityPage;
 
 > Server actions were published without security advise
 >
-> I don't wanna go too deep into that topic as I've made a video about it: [https://www.youtube.com/watch?v=j0_g8Redd0A](https://www.youtube.com/watch?v=j0_g8Redd0A&t=404s). The thing is: If you use Server Actions as part of your component and load data with credential keys, the credentials are bridged via frontend without you noticing. Some people said in the video: Well, that's obvious because it's a closure. But in fact: It's not a normal closure. This isn't "standard javascript". Nothing here is obvious. Server Actions themselves aren't obvious because they're extracted from the actual component and in times where bundlers do the work and something like Server Actions are presented without further warning or advise considering that, I can expect that they're being extracted without passing my credentials.
+> I don't wanna go too deep into that topic as I've made a video about it: [YouTube: NextJS reveals Password](https://www.youtube.com/watch?v=j0_g8Redd0A&t=404s). The thing is: If you use Server Actions as part of your component and load data with credential keys, the credentials are bridged via frontend without you noticing. Some people said in the video: Well, that's obvious because it's a closure. But in fact: It's not a normal closure. This isn't "standard javascript". Nothing here is obvious. Server Actions themselves aren't obvious because they're extracted from the actual component and in times where bundlers do the work and something like Server Actions are presented without further warning or advise considering that, I can expect that they're being extracted without passing my credentials.
 
-Sebastian did write an article talking about security in server actions.
-https://nextjs.org/blog/security-nextjs-server-components-actions
+[There is a blog post](https://nextjs.org/blog/security-nextjs-server-components-actions) written by Sebastian Markbåge talking about security in server actions.
 
 While it's true that there are always security risks to consider, the use of RSCs and server actions generally reduce security risks.
 
@@ -322,6 +321,6 @@ Also, it depends on what is meant by "I wouldn't want a frontend page switch to 
 For super interactive apps, we would mostly use client components and fetch most of the data on the client. However, we can also do what Convex does and use RSC's to preload data for page load and pass it to client components where they resume the session. Then the client component takes it from there and handles all the real-time updates.
 
 - Convex is basically a type safe real-time database, this is what they are doing with RSCs:
-  - https://docs.convex.dev/client/react/nextjs/server-rendering
-  - https://github.com/get-convex/preloaded-counter/tree/main
-  - https://labs.convex.dev/preloaded-counter
+  - [Convex docs: server rendering](https://docs.convex.dev/client/react/nextjs/server-rendering)
+  - [GitHub: preloaded-counter](https://github.com/get-convex/preloaded-counter/tree/main)
+  - [Running demo](https://labs.convex.dev/preloaded-counter)
