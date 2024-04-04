@@ -3,7 +3,9 @@ import Image from "next/image";
 
 import { Card } from "@/components/Card";
 import { SimpleLayout } from "@/components/SimpleLayout";
-import logoPlanetaria from "@/images/logos/taskify.svg";
+import logoTaskify from "@/images/logos/taskify.svg";
+import logoFriezeDev from "@/images/avatar.jpg";
+import logoMyDetailsOU from "@/images/logos/ou-logo.jpg";
 
 const projects = [
   {
@@ -14,7 +16,27 @@ const projects = [
       href: "https://github.com/MichaelFrieze/taskify-nextjs",
       label: "GitHub",
     },
-    logo: logoPlanetaria,
+    logo: logoTaskify,
+  },
+  {
+    name: "frieze.dev",
+    description:
+      "My personal website using Next.js, App Router, MDX, and Tailwind.",
+    link: {
+      href: "https://github.com/MichaelFrieze/frieze.dev",
+      label: "GitHub",
+    },
+    logo: logoFriezeDev,
+  },
+  {
+    name: "MyDetails",
+    description:
+      "Portlet using Java, Spring, and uPortal for the Oakland University student portal.  ",
+    link: {
+      href: "https://github.com/MichaelFrieze/MyDetails",
+      label: "GitHub",
+    },
+    logo: logoMyDetailsOU,
   },
 ];
 
@@ -51,8 +73,7 @@ export default function Projects() {
               <Image
                 src={project.logo}
                 alt=""
-                className="h-8 w-8"
-                unoptimized
+                className="h-8 w-8 rounded-full"
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
