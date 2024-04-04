@@ -16,6 +16,14 @@ export default (props) => <ArticleLayout article={article} {...props} />;
 
 _This is my response to [David Lorenz's](https://activeno.de/) article titled ["Re-evaluating Next.js: Did it go the wrong path?"](https://blog.activenode.de/re-evaluating-nextjs-did-it-go-the-wrong-path). David also made a Reddit post about his article that can be viewed [here](https://www.reddit.com/r/nextjs/comments/1bhofzr/did_nextjs_move_in_the_wrong_direction_a/)._
 
+## The reason for my response
+
+I am responding to David's article because I frequently encounter similar complaints about React Server Components (RSCs), Server-Side Rendering (SSR), and the Next.js App Router on various social media platforms.
+
+Going through David's article and addressing each of the criticisms is an effective way for me to consolidate all of my thoughts on the subject in one place.
+
+Having this article as a reference will allow me to easily provide answers to many of the questions developers raise about these topics.
+
 ---
 
 > Since v13, Next.js tries to push Server-Side-Rendering to the fullest but it doesn't feel complementary anymore but instead seems to wanting to replace frontend. I mean this is cool in the use-case where you actually want that, say a contentful news page or an e-commerce shop. But for an extremely fluid, reactive application with beautiful user interaction, things got way more complicated.
@@ -91,12 +99,14 @@ Furthermore, tools like `getServerSideProps` and Remix's loader function improve
   - There is no standard.
   - All React components will always hydrate on the client.
 
-This is where React Server Components (RSCs) come in to help solve those downsides. RSCs can fetch data at the component level and they do not need to hydrate on the client. It might take a while until RSCs are the standard since they are only really used in App Router, but Remix will have them soon. Also, there is a framework called [Waku](https://waku.gg/) that supports RSCs.
+This is where React Server Components (RSCs) come in to help solve those downsides. RSCs can fetch data at the component level and they do not need to hydrate on the client since they are rendered on the server.
+
+It might take a while until RSCs are the standard since they are only really used in App Router, but Remix will have them soon. Also, there is a framework called [Waku](https://waku.gg/) that supports RSCs.
 
 Here are some of the differences between RSCs and client components:
 
 - **RSCs only render on the server**
-  - this is why react hooks don’t work in RSCs
+  - this is why react hooks don't work in RSCs
   - RSCs are just an additional layer, they do not change behavior of client components
 - **Client components render on the server and the client**
   - Client components work the same way react components have always worked and that includes SSR
@@ -104,7 +114,7 @@ Here are some of the differences between RSCs and client components:
 
 RSCs are like the skeleton and client components are the interactive muscle that surrounds the skeleton. As I said, RSCs and client components work alongside each other and serve different purposes.
 
-Also, RSC’s are similar to HTMX but they return JSX instead of HTML. The initial RSC content is included in the HTML payload. But RSCs are about more than just returning JSX, they allow for [components on both sides](https://twitter.com/dan_abramov2/status/1747407834751336613).
+Also, RSC's are similar to HTMX but they return JSX instead of HTML. The initial RSC content is included in the HTML payload. But RSCs are about more than just returning JSX, they allow for [components on both sides](https://twitter.com/dan_abramov2/status/1747407834751336613).
 
 React's focus on components has caused significant debate over the years. One of the first controversies was about JSX and "separation of concerns". While some developers initially struggled with JSX, many grew to appreciate it and were still able to look at React through an MVC perspective. However, with the introduction of RSCs, I think a shift towards a more component-centric mindset is necessary for developers to effectively adapt to these new changes.
 
