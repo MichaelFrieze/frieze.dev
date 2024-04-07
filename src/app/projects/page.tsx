@@ -6,10 +6,12 @@ import { SimpleLayout } from "@/components/SimpleLayout";
 import logoTaskify from "@/images/logos/taskify.svg";
 import logoFriezeDev from "@/images/avatar.jpg";
 import logoMyDetailsOU from "@/images/logos/ou-logo.jpg";
+import logoDiscordClone from "@/images/logos/discord-clone.png";
+import logoVisualWorkspace from "@/images/logos/visual-workspace-nextjs.svg";
 
 const projects = [
   {
-    name: "taskify-nextjs",
+    name: "taskify",
     description:
       "Trello clone using Next.js, App Router, Server Actions, React, Prisma, Stripe, and Tailwind.",
     link: {
@@ -17,6 +19,26 @@ const projects = [
       label: "GitHub",
     },
     logo: logoTaskify,
+  },
+  {
+    name: "visual-workspace",
+    description:
+      "Real-time visual workspace using Next.js (App Router), Convex, and Tailwind.",
+    link: {
+      href: "https://github.com/MichaelFrieze/visual-workspace-nextjs",
+      label: "GitHub",
+    },
+    logo: logoVisualWorkspace,
+  },
+  {
+    name: "discord-clone",
+    description:
+      "Discord clone using Next.js App Router, Socket.io, UploadThing, Prisma, and Tailwind.",
+    link: {
+      href: "https://github.com/MichaelFrieze/discord-clone-nextjs",
+      label: "GitHub",
+    },
+    logo: logoDiscordClone,
   },
   {
     name: "frieze.dev",
