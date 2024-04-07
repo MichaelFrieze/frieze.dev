@@ -62,24 +62,6 @@ export default function Home() {
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
-          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. I live in Metro Detroit, where I develop
-            UIs for the web.
-          </h1> */}
-          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. I live in Metro Detroit, where I develop
-            apps for the web.
-          </h1> */}
-          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. Based in Metro Detroit, I develop UIs for
-            the web.
-          </h1> */}
-          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze 👋 A web developer based in Metro Detroit.
-          </h1> */}
-          {/* <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze. Living and coding in Metro Detroit.
-          </h1> */}
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             Hi, I&apos;m Mike Frieze
           </h1>
@@ -107,8 +89,15 @@ export default function Home() {
             <p>
               A Python course at Macomb Community College reignited my interest,
               leading me to pursue a computer science degree. This journey
-              culminated in my first job as a Java developer, working on the
-              student portal at Oakland University.
+              culminated in my first job as a Java developer, working on the{" "}
+              <a
+                target="_blank"
+                href="https://github.com/MichaelFrieze/MyDetails"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                student portal
+              </a>{" "}
+              at Oakland University.
             </p>
             <p>
               While working as a back-end developer for a few years, I slowly
@@ -118,7 +107,7 @@ export default function Home() {
               and dynamic web solutions that deliver great user experiences.
             </p>
             <p>
-              Outside of coding, my interests include{" "}
+              My interests outside of web development include{" "}
               <a
                 target="_blank"
                 href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
@@ -126,12 +115,35 @@ export default function Home() {
               >
                 playing guitar
               </a>
-              , listening to a variety of music genres, and immersing myself in
-              PC games like &rdquo;Star Citizen&rdquo; and &rdquo;Crusader Kings
-              3&rdquo;.
+              ,{" "}
+              <a
+                target="_blank"
+                href="https://youtu.be/JIbXZKE5yJg"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                making music with other musicians
+              </a>
+              , listening to a variety of music genres, and{" "}
+              <a
+                target="_blank"
+                href="images/me-kayla-nye.JPG"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                going to concerts
+              </a>
+              . Music has always been an important part of my life. I also enjoy
+              immersing myself in PC games like{" "}
+              <a
+                target="_blank"
+                href="images/star-citizen.png"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                &rdquo;Star Citizen&rdquo;
+              </a>{" "}
+              and &rdquo;Crusader Kings 3&rdquo;.
             </p>
             <p>
-              My family is an important part of my life.{" "}
+              A bit about my family -{" "}
               <a
                 target="_blank"
                 href="https://kaylafoister.weebly.com/"
@@ -140,15 +152,24 @@ export default function Home() {
                 Kayla
               </a>
               , my partner of over 14 years, is an elementary teacher and spends
-              most of her time reading books. Our 9-year-old chihuahua,{" "}
+              most of her time reading books.{" "}
               <a
                 target="_blank"
                 href="images/atticus.jpeg"
                 className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
               >
-                Atticus
-              </a>
-              , is our everyday companion.
+                Our 9-year-old chihuahua
+              </a>{" "}
+              is our everyday companion. My younger brother{" "}
+              <a
+                target="_blank"
+                href="images/me-scott-lockn.jpg"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                Scott
+              </a>{" "}
+              lives in Ohio these days, but he used to be the drummer to my
+              guitar. When I play PC games it&apos;s usually with him.
             </p>
             <p>
               Curious about how we can work together or just want to chat? Send
