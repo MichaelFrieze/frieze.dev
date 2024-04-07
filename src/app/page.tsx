@@ -8,6 +8,7 @@ import {
   XIcon,
   FacebookIcon,
   RedditIcon,
+  LinkedInIcon,
 } from "@/components/SocialIcons";
 import portraitImage from "@/images/portrait.jpg";
 
@@ -151,8 +152,8 @@ export default function Home() {
               >
                 Kayla
               </a>
-              , my partner of over 14 years, is an elementary teacher and spends
-              most of her time reading books.{" "}
+              , my partner of over 14 years, is a kindergarten teacher and
+              spends most of her time reading books.{" "}
               <a
                 target="_blank"
                 href="images/atticus.jpeg"
@@ -195,13 +196,13 @@ export default function Home() {
             >
               Follow on Facebook
             </SocialLink>
-            {/* <SocialLink
+            <SocialLink
               href="https://www.linkedin.com/in/michaelfrieze"
               icon={LinkedInIcon}
               className="mt-4"
             >
               Follow on LinkedIn
-            </SocialLink> */}
+            </SocialLink>
             <SocialLink
               href="mailto:mike@frieze.dev"
               icon={MailIcon}
