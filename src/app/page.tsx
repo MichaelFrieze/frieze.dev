@@ -91,25 +91,31 @@ export default function Home() {
           </h2> */}
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              My interest in web development began in high school, where I
-              taught myself enough PHP, HTML, and CSS to create a music forum
-              using phpBB. Though I didn&apos;t pursue coding seriously at the
-              time, this early exposure laid the foundation for my future career
-              path.
+              My interest in web development{" "}
+              <Link
+                href={"/articles/from-pc-building-to-web-dev"}
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+                target="_blank"
+              >
+                began in high school
+              </Link>
+              , where I taught myself enough PHP, HTML, and CSS to create a
+              music forum using phpBB. Though I didn&apos;t pursue coding
+              seriously at the time, I had a lot of fun and this early exposure
+              sparked my interest in programming.
             </p>
             <p>
-              A transformative Python course at Macomb Community College
-              reignited my passion for programming, leading me to pursue a
-              Computer Science degree. This journey culminated in my first job
-              as a Java developer, working on the student portal at Oakland
-              University.
+              A Python course at Macomb Community College reignited my interest,
+              leading me to pursue a computer science degree. This journey
+              culminated in my first job as a Java developer, working on the
+              student portal at Oakland University.
             </p>
             <p>
-              Having transitioned from Java to front-end development, I now
-              utilize JavaScript and innovative technologies such as React,
-              Next.js, Remix, Astro, TypeScript, Tailwind, Drizzle, etc. My
-              focus is on building intuitive user interfaces and dynamic web
-              solutions that deliver exceptional user experiences.
+              While working as a back-end developer for a few years, I slowly
+              transitioned to the front end. I now mostly utilize JavaScript and
+              innovative technologies such as React, Next.js, Astro, TypeScript,
+              Tailwind, etc. My focus is on building intuitive user interfaces
+              and dynamic web solutions that deliver great user experiences.
             </p>
             <p>
               Outside of coding, my interests include{" "}
@@ -120,9 +126,29 @@ export default function Home() {
               >
                 playing guitar
               </a>
-              , listening to a variety of music genres, immersing myself in PC
-              games like &rdquo;Star Citizen&rdquo; and &rdquo;Crusader Kings
-              3&rdquo;, and spending time with my family.
+              , listening to a variety of music genres, and immersing myself in
+              PC games like &rdquo;Star Citizen&rdquo; and &rdquo;Crusader Kings
+              3&rdquo;.
+            </p>
+            <p>
+              My family is an important part of my life.{" "}
+              <a
+                target="_blank"
+                href="https://kaylafoister.weebly.com/"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                Kayla
+              </a>
+              , my partner of over 14 years, is an elementary teacher and spends
+              most of her time reading books. Our 9-year-old chihuahua,{" "}
+              <a
+                target="_blank"
+                href="images/atticus.jpeg"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                Atticus
+              </a>
+              , is our everyday companion.
             </p>
             <p>
               Curious about how we can work together or just want to chat? Send
