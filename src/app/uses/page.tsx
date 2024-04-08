@@ -96,14 +96,13 @@ export default function Uses() {
               This is my favorite dark theme for VS Code.
             </Tool>
             <Tool title="Monaspace">
-              This superfamily of fonts are my go-to when coding.{" "}
-              <em>Monaspace</em> was created by engineers at GitHub and designed
-              with programmers in mind. Mono-spaced type usually suffers from an
-              inherent problem of uneven texture, but <em>Monaspace</em> has a
-              feature called texture healing that evens out the density of
-              mono-spaced type and preserves the monospace grid. There are 5
-              fonts to choose from and my favorite is Neon, which they call
-              Neo-grotesque sans.
+              This superfamily of fonts are my go-to when coding. It was created
+              by engineers at GitHub and designed with programmers in mind. A{" "}
+              <em>mono</em>-spaced type usually suffers from an inherent problem
+              of uneven texture, but Monaspace has a feature called texture
+              healing that evens out the density and preserves the grid. There
+              are 5 fonts to choose from and my favorite is Neon, which they
+              call Neo-grotesque sans.
             </Tool>
             <Tool title="Pretty TypeScript Errors">
               I am not going to mention a lot of VS Code extensions here, but
@@ -114,9 +113,7 @@ export default function Uses() {
               This is what I used for note taking. I mostly just use it as a
               simple text editor for markdown and it&apos;s great for that
               purpose. I also like it because it stores all my notes as markdown
-              files on my system. It has a syncing feature that can give a
-              cloud-like experience where I can access my notes on different
-              devices, but I don&apos;t use it.
+              files on my system.
             </Tool>
             <Tool title="iTerm2">
               I&apos;m honestly not even sure what features I get with this that
@@ -134,8 +131,8 @@ export default function Uses() {
               It&apos;s great and I can&apos;t imagine using anything else.
             </Tool>
             <Tool title="Excalidraw">
-              Excalidraw is an open-source, react-based, web-based drawing tool.
-              I use it for creating diagrams and wireframes.
+              Excalidraw is an open-source, web-based drawing tool built with
+              React. I use it for creating diagrams and wireframes.
             </Tool>
           </ToolsSection>
           <ToolsSection title="Productivity">
@@ -164,12 +161,10 @@ export default function Uses() {
             <Tool title="Raindrop">
               As an all-in-one bookmark manager, it allows me to seamlessly save
               and organize content from across the web - whether it&apos;s
-              articles, videos, PDFs, or just general webpages. The ability to
-              create custom collections and apply tags makes it easy to quickly
-              find and access the information I need. But what I appreciate most
-              is Raindrop&apos;s robust search capabilities, which let me
-              quickly surface relevant bookmarks, even if I can&apos;t recall
-              the exact title or URL.
+              articles, videos, PDFs, or just general webpages. But what I
+              appreciate most is Raindrop&apos;s robust search capabilities,
+              which let me quickly surface relevant bookmarks, even if I
+              can&apos;t recall the exact title or URL.
             </Tool>
           </ToolsSection>
         </div>
