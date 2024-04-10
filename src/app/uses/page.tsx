@@ -51,20 +51,19 @@ export default function Uses() {
               I&apos;ve owned this MacBook since 2021 and still have no reason
               to upgrade.
             </Tool>
-            <Tool title="MINISFORUM HX80G, Ryzen 7 5800H, 32GB RAM, 1TB SSD, RX 6600M">
-              As my primary Windows/Linux machine, this mini-PC packs a serious
-              punch and works well as my gaming PC. It handles even demanding
-              titles like Star Citizen without too many issues. While I tend to
-              use my MacBook more for coding, this compact system is my go-to
-              when I need to run Windows or Linux software for work.
+            <Tool title="MINISFORUM HX80G, Ryzen 7 5800H, 32GB RAM, RX 6600M">
+              As my primary Windows machine, this mini-PC packs a serious punch
+              and works well as my gaming PC. It handles even demanding titles
+              like Star Citizen without too many issues. While I tend to use my
+              MacBook more for coding, this compact system is my go-to when I
+              need to run Windows for work.
             </Tool>
             <Tool title="GIGABYTE M27Q PRO: 27 inch 165Hz 1440P">
               This display is a great low-cost companion for the MacBook and the
               HX80G mini-PC. With its 2560 x 1440 resolution, 165Hz refresh
-              rate, and AMD FreeSync support, it delivers an incredibly smooth
-              and detailed gaming experience. The IPS panel ensures accurate
-              colors and wide viewing angles, making it great for both work and
-              play.
+              rate, and AMD FreeSync support, it delivers a smooth and detailed
+              gaming experience. The IPS panel ensures accurate colors and wide
+              viewing angles, making it great for both work and play.
             </Tool>
             <Tool title="Sennheiser HD 560 S">
               For audio, I rely on my trusty pair of Sennheiser HD 560 S. These
