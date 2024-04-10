@@ -124,16 +124,8 @@ export default function Home() {
               >
                 making music with other musicians
               </a>
-              , and{" "}
-              <a
-                target="_blank"
-                href="images/me-kayla-nye.JPG"
-                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-              >
-                going to concerts
-              </a>
-              . Music has always been an important part of my life. I also enjoy
-              immersing myself in PC games like{" "}
+              , and going to concerts. Music has always been an important part
+              of my life. I also enjoy immersing myself in PC games like{" "}
               <a
                 target="_blank"
                 href="images/star-citizen.png"
