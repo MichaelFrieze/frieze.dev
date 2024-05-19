@@ -65,6 +65,20 @@ export default function Uses() {
               gaming experience. The IPS panel ensures accurate colors and wide
               viewing angles, making it great for both work and play.
             </Tool>
+            <Tool title="ZSA Voyager">
+              After just a few days of adjustment to its columnar layout,
+              I&apos;m in love with this ergonomic split keyboard. The compact
+              size, premium build quality, Oryx software, and ergonomic design
+              make it an excellent keyboard for developers. The columnar layout
+              reduces lateral finger movement and keeps hands in a more neutral
+              position. Also, the keyboard is split into two halves which allows
+              for a more natural shoulder-width hand positioning. It uses
+              low-profile Kailh Choc mechanical switches, double-shot PBT
+              keycaps, features magnetic accessories like tenting legs, and is
+              made out of sturdy aluminium. The Voyager is fully programmable
+              using ZSA&apos;s Oryx software to customize the layout and remap
+              keys.
+            </Tool>
             <Tool title="Sennheiser HD 560 S">
               For audio, I rely on my trusty pair of Sennheiser HD 560 S. These
               open-back headphones deliver an exceptional listening experience,
