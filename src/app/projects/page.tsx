@@ -8,6 +8,7 @@ import logoFriezeDev from "@/images/avatar.jpg";
 import logoMyDetailsOU from "@/images/logos/ou-logo.jpg";
 import logoDiscordClone from "@/images/logos/discord-clone.png";
 import logoVisualWorkspace from "@/images/logos/visual-workspace-nextjs.svg";
+import logoFinance from "@/images/logos/finance-logo.svg";
 
 const projects = [
   {
@@ -29,6 +30,16 @@ const projects = [
       label: "GitHub",
     },
     logo: logoVisualWorkspace,
+  },
+  {
+    name: "finance-nextjs",
+    description:
+      "Finance app using Next.js (App Router), Hono, Drizzle ORM, Clerk, and Tailwind.",
+    link: {
+      href: "https://github.com/MichaelFrieze/finance-nextjs",
+      label: "GitHub",
+    },
+    logo: logoFinance,
   },
   {
     name: "discord-clone",
