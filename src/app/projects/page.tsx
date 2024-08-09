@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Card } from "@/components/Card";
 import { SimpleLayout } from "@/components/SimpleLayout";
-// import logoTaskify from "@/images/logos/taskify.svg";
+import logoTaskify from "@/images/logos/taskify.svg";
 import logoFriezeDev from "@/images/avatar.jpg";
 import logoMyDetailsOU from "@/images/logos/ou-logo.jpg";
 // import logoDiscordClone from "@/images/logos/discord-clone.png";
