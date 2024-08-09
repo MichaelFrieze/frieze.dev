@@ -11,16 +11,16 @@ import logoMyDetailsOU from "@/images/logos/ou-logo.jpg";
 // import logoFinance from "@/images/logos/finance-logo.svg";
 
 const projects = [
-  // {
-  //   name: "taskify",
-  //   description:
-  //     "Trello clone using Next.js, App Router, Server Actions, React, Prisma, Stripe, and Tailwind.",
-  //   link: {
-  //     href: "https://github.com/MichaelFrieze/taskify-nextjs",
-  //     label: "GitHub",
-  //   },
-  //   logo: logoTaskify,
-  // },
+  {
+    name: "taskify",
+    description:
+      "Trello clone using Next.js, App Router, Server Actions, React, Prisma, Stripe, and Tailwind.",
+    link: {
+      href: "https://github.com/MichaelFrieze/taskify-nextjs",
+      label: "GitHub",
+    },
+    logo: logoTaskify,
+  },
   // {
   //   name: "visual-workspace",
   //   description:
