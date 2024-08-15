@@ -6,7 +6,7 @@ import { SimpleLayout } from "@/components/SimpleLayout";
 import logoTaskify from "@/images/logos/taskify.svg";
 import logoFriezeDev from "@/images/avatar.jpg";
 import logoMyDetailsOU from "@/images/logos/ou-logo.jpg";
-// import logoDiscordClone from "@/images/logos/discord-clone.png";
+import logoDiscordClone from "@/images/logos/discord-clone.png";
 // import logoVisualWorkspace from "@/images/logos/visual-workspace-nextjs.svg";
 // import logoFinance from "@/images/logos/finance-logo.svg";
 
@@ -41,16 +41,16 @@ const projects = [
   //   },
   //   logo: logoFinance,
   // },
-  // {
-  //   name: "discord-clone",
-  //   description:
-  //     "Discord clone using Next.js App Router, Socket.io, UploadThing, Prisma, and Tailwind.",
-  //   link: {
-  //     href: "https://github.com/MichaelFrieze/discord-clone-nextjs",
-  //     label: "GitHub",
-  //   },
-  //   logo: logoDiscordClone,
-  // },
+  {
+    name: "discord-clone",
+    description:
+      "Discord clone using Next.js App Router, Socket.io, UploadThing, Prisma, and Tailwind.",
+    link: {
+      href: "https://github.com/MichaelFrieze/discord-clone-nextjs",
+      label: "GitHub",
+    },
+    logo: logoDiscordClone,
+  },
   {
     name: "frieze.dev",
     description:
