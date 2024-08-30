@@ -41,16 +41,16 @@ const projects = [
   //   },
   //   logo: logoFinance,
   // },
-  {
-    name: "discord-clone",
-    description:
-      "Discord clone using Next.js App Router, Socket.io, UploadThing, Prisma, and Tailwind.",
-    link: {
-      href: "https://github.com/MichaelFrieze/discord-clone-nextjs",
-      label: "GitHub",
-    },
-    logo: logoDiscordClone,
-  },
+  // {
+  //   name: "discord-clone",
+  //   description:
+  //     "Discord clone using Next.js App Router, Socket.io, UploadThing, Prisma, and Tailwind.",
+  //   link: {
+  //     href: "https://github.com/MichaelFrieze/discord-clone-nextjs",
+  //     label: "GitHub",
+  //   },
+  //   logo: logoDiscordClone,
+  // },
   {
     name: "frieze.dev",
     description:
