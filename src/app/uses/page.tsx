@@ -79,6 +79,22 @@ export default function Uses() {
               using ZSA&apos;s Oryx software to customize the layout and remap
               keys.
             </Tool> */}
+            <Tool title="Kinesis Advantage 360 Pro">
+              I recently bought a Kinesis Advantage 360 Pro, and it&apos;s
+              fantastic. This ergonomic split keyboard features a unique
+              contoured design called a &quote;key&nbsp;well&quote; that keeps
+              my hands in a more natural position, minimizing strain during long
+              coding sessions. It also has a columnar layout which reduces
+              lateral finger movement. The Pro model is extremely customizable
+              since it uses ZMK and it&quote;s one of my favorite things about
+              this keyboard, but maybe ZMK isn&quote;t for everyone. I&apos;m a
+              fan of the Box White switches—they provide a satisfying tactile
+              feel and sound great if you don&quote;t mind some noise. The split
+              layout promotes comfortable shoulder-width spacing, and the
+              overall build quality is top-notch. After a short adjustment
+              period, this keyboard is one of the best things I have ever
+              purchased.
+            </Tool>
             <Tool title="Sennheiser HD 560 S">
               For audio, I rely on my trusty pair of Sennheiser HD 560 S. These
               open-back headphones deliver an exceptional listening experience,
