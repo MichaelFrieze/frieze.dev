@@ -119,21 +119,6 @@ React's focus on components has caused significant debate over the years. One of
 
 ---
 
-> With v13, Next.js started caching your internal API requests implicitly. Means: If you use fetch for grabbing weather data, you'll get old weather data the next time you fetch it. Thanks to automatic caching. Sure, you can disable it. But this is a breaking change and React itself has a known guideline that it's tailored for enterprise not having breaking changes like that ([link to react docs](https://legacy.reactjs.org/docs/design-principles.html#stability)). So even though React and Next are extremely close, Next didn't seem to adhere to the same design principles. Having such a caching mechanism is surely awesome, if you can enable it - either globally or partially. But I'm confused that amongst all architects, no one said: it shouldn't be enabled by default changing the way your application works in a world where probably most API requests should not be cached.
-
-Wanting RSCs to be opt-in to caching (rather than opt-out) is a misunderstanding of how RSCs work in App Router. RSCs are prerendered by default and not dynamic, which I think is also the approach recommended by React. This will become even more important when [partial prerendering](https://vercel.com/blog/partial-prerendering-with-next-js-creating-a-new-default-rendering-model) comes out.
-
-RSCs are prerendered by default but if we use dynamic functions (`cookies()`, `header()`, and `searchParams`) in a server component, then it will automatically opt the whole route into dynamic rendering. Also, we can manually opt-out with options like `noStore()`.
-
-Most of the time, we will use on-demand revalidation like `revalidatePath()` instead of dynamic rendering.
-
-I think most of the complaints about caching are related to the client-side router cache. Currently, staletime is automatically set to `30 seconds` for dynamic rendering and I think people expect it to update immediately. There is a proposal to give the option to set staletime to `0 seconds` and I think this will help solve a lot of the caching issues.
-
-In the legacy React docs about stability, I think this is an important paragraph:
-"However we think stability in the sense of “nothing changes” is overrated. It quickly turns into stagnation. Instead, we prefer the stability in the sense of “It is heavily used in production, and when something changes, there is a clear (and preferably automated) migration path.”
-
----
-
 > The whole thing lead to an answer in the form of explaining the caching ([Vercel video on caching](https://www.youtube.com/watch?v=VBlSe8tvg4U)). There's a saying though: If you need to explain it, it's not intuitive enough. But the thing is: it was explained in the docs (which makes sense) so rather the saying is: If you need to explain it over and over again, it's definitely not the best solution. (Still, thanks for the video, it's a good one!).
 
 As David said in the quote above, not only is caching explained in the docs, but Lee also made a video about it. I think this is evidence that developers seem to be struggling with caching in app router. I see a lot of complaints on social media as well. However, I think it's important to keep in mind that caching is notoriously difficult and it doesn't help that we have to think about caching on the server and the client.
@@ -170,7 +155,7 @@ Server components have to be the default [because they are the "root"](https://t
 
 > when I'm using Supabase and fetch data from it, it will always skip the cache - which usually makes sense but if Next had explicit caching, I could just put the result to the cache - oh well, in fact, you can, it's just hidden: [next docs: react-cache-function](https://nextjs.org/docs/app/building-your-application/caching#react-cache-function) but, again, comes with pitfalls: [react docs: cache](https://react.dev/reference/react/cache). So much to know for a rather simple thing to achieve.
 
-This is not hidden. Not only is it clearly in the docs but I believe it's also in Lee's video.
+This is not hidden; it's mentioned in the docs and also covered in Lee's video. Additionally, this is not a Next.js cache, it's a React cache designed for deduplication and does not persist. For persistent caching in Next.js, you can utilize the `unstable_cache` function.
 
 Also, here is the example of the Pitfall mentioned:
 
@@ -183,11 +168,7 @@ export function Temperature({ cityData }) {
 }
 ```
 
-We wouldn't want a new cache to get created on each rerender, but more importantly, we want that cache accessible outside of that component. For example, I would put `cache()` on a Prisma query in it's own separate file.
-
-> So much to know for a rather simple thing to achieve.
-
-I think this should be obvious to anyone that has a basic understanding of React. Also, this is clearly explained in the React docs and it's a React cache, not a Next.js cache.
+We wouldn't want a new cache to get created on each rerender, but more importantly, we want that cache accessible outside of that component.
 
 ---
 
@@ -271,9 +252,9 @@ But, if a developer is used to debugging on the server and the client, it's just
 
 There are some other things about RSCs that take some time to get used to. At first, I didn't realize that a server component can be a child of a client component. This realization made composing server and client components together much easier. What determines whether a component is a server or client component is where they are imported, not the parent/child relationship. So we can use a client component like `<QueryProvider>` in a root layout and components that get passed through as children can still be server components.
 
-Another quirk of App Router is not being able to get the current URL pathname in `Layout.tsx`. For example, if we have a navbar server component in a layout, we can't get the current pathname in the layout and pass it to the navbar. So, if we want active link styling in the navbar, we have to make each link a client component to access current URL pathname with `usePathname()`. I think this is because of [partial rendering](https://github.com/vercel/next.js/discussions/43657#discussioncomment-6720188). We can do some middleware hacks, but it's not recommend.
+Another quirk of App Router is not being able to get the current URL pathname in `Layout.tsx`. For example, if we have a navbar server component in a layout, we can't get the current pathname in the layout and pass it to the navbar. So, if we want active link styling in the navbar, we have to make each link a client component to access current URL pathname with `usePathname()`. We can do some middleware hacks, but it's not recommend.
 
-Trying to deviate from the recommended approach is what will make it harder to debug. This is when we will dig deep to find a solution, possibly without success.
+Trying to deviate from the recommended approach is what will make it harder to debug. It's best not to fight the framework.
 
 Also, we cannot access `searchParams` in `Layout.tsx` for [a similar reason](https://nextjs.org/docs/app/api-reference/functions/use-search-params#layouts). A shared layout is not re-rendered during navigation which could lead to stale params between navigation. But, we do have access to `searchParams` in `Page.tsx`.
 
@@ -283,7 +264,7 @@ These quirks are in the docs and easy to deal with when we come across them. It 
 
 > What I find especially troublesome is the fact that the dev experience doesn't reflect the prod experience at all. It's known that Next produces an optimized output for npm run build but it's not clear on the other hand that sometimes the dev server is kinda hanging itself on a machine that can handle gaming, video cutting and coding at the same time. The worst part is that it's not clear why this happens but it doesn't just happen to me.
 
-Yes, the default dev server has performance issuess. Especially compared to esbuild/Vite. But, turbopack works well now and it's much a much better experience. To enable turbopack, include this in the dev script: `"dev": "next dev --turbo",`
+Yes, the default dev server has performance issues. Especially compared to esbuild/Vite. But, turbopack works well now and it's much a much better experience. To enable turbopack, include this in the dev script: `"dev": "next dev --turbo",`
 
 ---
 
@@ -297,7 +278,7 @@ Also, we can build highly interactive apps using App Router with mostly client c
 
 > I remember the times when headless was the way to go. We all used SPAs like React or Angular and loaded data from the server. A pretty good approach with the disadvantage of having a lot of code in the frontend. That however was solved by having the option to lazy load. Back then, we noticed we need immediate server-rendered pages especially for search engines so we rendered the SPAs output as well on the server and hydrated it.
 
-As I mentioned before, server-side rendering is about more than just SEO. Also, with client components we can still put as much code on the client as we like, but now we get the additional benefit of SSR and RSC's. I already went over the downsides of relying solely on client-side rendering (SPAs).
+As I mentioned before, server-side rendering is about more than just SEO. Also, with client components we can still put as much code on the client as we like, but now we get the additional benefit of SSR and RSC's.
 
 ---
 
