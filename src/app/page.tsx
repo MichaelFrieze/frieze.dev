@@ -68,9 +68,6 @@ export default function Home() {
           <h2 className="text-1xl italic tracking-tight text-zinc-600 sm:text-2xl dark:text-zinc-400">
             Web developer based in Metro Detroit
           </h2>
-          {/* <h2 className="text-2xl italic tracking-tight text-zinc-800 sm:text-3xl dark:text-zinc-100">
-            Living and coding in Metro Detroit
-          </h2> */}
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
               I specialize in creating intuitive user interfaces and dynamic web
@@ -87,6 +84,21 @@ export default function Home() {
                and has led me through various roles, from Java on the back-end
               to my current focus on front-end.
             </p>
+            {/* <p>
+              I&apos;m active in the web development community on platforms like
+              X, Bluesky, and especially{" "}
+              <a
+                target="_blank"
+                href="https://www.reddit.com/user/michaelfrieze/comments/"
+                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+              >
+                Reddit
+              </a>
+              . Sharing knowledge about technologies like React helps me stay
+              updated on the latest trends and best practices. I&apos;m also
+              investing more time in writing articles to share my experiences
+              and deepen my understanding of these technologies.
+            </p> */}
             <p>
               My interests outside of web development include{" "}
               <a
