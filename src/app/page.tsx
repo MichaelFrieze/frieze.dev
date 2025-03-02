@@ -73,7 +73,10 @@ export default function Home() {
           </h2> */}
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              My interest in web development{" "}
+              I specialize in creating intuitive user interfaces and dynamic web
+              applications using JavaScript and modern technologies like React,
+              Next.js, Astro, TypeScript, and Tailwind. My journey in web
+              development 
               <Link
                 href={"/articles/from-pc-building-to-web-dev"}
                 className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
@@ -81,30 +84,8 @@ export default function Home() {
               >
                 began in high school
               </Link>
-              , where I taught myself enough PHP, HTML, and CSS to create a
-              music forum using phpBB. Though I didn&apos;t pursue coding
-              seriously at the time, I had a lot of fun and this early exposure
-              sparked my interest in programming.
-            </p>
-            <p>
-              A Python course at Macomb Community College reignited my interest,
-              leading me to pursue a computer science degree. This journey
-              culminated in my first job as a Java developer, working on the{" "}
-              <a
-                target="_blank"
-                href="https://github.com/MichaelFrieze/MyDetails"
-                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-              >
-                student portal
-              </a>{" "}
-              at Oakland University.
-            </p>
-            <p>
-              While working as a back-end developer for a few years, I slowly
-              transitioned to the front end. I now mostly utilize JavaScript and
-              innovative technologies such as React, Next.js, Astro, TypeScript,
-              Tailwind, etc. My focus is on building intuitive user interfaces
-              and dynamic web solutions that deliver great user experiences.
+               and has led me through various roles, from Java on the back-end
+              to my current focus on front-end.
             </p>
             <p>
               My interests outside of web development include{" "}
@@ -121,21 +102,15 @@ export default function Home() {
                 href="https://youtu.be/JIbXZKE5yJg"
                 className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
               >
-                making music with other musicians
+                jamming with other musicians
               </a>
-              , and going to concerts. Music has always been an important part
-              of my life. I also enjoy immersing myself in PC games like{" "}
-              <a
-                target="_blank"
-                href="images/star-citizen.png"
-                className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
-              >
-                &rdquo;Star Citizen&rdquo;
-              </a>{" "}
-              and &rdquo;Crusader Kings 3&rdquo;.
+              , and attending concerts. Music has always been an important part
+              of my life. I also enjoy immersing myself in PC games like
+              &rdquo;Star Citizen&rdquo; and &rdquo;Crusader Kings 3&rdquo;.
             </p>
+
             <p>
-              A bit about my family -{" "}
+              I share my life with{" "}
               <a
                 target="_blank"
                 href="https://kaylafoister.weebly.com/"
@@ -143,8 +118,8 @@ export default function Home() {
               >
                 Kayla
               </a>
-              , my partner of over 14 years, is a kindergarten teacher and
-              spends most of her time reading books.{" "}
+              , my partner of over 14 years. She is a kindergarten teacher and
+              avid reader.{" "}
               <a
                 target="_blank"
                 href="images/atticus.jpeg"
