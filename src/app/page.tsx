@@ -131,8 +131,8 @@ export default function Home() {
             </p>
             <p>
               Curious about how we can work together or just want to chat? Send
-              me an email or connect with me on platforms like X, Reddit, or
-              Facebook.
+              me an email or connect with me on platforms like Reddit, X, or
+              Bluesky.
             </p>
           </div>
         </div>
