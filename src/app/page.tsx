@@ -6,9 +6,8 @@ import { Container } from "@/components/Container";
 import {
   GitHubIcon,
   XIcon,
-  FacebookIcon,
   RedditIcon,
-  LinkedInIcon,
+  BlueskyIcon,
 } from "@/components/SocialIcons";
 import portraitImage from "@/images/portrait.jpg";
 
@@ -164,9 +163,6 @@ export default function Home() {
         </div>
         <div className="lg:pl-20">
           <ul role="list">
-            <SocialLink href="https://twitter.com/MichaelFrieze" icon={XIcon}>
-              Follow on X
-            </SocialLink>
             <SocialLink
               href="https://github.com/MichaelFrieze"
               icon={GitHubIcon}
@@ -182,18 +178,18 @@ export default function Home() {
               Follow on Reddit
             </SocialLink>
             <SocialLink
-              href="https://www.facebook.com/frieze.dev"
-              icon={FacebookIcon}
+              href="https://bsky.app/profile/frieze.dev"
+              icon={BlueskyIcon}
               className="mt-4"
             >
-              Follow on Facebook
+              Follow on Bluesky
             </SocialLink>
             <SocialLink
-              href="https://www.linkedin.com/in/michaelfrieze"
-              icon={LinkedInIcon}
+              href="https://twitter.com/MichaelFrieze"
+              icon={XIcon}
               className="mt-4"
             >
-              Follow on LinkedIn
+              Follow on X
             </SocialLink>
             <SocialLink
               href="mailto:mike@frieze.dev"
