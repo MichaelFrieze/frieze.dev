@@ -114,15 +114,14 @@ export default function Home() {
                 href="https://youtu.be/JIbXZKE5yJg"
                 className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
               >
-                jamming with other musicians
+                collaborating with other musicians
               </a>
               , and attending concerts. Music has always been an important part
               of my life. I also enjoy immersing myself in PC games like
               &rdquo;Star Citizen&rdquo; and &rdquo;Crusader Kings 3&rdquo;.
             </p>
-
             <p>
-              I share my life with{" "}
+              A bit about my family -{" "}
               <a
                 target="_blank"
                 href="https://kaylafoister.weebly.com/"
@@ -130,8 +129,8 @@ export default function Home() {
               >
                 Kayla
               </a>
-              , my partner of over 14 years. She is a kindergarten teacher and
-              avid reader.{" "}
+              , my partner of over 14 years, is a kindergarten teacher and avid
+              reader.{" "}
               <a
                 target="_blank"
                 href="images/atticus.jpeg"
