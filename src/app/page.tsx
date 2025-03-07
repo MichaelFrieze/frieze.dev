@@ -63,7 +63,7 @@ export default function Home() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Hi, I&apos;m Mike Frieze
+            Hi, I&apos;m Michael Frieze
           </h1>
           <h2 className="text-1xl italic tracking-tight text-zinc-600 sm:text-2xl dark:text-zinc-400">
             Web developer based in Metro Detroit
@@ -178,11 +178,11 @@ export default function Home() {
               Follow on X
             </SocialLink>
             <SocialLink
-              href="mailto:mike@frieze.dev"
+              href="mailto:michael@frieze.dev"
               icon={MailIcon}
               className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
             >
-              mike@frieze.dev
+              michael@frieze.dev
             </SocialLink>
           </ul>
         </div>

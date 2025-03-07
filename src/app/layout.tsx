@@ -7,10 +7,11 @@ import "@/styles/tailwind.css";
 
 export const metadata: Metadata = {
   title: {
-    template: "Mike Frieze | %s",
-    default: "Mike Frieze | Developer",
+    template: "Michael Frieze | %s",
+    default: "Michael Frieze | Developer",
   },
-  description: "Hi, I'm Mike Frieze. A web developer based in Metro Detroit.",
+  description:
+    "Hi, I'm Michael Frieze. A web developer based in Metro Detroit.",
   alternates: {
     types: {
       "application/rss+xml": `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
