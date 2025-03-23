@@ -100,15 +100,15 @@ export default function Home() {
               and deepen my understanding of these technologies.
             </p> */}
             <p>
-              My interests outside of web development include{" "}
+              In my free time, I enjoy{" "}
               <a
                 target="_blank"
                 href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
                 className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
               >
                 playing guitar
-              </a>
-              ,{" "}
+              </a>{" "}
+              and{" "}
               <a
                 target="_blank"
                 href="https://youtu.be/JIbXZKE5yJg"
@@ -116,9 +116,8 @@ export default function Home() {
               >
                 collaborating with other musicians
               </a>
-              , and attending concerts. Music has always been an important part
-              of my life. I also enjoy immersing myself in PC games like
-              &rdquo;Star Citizen&rdquo; and &rdquo;Crusader Kings 3&rdquo;.
+              . I also enjoy immersing myself in PC games like &rdquo;Star
+              Citizen&rdquo; and &rdquo;Crusader Kings 3&rdquo;.
             </p>
             <p>
               A bit about my family -{" "}
