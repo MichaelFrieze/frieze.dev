@@ -72,8 +72,7 @@ export default function Home() {
             <p>
               I specialize in creating intuitive user interfaces and dynamic web
               applications using JavaScript and modern technologies like React,
-              Next.js, Astro, TypeScript, and Tailwind. My journey in web
-              development 
+              Next.js, Astro, and TypeScript. My journey in web development 
               <Link
                 href={"/articles/from-pc-building-to-web-dev"}
                 className="font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
