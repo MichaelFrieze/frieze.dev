@@ -1,3 +1,6 @@
+`global.css`
+
+```css
 @import 'tailwindcss';
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -146,3 +149,4 @@
     @apply border-border outline-ring/50 tracking-tight;
   }
 }
+```
