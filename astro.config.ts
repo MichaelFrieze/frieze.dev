@@ -41,12 +41,11 @@ export default defineConfig({
         codeFontSize: '0.75rem',
         borderColor: 'var(--border)',
         codeFontFamily: 'var(--font-mono)',
-        codeBackground:
-          'color-mix(in oklab, var(--secondary) 25%, transparent)',
+        codeBackground: 'color-mix(in oklab, var(--card) 50%, transparent)',
         frames: {
-          editorActiveTabForeground: 'var(--muted-foreground)',
+          editorActiveTabForeground: 'var(--card-foreground)',
           editorActiveTabBackground:
-            'color-mix(in oklab, var(--secondary) 25%, transparent)',
+            'color-mix(in oklab, var(--card) 50%, transparent)',
           editorActiveTabIndicatorBottomColor: 'transparent',
           editorActiveTabIndicatorTopColor: 'transparent',
           editorTabBorderRadius: '0',
@@ -54,13 +53,13 @@ export default defineConfig({
           editorTabBarBorderBottomColor: 'transparent',
           frameBoxShadowCssValue: 'none',
           terminalBackground:
-            'color-mix(in oklab, var(--secondary) 25%, transparent)',
+            'color-mix(in oklab, var(--card) 50%, transparent)',
           terminalTitlebarBackground: 'transparent',
           terminalTitlebarBorderBottomColor: 'transparent',
-          terminalTitlebarForeground: 'var(--muted-foreground)',
+          terminalTitlebarForeground: 'var(--card-foreground)',
         },
         lineNumbers: {
-          foreground: 'var(--muted-foreground)',
+          foreground: 'var(--card-foreground)',
         },
         uiFontFamily: 'var(--font-sans)',
       },
