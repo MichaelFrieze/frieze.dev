@@ -38,7 +38,7 @@ const MobileMenu = () => {
         <Button
           variant="ghost"
           size="icon"
-          className="size-8 sm:hidden"
+          className="hover:bg-card hover:text-foreground size-8 sm:hidden"
           title="Menu"
         >
           <Menu className="size-5" />
