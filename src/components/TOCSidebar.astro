@@ -54,7 +54,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
                           getHeadingMargin(heading.depth),
                           isCurrentSubpost
                             ? 'text-foreground/40'
-                            : 'text-foreground/60',
+                            : 'text-foreground/60'
                         )}
                       >
                         <a
@@ -75,7 +75,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
                   <div
                     class={cn(
                       'rounded-md border p-2',
-                      section.subpostId === currentPostId ? 'bg-muted/50' : '',
+                      section.subpostId === currentPostId ? 'bg-card/50' : ''
                     )}
                   >
                     <ul class="flex list-none flex-col gap-y-2">
@@ -84,7 +84,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
                           'text-xs font-medium',
                           section.subpostId === currentPostId
                             ? 'text-foreground'
-                            : 'text-foreground/60',
+                            : 'text-foreground/60'
                         )}
                       >
                         <a
@@ -110,7 +110,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
                             getHeadingMargin(heading.depth),
                             section.subpostId === currentPostId
                               ? 'text-foreground/60'
-                              : 'text-foreground/30',
+                              : 'text-foreground/30'
                           )}
                         >
                           <a
@@ -147,7 +147,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
 
   class TOCState {
     links: NodeListOf<Element> = document.querySelectorAll(
-      '[data-heading-link]',
+      '[data-heading-link]'
     )
     activeIds: string[] = []
     headings: HTMLElement[] = []
@@ -157,7 +157,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
 
     reset() {
       this.links = document.querySelectorAll(
-        '#toc-sidebar-container [data-heading-link]',
+        '#toc-sidebar-container [data-heading-link]'
       )
       this.activeIds = []
       this.headings = []
@@ -176,8 +176,8 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
     static build() {
       state.headings = Array.from(
         document.querySelectorAll<HTMLElement>(
-          '.prose h2, .prose h3, .prose h4, .prose h5, .prose h6',
-        ),
+          '.prose h2, .prose h3, .prose h4, .prose h5, .prose h6'
+        )
       )
 
       if (state.headings.length === 0) {
@@ -256,7 +256,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
       headingIds.forEach((id) => {
         if (id) {
           const activeLink = document.querySelector(
-            `#toc-sidebar-container [data-heading-link="${id}"]`,
+            `#toc-sidebar-container [data-heading-link="${id}"]`
           )
           if (activeLink) {
             activeLink.classList.add('text-foreground')
@@ -271,7 +271,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
       if (!state.scrollArea || !headingIds.length) return
 
       const activeLink = document.querySelector(
-        `#toc-sidebar-container [data-heading-link="${headingIds[0]}"]`,
+        `#toc-sidebar-container [data-heading-link="${headingIds[0]}"]`
       )
       if (!activeLink) return
 
@@ -285,8 +285,8 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
         0,
         Math.min(
           currentLinkTop - (areaHeight - linkHeight) / 2,
-          state.scrollArea.scrollHeight - state.scrollArea.clientHeight,
-        ),
+          state.scrollArea.scrollHeight - state.scrollArea.clientHeight
+        )
       )
 
       if (Math.abs(targetScroll - state.scrollArea.scrollTop) > 5) {
@@ -337,7 +337,7 @@ const parentId = isCurrentSubpost ? getParentId(currentPostId) : currentPostId
       state.scrollArea?.addEventListener(
         'scroll',
         this.handleTOCScroll,
-        options,
+        options
       )
     }
 
