@@ -1,7 +1,7 @@
 import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
-  title: 'Frieze.DEV',
+  title: 'frieze.dev',
   description:
     "Hi, I'm Michael Frieze. A web developer based in Metro Detroit.",
   href: 'https://frieze.dev',
