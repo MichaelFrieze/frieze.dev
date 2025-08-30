@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils'
 import type { SocialLink } from '@/types'
 import type { CollectionEntry } from 'astro:content'
 import SocialIcons from './SocialIcons.astro'
+import { Card } from './ui/card'
 
 interface Props {
   author: CollectionEntry<'authors'>
@@ -18,15 +19,15 @@ const isAuthorPage = currentPath === `/authors/${author.id}`
 const socialLinks: SocialLink[] = [
   author.data.website && { href: author.data.website, label: 'Website' },
   author.data.github && { href: author.data.github, label: 'GitHub' },
+  author.data.reddit && { href: author.data.reddit, label: 'Reddit' },
   author.data.twitter && { href: author.data.twitter, label: 'Twitter' },
+  author.data.bsky && { href: author.data.bsky, label: 'Bluesky' },
   author.data.linkedin && { href: author.data.linkedin, label: 'LinkedIn' },
   author.data.mail && { href: `mailto:${author.data.mail}`, label: 'Email' },
 ].filter(Boolean) as SocialLink[]
 ---
 
-<div
-  class="has-[a:hover]:bg-secondary/50 overflow-hidden rounded-xl border p-4 transition-colors duration-300 ease-in-out"
->
+<Card className="bg-card/30 p-4">
   <div class="flex flex-wrap gap-4">
     <Link
       href={`/authors/${author.id}`}
@@ -40,7 +41,7 @@ const socialLinks: SocialLink[] = [
         className={cn(
           'size-32 rounded-md [&>[data-slot="avatar-fallback"]]:rounded-md',
           !isAuthorPage &&
-            'hover:ring-primary transition-shadow duration-300 hover:cursor-pointer hover:ring-2',
+            'hover:ring-primary transition-shadow duration-300 hover:cursor-pointer hover:ring-2'
         )}
       />
     </Link>
@@ -50,13 +51,13 @@ const socialLinks: SocialLink[] = [
           <h3 class="text-lg font-medium">{name}</h3>
           {
             pronouns && (
-              <span class="text-muted-foreground text-sm">({pronouns})</span>
+              <span class="text-foreground/60 text-sm">({pronouns})</span>
             )
           }
         </div>
-        <p class="text-muted-foreground text-sm">{bio}</p>
+        <p class="text-foreground/80 text-sm">{bio}</p>
       </div>
-      <SocialIcons links={socialLinks} />
+      <SocialIcons links={socialLinks} bgVariant="card" />
     </div>
   </div>
-</div>
+</Card>

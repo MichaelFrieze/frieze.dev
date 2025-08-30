@@ -7,31 +7,60 @@ import { Icon } from 'astro-icon/components'
 
 interface Props {
   links: SocialLink[]
+  bgVariant?: 'background' | 'card'
 }
 
-const { links } = Astro.props
+const { links, bgVariant = 'background' } = Astro.props
 ---
 
-<ul class="flex flex-wrap gap-2" role="list">
-  {
-    links.map(({ href, label }) => (
-      <li>
-        <Link
-          href={href}
-          aria-label={label}
-          title={label}
-          class={buttonVariants({ variant: 'outline', size: 'icon' })}
-          external
-        >
-          <Icon
-            name={
-              ICON_MAP[label as keyof typeof ICON_MAP] ||
-              'lucide:message-circle-question'
-            }
-            class="size-4"
-          />
-        </Link>
-      </li>
-    ))
-  }
-</ul>
+{
+  bgVariant === 'background' ? (
+    <ul class="flex flex-wrap gap-2" role="list">
+      {links.map(({ href, label }) => (
+        <li>
+          <Link
+            href={href}
+            aria-label={label}
+            title={label}
+            class={buttonVariants({ variant: 'outline', size: 'icon' })}
+            external
+          >
+            <Icon
+              name={
+                ICON_MAP[label as keyof typeof ICON_MAP] ||
+                'lucide:message-circle-question'
+              }
+              class="size-4"
+            />
+          </Link>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <ul class="flex flex-wrap gap-2" role="list">
+      {links.map(({ href, label }) => (
+        <li>
+          <Link
+            href={href}
+            aria-label={label}
+            title={label}
+            class={buttonVariants({
+              variant: 'outline',
+              size: 'icon',
+              className: 'bg-card/30 hover:bg-card',
+            })}
+            external
+          >
+            <Icon
+              name={
+                ICON_MAP[label as keyof typeof ICON_MAP] ||
+                'lucide:message-circle-question'
+              }
+              class="size-4"
+            />
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )
+}
