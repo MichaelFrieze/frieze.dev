@@ -32,8 +32,16 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'GitHub',
   },
   {
+    href: 'https://reddit.com/u/michaelfrieze',
+    label: 'Reddit',
+  },
+  {
     href: 'https://x.com/MichaelFrieze',
     label: 'Twitter',
+  },
+  {
+    href: 'https://bsky.app/profile/frieze.dev',
+    label: 'Bluesky',
   },
   {
     href: 'mailto:michael@frieze.dev',
@@ -48,8 +56,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const ICON_MAP: IconMap = {
   Website: 'lucide:globe',
   GitHub: 'lucide:github',
+  Reddit: 'ri:reddit-line',
   LinkedIn: 'lucide:linkedin',
   Twitter: 'lucide:twitter',
+  Bluesky: 'ri:bluesky-line',
   Email: 'lucide:mail',
   RSS: 'lucide:rss',
 }

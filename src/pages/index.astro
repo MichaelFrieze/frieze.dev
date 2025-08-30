@@ -114,57 +114,119 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
           class="rounded-xl shadow-md"
         />
 
-        <!-- <div class="flex w-full justify-center">
-          <SocialIcons links={SOCIAL_LINKS} />
-        </div> -->
+        <Card className="bg-card/30 gap-4 p-4 text-sm">
+          <div class="border-b px-2 pb-2">
+            <h3
+              class="text-foreground flex items-center gap-2 text-base font-semibold"
+            >
+              <Icon name={'lucide:link'} class="text-primary size-4" />
+              Connect with me
+            </h3>
+          </div>
 
-        <Card
-          className="bg-card/30 text-foreground/80 flex flex-col items-start gap-2 p-4 text-sm"
-        >
-          <Link
-            href="https://github.com/michaelfrieze"
-            external
-            class="hover:text-foreground inline-flex items-center gap-2"
-          >
-            <Icon name={'lucide:github'} class="size-4" />
-            Follow on GitHub</Link
-          >
+          <ul class="">
+            <li>
+              <Link
+                href="https://github.com/michaelfrieze"
+                external
+                aria-label="Follow on GitHub"
+                class="group text-foreground/80 hover:bg-card hover:text-foreground inline-flex w-full items-center justify-between rounded-lg p-2 transition-colors"
+              >
+                <span class="inline-flex items-center gap-2">
+                  <Icon
+                    name={'lucide:github'}
+                    class="size-4 transition-colors"
+                  />
+                  Follow on GitHub
+                </span>
+                <Icon
+                  name={'lucide:arrow-up-right'}
+                  class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </li>
 
-          <Link
-            href="https://reddit.com/u/michaelfrieze"
-            external
-            class="hover:text-foreground flex items-center gap-2"
-          >
-            <Icon name={'ri:reddit-line'} class="size-4" />
-            Follow on Reddit</Link
-          >
+            <li>
+              <Link
+                href="https://reddit.com/u/michaelfrieze"
+                external
+                aria-label="Follow on Reddit"
+                class="group text-foreground/80 hover:bg-card hover:text-foreground inline-flex w-full items-center justify-between rounded-lg p-2 transition-colors"
+              >
+                <span class="inline-flex items-center gap-2">
+                  <Icon
+                    name={'ri:reddit-line'}
+                    class="size-4 transition-colors"
+                  />
+                  Follow on Reddit
+                </span>
+                <Icon
+                  name={'lucide:arrow-up-right'}
+                  class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </li>
 
-          <Link
-            href="https://x.com/michaelfrieze"
-            external
-            class="hover:text-foreground flex items-center gap-2"
-          >
-            <Icon name={'lucide:twitter'} class="size-4" />
-            Follow on Twitter</Link
-          >
+            <li>
+              <Link
+                href="https://x.com/michaelfrieze"
+                external
+                aria-label="Follow on Twitter"
+                class="group text-foreground/80 hover:bg-card hover:text-foreground inline-flex w-full items-center justify-between rounded-lg p-2 transition-colors"
+              >
+                <span class="inline-flex items-center gap-2">
+                  <Icon
+                    name={'lucide:twitter'}
+                    class="size-4 transition-colors"
+                  />
+                  Follow on Twitter
+                </span>
+                <Icon
+                  name={'lucide:arrow-up-right'}
+                  class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </li>
 
-          <Link
-            href="https://bsky.app/profile/frieze.dev"
-            external
-            class="hover:text-foreground flex items-center gap-2"
-          >
-            <Icon name={'ri:bluesky-line'} class="size-4" />
-            Follow on Bluesky</Link
-          >
+            <li>
+              <Link
+                href="https://bsky.app/profile/frieze.dev"
+                external
+                aria-label="Follow on Bluesky"
+                class="group text-foreground/80 hover:bg-card hover:text-foreground inline-flex w-full items-center justify-between rounded-lg p-2 transition-colors"
+              >
+                <span class="inline-flex items-center gap-2">
+                  <Icon
+                    name={'ri:bluesky-line'}
+                    class="size-4 transition-colors"
+                  />
+                  Follow on Bluesky
+                </span>
+                <Icon
+                  name={'lucide:arrow-up-right'}
+                  class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </li>
 
-          <Link
-            href="mailto:michael@frieze.dev"
-            external
-            class="hover:text-foreground flex items-center gap-2"
-          >
-            <Icon name={'lucide:mail'} class="size-4" />
-            Send me an email</Link
-          >
+            <li>
+              <Link
+                href="mailto:michael@frieze.dev"
+                external
+                aria-label="Send me an email"
+                class="group text-foreground/80 hover:bg-card hover:text-foreground inline-flex w-full items-center justify-between rounded-lg p-2 transition-colors"
+              >
+                <span class="inline-flex items-center gap-2">
+                  <Icon name={'lucide:mail'} class="size-4 transition-colors" />
+                  Send me an email
+                </span>
+                <Icon
+                  name={'lucide:arrow-up-right'}
+                  class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </li>
+          </ul>
         </Card>
       </div>
     </div>
