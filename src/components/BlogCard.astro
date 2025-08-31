@@ -49,10 +49,10 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
 
     <div class="grow">
       <h3 class="mb-1 text-lg font-medium">{entry.data.title}</h3>
-      <p class="text-foreground/60 mb-2 text-sm">{entry.data.description}</p>
+      <p class="text-foreground/80 mb-2 text-sm">{entry.data.description}</p>
 
       <div
-        class="text-foreground/60 mb-2 flex flex-wrap items-center gap-x-2 text-xs"
+        class="text-foreground/80 mb-2 flex flex-wrap items-center gap-x-2 text-xs"
       >
         {
           authors.length > 0 && (

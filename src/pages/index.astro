@@ -61,7 +61,9 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
           Curious about how we can work together or just want to chat? Send me
           an email or connect with me on platforms like Reddit, X, or Bluesky.
         </p>
-        <SocialIcons links={SOCIAL_LINKS} bgVariant="card" />
+        <div class="text-foreground">
+          <SocialIcons links={SOCIAL_LINKS} bgVariant="card" />
+        </div>
       </div>
     </Card>
   </section>
@@ -135,14 +137,14 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
             </CardTitle>
           </CardHeader>
 
-          <CardContent className="p-0">
+          <CardContent className="text-foreground/80 p-0">
             <ul class="">
               <li>
                 <Link
                   href="https://github.com/michaelfrieze"
                   external
                   aria-label="Follow on GitHub"
-                  class="group text-foreground/80 hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'lucide:github'} class="size-4" />
@@ -160,7 +162,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                   href="https://reddit.com/u/michaelfrieze"
                   external
                   aria-label="Follow on Reddit"
-                  class="group text-foreground/80 hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'ri:reddit-line'} class="size-4" />
@@ -178,7 +180,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                   href="https://x.com/michaelfrieze"
                   external
                   aria-label="Follow on Twitter"
-                  class="group text-foreground/80 hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'lucide:twitter'} class="size-4" />
@@ -196,7 +198,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                   href="https://bsky.app/profile/frieze.dev"
                   external
                   aria-label="Follow on Bluesky"
-                  class="group text-foreground/80 hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'ri:bluesky-line'} class="size-4" />
@@ -208,27 +210,6 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                   />
                 </Link>
               </li>
-
-              <!-- <li>
-                <Link
-                  href="mailto:michael@frieze.dev"
-                  external
-                  aria-label="Send me an email"
-                  class="group text-foreground/80 hover:bg-card/60 hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2.5 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
-                >
-                  <span class="inline-flex items-center gap-2">
-                    <Icon
-                      name={'lucide:mail'}
-                      class="text-muted-foreground group-hover:text-foreground size-4 transition-colors"
-                    />
-                    Send me an email
-                  </span>
-                  <Icon
-                    name={'lucide:arrow-up-right'}
-                    class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </Link>
-              </li> -->
             </ul>
           </CardContent>
         </Card>

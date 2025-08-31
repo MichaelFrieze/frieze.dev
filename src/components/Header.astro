@@ -2,6 +2,7 @@
 import Link from '@/components/Link.astro'
 import MobileMenu from '@/components/ui/mobile-menu'
 import { NAV_LINKS, SITE } from '@/consts'
+import ThemeToggle from './ThemeToggle.astro'
 ---
 
 <header transition:persist>
@@ -20,13 +21,14 @@ import { NAV_LINKS, SITE } from '@/consts'
           NAV_LINKS.map((item) => (
             <Link
               href={item.href}
-              class="text-foreground/60 hover:text-foreground/80 capitalize transition-colors"
+              class="text-foreground/60 hover:text-foreground capitalize transition-colors"
             >
               {item.label}
             </Link>
           ))
         }
       </nav>
+      <ThemeToggle transition:persist />
       <MobileMenu client:load transition:persist />
     </div>
   </div>
