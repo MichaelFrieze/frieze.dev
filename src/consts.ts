@@ -43,10 +43,10 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: 'https://bsky.app/profile/frieze.dev',
     label: 'Bluesky',
   },
-  {
-    href: 'mailto:michael@frieze.dev',
-    label: 'Email',
-  },
+  // {
+  //   href: 'mailto:michael@frieze.dev',
+  //   label: 'Email',
+  // },
   {
     href: '/rss.xml',
     label: 'RSS',

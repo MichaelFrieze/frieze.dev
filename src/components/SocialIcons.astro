@@ -35,6 +35,23 @@ const { links, bgVariant = 'background' } = Astro.props
           </Link>
         </li>
       ))}
+      <li>
+        <Link
+          href={'mailto:michael@frieze.dev'}
+          aria-label={'Email'}
+          title={'Email'}
+          class={buttonVariants({ variant: 'outline', size: 'icon' })}
+          external
+        >
+          <Icon
+            name={
+              ICON_MAP['Email' as keyof typeof ICON_MAP] ||
+              'lucide:message-circle-question'
+            }
+            class="size-4"
+          />
+        </Link>
+      </li>
     </ul>
   ) : (
     <ul class="flex flex-wrap gap-2" role="list">
@@ -61,6 +78,27 @@ const { links, bgVariant = 'background' } = Astro.props
           </Link>
         </li>
       ))}
+      <li>
+        <Link
+          href={'mailto:michael@frieze.dev'}
+          aria-label={'Email'}
+          title={'Email'}
+          class={buttonVariants({
+            variant: 'outline',
+            size: 'icon',
+            className: 'bg-card/30 hover:bg-card',
+          })}
+          external
+        >
+          <Icon
+            name={
+              ICON_MAP['Email' as keyof typeof ICON_MAP] ||
+              'lucide:message-circle-question'
+            }
+            class="size-4"
+          />
+        </Link>
+      </li>
     </ul>
   )
 }
