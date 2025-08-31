@@ -116,7 +116,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
           class="rounded-xl shadow-md"
         />
 
-        <div class="flex justify-center">
+        <!-- <div class="flex justify-center">
           <Button
             variant="outline"
             size="default"
@@ -125,7 +125,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
             <Icon name={'lucide:mail'} class="size-4" />
             Contact Me</Button
           >
-        </div>
+        </div> -->
 
         <Card className="bg-card/30 gap-0 p-0 text-sm">
           <CardHeader className="border-b border-transparent px-4 pt-2 !pb-0">
@@ -138,7 +138,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
           </CardHeader>
 
           <CardContent className="text-foreground/60 mb-0.5 px-0 py-2">
-            <ul class="">
+            <ul>
               <li>
                 <Link
                   href="https://github.com/michaelfrieze"
@@ -211,6 +211,17 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                 </Link>
               </li>
             </ul>
+
+            <div class="px-4 pt-2 pb-2">
+              <Button
+                variant="outline"
+                size="default"
+                className="bg-card/30 text-foreground/80 hover:text-foreground w-full cursor-pointer"
+              >
+                <Icon name={'lucide:mail'} class="size-4" />
+                Contact Me</Button
+              >
+            </div>
           </CardContent>
         </Card>
       </div>
