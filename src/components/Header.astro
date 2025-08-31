@@ -28,8 +28,10 @@ import ThemeToggle from './ThemeToggle.astro'
           ))
         }
       </nav>
-      <MobileMenu client:load transition:persist />
-      <ThemeToggle transition:persist />
+      <div class="flex items-center gap-4">
+        <MobileMenu client:load transition:persist />
+        <ThemeToggle transition:persist />
+      </div>
     </div>
   </div>
 </header>

@@ -3,23 +3,45 @@ import { Button } from '@/components/ui/button'
 import { Icon } from 'astro-icon/components'
 ---
 
-<Button
-  id="theme-toggle"
-  variant="ghost"
-  size="icon"
-  title="Toggle theme"
-  className="text-foreground hover:text-foreground hover:bg-card cursor-pointer"
->
-  <Icon
-    name="lucide:sun"
-    class="size-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
-  />
-  <Icon
-    name="lucide:moon"
-    class="absolute size-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
-  />
-  <span class="sr-only">Toggle theme</span>
-</Button>
+<div class="sm:hidden">
+  <Button
+    id="theme-toggle-mobile"
+    variant="outline"
+    size="icon"
+    title="Toggle theme"
+    className="text-foreground hover:text-foreground hover:bg-card cursor-pointer"
+  >
+    <Icon
+      name="lucide:sun"
+      class="size-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
+    />
+    <Icon
+      name="lucide:moon"
+      class="absolute size-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
+    />
+    <span class="sr-only">Toggle theme</span>
+  </Button>
+</div>
+
+<div class="hidden sm:block">
+  <Button
+    id="theme-toggle"
+    variant="ghost"
+    size="icon"
+    title="Toggle theme"
+    className="text-foreground hover:text-foreground hover:bg-card cursor-pointer"
+  >
+    <Icon
+      name="lucide:sun"
+      class="size-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
+    />
+    <Icon
+      name="lucide:moon"
+      class="absolute size-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
+    />
+    <span class="sr-only">Toggle theme</span>
+  </Button>
+</div>
 
 <script is:inline data-astro-rerun>
   const theme = (() => {
@@ -62,8 +84,12 @@ import { Icon } from 'astro-icon/components'
 
   function initThemeToggle() {
     const themeToggle = document.getElementById('theme-toggle')
+    const themeToggleMobile = document.getElementById('theme-toggle-mobile')
     if (themeToggle) {
       themeToggle.addEventListener('click', handleToggleClick)
+    }
+    if (themeToggleMobile) {
+      themeToggleMobile.addEventListener('click', handleToggleClick)
     }
   }
 

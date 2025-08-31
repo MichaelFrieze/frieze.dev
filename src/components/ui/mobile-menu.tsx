@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { NAV_LINKS } from '@/consts'
-import { Menu } from 'lucide-react'
+import { ArrowDown, ChevronDown, Menu } from 'lucide-react'
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -36,13 +36,14 @@ const MobileMenu = () => {
         }}
       >
         <Button
-          variant="ghost"
-          size="icon"
-          className="hover:bg-card hover:text-foreground sm:hidden"
+          variant="outline"
+          size="default"
+          className="hover:bg-card text-foreground cursor-pointer text-sm font-normal sm:hidden"
           title="Menu"
         >
-          <Menu className="size-5" />
-          <span className="sr-only">Toggle menu</span>
+          {/* <Menu className="size-5" /> */}
+          <span className="">Menu</span>
+          <ChevronDown className="size-4" />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="bg-background">
