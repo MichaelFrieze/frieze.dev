@@ -37,23 +37,51 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 
       <div class="text-foreground/80 space-y-3">
         <p>
-          My journey in web development began in high school and has led me
-          through various roles, from Java on the back-end to my current focus
-          on front-end. These days, I'm building with JavaScript, TypeScript,
-          React, and frameworks like Next.js, TanStack Start, and Astro. This
-          site is my space to share what I'm learning, what I'm building, and
+          My journey in web development <Link
+            href="/blog/from-pc-building-to-web-dev"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            began in high school
+          </Link> and has led me through various roles, from Java on the back-end
+          to my current focus on front-end. These days, I'm building with JavaScript,
+          TypeScript, React, and frameworks like Next.js, TanStack Start, and Astro.
+          This site is my space to share what I'm learning, what I'm building, and
           occasionally just whatever's on my mind.
         </p>
 
         <p>
-          When I'm not coding, I enjoy playing guitar and collaborating with
-          other musicians. I also like immersing myself in PC games like "Star
-          Citizen" and "Crusader Kings 3".
+          When I'm not coding, I enjoy <Link
+            href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            playing guitar
+          </Link> and <Link
+            href="https://www.youtube.com/watch?v=JIbXZKE5yJg"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            collaborating with other musicians
+          </Link>. I also like immersing myself in PC games like "Star Citizen"
+          and "Crusader Kings 3".
         </p>
 
         <p>
-          At home, I live with my partner Kayla, a kindergarten teacher and avid
-          reader, along with our 10-year-old chihuahua.
+          At home, I live with my partner <Link
+            href="https://kaylafoister.weebly.com/"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            Kayla
+          </Link>, a kindergarten teacher and avid reader, along with our
+          10-year-old chihuahua named <Link
+            href="https://f8duhkpzb6.ufs.sh/f/qF009i75eUMjBba9Vt1FQqndVa9rvyhc2Ji7fEbsu0PmSleo"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            Atticus
+          </Link>.
         </p>
 
         <p>
@@ -76,25 +104,53 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
           </p>
         </div>
 
-        <div class="text-foreground/80 space-y-3">
+        <div class="text-foreground/80 space-y-3 pb-0.5">
           <p>
-            My journey in web development began in high school and has led me
-            through various roles, from Java on the back-end to my current focus
-            on front-end. These days, I'm building with JavaScript, TypeScript,
-            React, and frameworks like Next.js, TanStack Start, and Astro. This
-            site is my space to share what I'm learning, what I'm building, and
-            occasionally just whatever's on my mind.
+            My journey in web development <Link
+              href="/blog/from-pc-building-to-web-dev"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              began in high school
+            </Link> and has led me through various roles, from Java on the back-end
+            to my current focus on front-end. These days, I'm building with JavaScript,
+            TypeScript, React, and frameworks like Next.js, TanStack Start, and Astro.
+            This site is my space to share what I'm learning, what I'm building,
+            and occasionally just whatever's on my mind.
           </p>
 
           <p>
-            When I'm not coding, I enjoy playing guitar and collaborating with
-            other musicians. I also like immersing myself in PC games like "Star
+            When I'm not coding, I enjoy <Link
+              href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              playing guitar
+            </Link> and <Link
+              href="https://www.youtube.com/watch?v=JIbXZKE5yJg"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              collaborating with other musicians
+            </Link>. I also like immersing myself in PC games like "Star
             Citizen" and "Crusader Kings 3".
           </p>
 
           <p>
-            At home, I live with my partner Kayla, a kindergarten teacher and
-            avid reader, along with our 10-year-old chihuahua.
+            At home, I live with my partner <Link
+              href="https://kaylafoister.weebly.com/"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              Kayla
+            </Link>, a kindergarten teacher and avid reader, along with our
+            10-year-old chihuahua named <Link
+              href="https://f8duhkpzb6.ufs.sh/f/qF009i75eUMjBba9Vt1FQqndVa9rvyhc2Ji7fEbsu0PmSleo"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              Atticus
+            </Link>.
           </p>
 
           <p>
@@ -115,7 +171,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 
         <Card className="gap-0 p-0 text-sm">
           <CardContent className="text-foreground/80 mb-0.5 px-0 py-4">
-            <ul class="pb-3">
+            <ul class="pb-4">
               <li>
                 <Link
                   href="https://github.com/michaelfrieze"
