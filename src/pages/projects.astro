@@ -1,0 +1,37 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import PageHead from '@/components/PageHead.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import Layout from '@/layouts/Layout.astro'
+import { getAllProjects } from '@/lib/data-utils'
+
+const projects = await getAllProjects()
+---
+
+<Layout class="max-w-3xl">
+  <PageHead slot="head" title="Projects" />
+  <Breadcrumbs items={[{ label: 'Projects', icon: 'lucide:folder' }]} />
+
+  <section>
+    <div class="min-w-full">
+      <div class="prose mb-8">
+        <p class="mt-0">
+          I'm a web developer who builds accessible, performant, and
+          user-focused web applications. This page is my projects portfolio: a
+          curated list of apps, libraries, and sites I've built, with short
+          summaries, tech stacks, and links to source or live demos.
+        </p>
+        <p>
+          Explore the projects below to see how I approach architecture, UX, and
+          frontend engineering. If you'd like to collaborate or see more
+          examples, get in touch via the contact details on my homepage.
+        </p>
+      </div>
+
+      <h2 class="mb-4 text-2xl font-medium">Example Projects Listing</h2>
+      <div class="flex flex-col gap-4">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+</Layout>
