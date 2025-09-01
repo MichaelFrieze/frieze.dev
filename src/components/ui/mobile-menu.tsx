@@ -38,7 +38,7 @@ const MobileMenu = () => {
         <Button
           variant="outline"
           size="default"
-          className="hover:bg-card text-foreground cursor-pointer text-sm font-normal sm:hidden"
+          className="text-foreground cursor-pointer text-sm font-normal sm:hidden"
           title="Menu"
         >
           {/* <Menu className="size-5" /> */}

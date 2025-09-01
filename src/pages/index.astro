@@ -27,15 +27,15 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
       class="rounded-xl shadow-md"
     />
 
-    <Card className="bg-card/30 w-full p-4">
+    <Card className="bg-card w-full p-4">
       <div>
         <h1 class="text-2xl font-bold">Hi, I'm Michael Frieze</h1>
-        <p class="text-foreground/60 text-sm italic">
+        <p class="text-foreground/80 italic">
           Web Developer based in Metro Detroit
         </p>
       </div>
 
-      <div class="text-foreground/60 space-y-3">
+      <div class="text-foreground/80 space-y-3">
         <p>
           My journey in web development began in high school and has led me
           through various roles, from Java on the back-end to my current focus
@@ -53,32 +53,30 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 
         <p>
           At home, I live with my partner Kayla, a kindergarten teacher and avid
-          reader, along with our 10-year-old chihuahua who's our everyday
-          companion.
+          reader, along with our 10-year-old chihuahua.
         </p>
 
         <p>
           Curious about how we can work together or just want to chat? Send me
           an email or connect with me on platforms like Reddit, X, or Bluesky.
         </p>
-        <div class="text-foreground">
-          <SocialIcons links={SOCIAL_LINKS} bgVariant="card" />
-        </div>
       </div>
+
+      <SocialIcons links={SOCIAL_LINKS} bgVariant="card" />
     </Card>
   </section>
 
   <section class="hidden md:block">
     <div class="flex flex-row items-start gap-4">
-      <Card className="bg-card/30 w-full p-4">
+      <Card className="bg-card w-full p-4">
         <div>
           <h1 class="text-2xl font-bold">Hi, I'm Michael Frieze</h1>
-          <p class="text-foreground/60 text-sm italic">
+          <p class="text-foreground/80 italic">
             Web Developer based in Metro Detroit
           </p>
         </div>
 
-        <div class="text-foreground/60 space-y-3">
+        <div class="text-foreground/80 space-y-3">
           <p>
             My journey in web development began in high school and has led me
             through various roles, from Java on the back-end to my current focus
@@ -96,8 +94,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 
           <p>
             At home, I live with my partner Kayla, a kindergarten teacher and
-            avid reader, along with our 10-year-old chihuahua who's our everyday
-            companion.
+            avid reader, along with our 10-year-old chihuahua.
           </p>
 
           <p>
@@ -116,15 +113,15 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
           class="rounded-xl shadow-md"
         />
 
-        <Card className="bg-card/30 gap-0 p-0 text-sm">
-          <CardContent className="text-foreground/60 mb-0.5 px-0 py-4">
-            <ul class="pb-2.5">
+        <Card className="gap-0 p-0 text-sm">
+          <CardContent className="text-foreground/80 mb-0.5 px-0 py-4">
+            <ul class="pb-3">
               <li>
                 <Link
                   href="https://github.com/michaelfrieze"
                   external
                   aria-label="Follow on GitHub"
-                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'lucide:github'} class="size-4" />
@@ -142,7 +139,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                   href="https://reddit.com/u/michaelfrieze"
                   external
                   aria-label="Follow on Reddit"
-                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'ri:reddit-line'} class="size-4" />
@@ -160,7 +157,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                   href="https://x.com/michaelfrieze"
                   external
                   aria-label="Follow on Twitter"
-                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'lucide:twitter'} class="size-4" />
@@ -178,7 +175,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                   href="https://bsky.app/profile/frieze.dev"
                   external
                   aria-label="Follow on Bluesky"
-                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'ri:bluesky-line'} class="size-4" />
@@ -196,7 +193,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
                   href="/rss.xml"
                   external
                   aria-label="Follow on Bluesky"
-                  class="group hover:bg-card hover:text-foreground focus-visible:ring-ring inline-flex w-full items-center justify-between px-4 py-2 transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
                 >
                   <span class="inline-flex items-center gap-2">
                     <Icon name={'lucide:rss'} class="size-4" />
@@ -214,7 +211,7 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
               <Button
                 variant="outline"
                 size="sm"
-                className="bg-card/30 text-foreground/80 hover:text-foreground w-full cursor-pointer"
+                className="bg-card text-foreground w-full cursor-pointer"
               >
                 <Icon name={'lucide:mail'} class="size-4" />
                 Contact Me</Button
@@ -240,7 +237,10 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
     <div class="flex justify-center">
       <Link
         href="/blog"
-        class={buttonVariants({ variant: 'ghost' }) + ' group'}
+        class={buttonVariants({
+          variant: 'ghost',
+          className: 'hover:text-primary',
+        }) + ' group'}
       >
         See all posts <span
           class="ml-1.5 transition-transform group-hover:translate-x-1"
