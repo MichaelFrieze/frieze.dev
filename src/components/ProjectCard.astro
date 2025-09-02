@@ -17,12 +17,12 @@ const { project } = Astro.props
 <Card className="bg-card hover:bg-muted px-4 py-4">
   <Link
     href={project.data.link}
-    class="flex flex-col gap-4 sm:flex-row"
+    class="flex flex-col gap-4 md:flex-row"
     external
   >
     {
       project.data.image && (
-        <div class="max-w-3xs sm:shrink-0">
+        <div class="md:max-w-3xs md:shrink-0">
           <Image
             src={project.data.image}
             alt={project.data.name}

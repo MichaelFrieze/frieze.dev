@@ -23,11 +23,14 @@ export async function getAllPostsAndSubposts(): Promise<
 
 export async function getAllProjects(): Promise<CollectionEntry<'projects'>[]> {
   const projects = await getCollection('projects')
-  return projects.sort((a, b) => {
-    const dateA = a.data.startDate?.getTime() || 0
-    const dateB = b.data.startDate?.getTime() || 0
-    return dateB - dateA
-  })
+  // Sort by date
+  // return projects.sort((a, b) => {
+  //   const dateA = a.data.startDate?.getTime() || 0
+  //   const dateB = b.data.startDate?.getTime() || 0
+  //   return dateB - dateA
+  // })
+  // Sort by name
+  return projects.sort((a, b) => a.data.name.localeCompare(b.data.name))
 }
 
 export async function getAllTags(): Promise<Map<string, number>> {
