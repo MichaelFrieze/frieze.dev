@@ -12,14 +12,19 @@ const sortedTags = await getSortedTags()
 
 <Layout class="max-w-3xl">
   <PageHead slot="head" title="Tags" />
-  <Breadcrumbs items={[{ label: 'Tags', icon: 'lucide:tags' }]} />
+  <Breadcrumbs
+    items={[
+      { label: 'Blog', href: '/blog', icon: 'lucide:library-big' },
+      { label: `Tags`, icon: 'lucide:tags' },
+    ]}
+  />
 
   <div class="flex flex-col gap-4">
     <div class="flex flex-wrap gap-2">
       {
         sortedTags.map(({ tag, count }) => (
           <Link
-            href={`/tags/${tag}`}
+            href={`/blog/tags/${tag}`}
             class={badgeVariants({ variant: 'default' })}
           >
             <Icon name="lucide:hash" class="size-3" />

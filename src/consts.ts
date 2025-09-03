@@ -21,10 +21,6 @@ export const NAV_LINKS: SocialLink[] = [
     label: 'blog',
   },
   {
-    href: '/tags',
-    label: 'tags',
-  },
-  {
     href: '/projects',
     label: 'projects',
   },

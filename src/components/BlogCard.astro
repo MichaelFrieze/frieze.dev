@@ -44,24 +44,6 @@ const subpostCount = !isSubpost(entry.id) ? await getSubpostCount(entry.id) : 0
       )
     }
 
-    <!-- {
-      entry.data.image && (
-        <div
-          class="relative overflow-hidden rounded-xl sm:shrink-0 sm:basis-64"
-          style="aspect-ratio:16/9"
-        >
-          <Image
-            src={entry.data.image}
-            alt={entry.data.title}
-            width={1200}
-            height={630}
-            class="absolute inset-0 h-full w-full object-cover"
-            sizes="(min-width: 640px) 16rem, 100vw"
-          />
-        </div>
-      )
-    } -->
-
     <div class="grow">
       <h3 class="mb-1 text-lg font-medium">{entry.data.title}</h3>
       <p class="text-foreground/80 mb-2 text-sm">{entry.data.description}</p>

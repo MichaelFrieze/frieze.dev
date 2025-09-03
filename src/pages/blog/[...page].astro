@@ -1,12 +1,15 @@
 ---
 import BlogCard from '@/components/BlogCard.astro'
 import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
+import { buttonVariants } from '@/components/ui/button'
 import PaginationComponent from '@/components/ui/pagination'
 import { SITE } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
 import { getAllPosts, groupPostsByYear } from '@/lib/data-utils'
 import type { PaginateFunction } from 'astro'
+import { Icon } from 'astro-icon/components'
 
 export async function getStaticPaths({
   paginate,
@@ -31,6 +34,23 @@ const years = Object.keys(postsByYear).sort((a, b) => parseInt(b) - parseInt(a))
       { label: `Page ${page.currentPage}`, icon: 'lucide:book-copy' },
     ]}
   />
+
+  <div class="flex justify-start gap-2 pb-4">
+    <Link
+      href="/blog/tags"
+      class={buttonVariants({ variant: 'outline', size: 'sm' })}
+    >
+      <Icon name="lucide:tags" class="size-4" />
+      Tags
+    </Link>
+    <Link
+      href="/blog/search"
+      class={buttonVariants({ variant: 'outline', size: 'sm' })}
+    >
+      <Icon name="lucide:search" class="size-4" />
+      Search
+    </Link>
+  </div>
 
   <div class="flex min-h-[calc(100vh-18rem)] flex-col gap-y-8">
     {
