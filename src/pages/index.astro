@@ -4,7 +4,7 @@ import BlogCard from '@/components/BlogCard.astro'
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import SocialIcons from '@/components/SocialIcons.astro'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { SITE, SOCIAL_LINKS } from '@/consts'
 import Layout from '@/layouts/Layout.astro'
@@ -264,14 +264,18 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
             </ul>
 
             <div class="px-4">
-              <Button
-                variant="outline"
-                size="sm"
-                className="bg-card text-foreground w-full cursor-pointer"
+              <Link
+                href="mailto:michael@frieze.dev"
+                external
+                class={buttonVariants({
+                  variant: 'outline',
+                  size: 'sm',
+                  className: 'bg-card text-foreground w-full cursor-pointer',
+                })}
               >
                 <Icon name={'lucide:mail'} class="size-4" />
-                Contact Me</Button
-              >
+                Contact Me
+              </Link>
             </div>
           </CardContent>
         </Card>
