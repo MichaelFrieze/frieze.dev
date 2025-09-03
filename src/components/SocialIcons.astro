@@ -1,0 +1,104 @@
+---
+import Link from '@/components/Link.astro'
+import { buttonVariants } from '@/components/ui/button'
+import { ICON_MAP } from '@/consts'
+import type { SocialLink } from '@/types'
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  links: SocialLink[]
+  bgVariant?: 'background' | 'card'
+}
+
+const { links, bgVariant = 'background' } = Astro.props
+---
+
+{
+  bgVariant === 'background' ? (
+    <ul class="flex flex-wrap gap-2" role="list">
+      {links.map(({ href, label }) => (
+        <li>
+          <Link
+            href={href}
+            aria-label={label}
+            title={label}
+            class={buttonVariants({ variant: 'outline', size: 'icon' })}
+            external
+          >
+            <Icon
+              name={
+                ICON_MAP[label as keyof typeof ICON_MAP] ||
+                'lucide:message-circle-question'
+              }
+              class="size-4"
+            />
+          </Link>
+        </li>
+      ))}
+      <li>
+        <Link
+          href={'mailto:michael@frieze.dev'}
+          aria-label={'Email'}
+          title={'Email'}
+          class={buttonVariants({ variant: 'outline', size: 'icon' })}
+          external
+        >
+          <Icon
+            name={
+              ICON_MAP['Email' as keyof typeof ICON_MAP] ||
+              'lucide:message-circle-question'
+            }
+            class="size-4"
+          />
+        </Link>
+      </li>
+    </ul>
+  ) : (
+    <ul class="flex flex-wrap gap-2" role="list">
+      {links.map(({ href, label }) => (
+        <li>
+          <Link
+            href={href}
+            aria-label={label}
+            title={label}
+            class={buttonVariants({
+              variant: 'outline',
+              size: 'icon',
+              className: 'bg-card text-foreground',
+            })}
+            external
+          >
+            <Icon
+              name={
+                ICON_MAP[label as keyof typeof ICON_MAP] ||
+                'lucide:message-circle-question'
+              }
+              class="size-4"
+            />
+          </Link>
+        </li>
+      ))}
+      <li>
+        <Link
+          href={'mailto:michael@frieze.dev'}
+          aria-label={'Email'}
+          title={'Email'}
+          class={buttonVariants({
+            variant: 'outline',
+            size: 'icon',
+            className: 'bg-card text-foreground',
+          })}
+          external
+        >
+          <Icon
+            name={
+              ICON_MAP['Email' as keyof typeof ICON_MAP] ||
+              'lucide:message-circle-question'
+            }
+            class="size-4"
+          />
+        </Link>
+      </li>
+    </ul>
+  )
+}
