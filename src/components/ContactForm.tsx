@@ -53,14 +53,14 @@ export default function ContactForm({ className }: { className?: string }) {
 
   const [isSuccess, setIsSuccess] = useState(false)
   const [submittedName, setSubmittedName] = useState<string | null>(null)
-  const accessKey = useMemo(() => import.meta.env.PUBLIC_WEB3FORMS_KEY, [])
+  // const accessKey = useMemo(() => import.meta.env.PUBLIC_WEB3FORMS_KEY, [])
 
   async function onSubmit(values: FormValues) {
     if (values.botcheck?.trim() !== '') {
       return
     }
     const payload = {
-      access_key: accessKey,
+      access_key: '1be29f56-a4ae-412d-b6b2-5dee6ab55c01',
       name: values.name,
       email: values.email,
       subject: values.subject,
