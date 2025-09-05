@@ -1,0 +1,163 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import PageHead from '@/components/PageHead.astro'
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import Layout from '@/layouts/Layout.astro'
+
+type ToolItem = {
+  title: string
+  description: string
+}
+
+type ToolsSection = {
+  title: string
+  items: ToolItem[]
+}
+
+const sections: ToolsSection[] = [
+  {
+    title: 'Workstation',
+    items: [
+      {
+        title: 'MacBook Air, M1, 16GB RAM',
+        description: `I used an Intel-based MacBook Pro prior to this and the difference is night and day. The M1 chip is so much better. I've owned this MacBook since 2021 and still have no reason to upgrade.`,
+      },
+      {
+        title: 'MINISFORUM HX80G, Ryzen 7 5800H, 32GB RAM, RX 6600M',
+        description: `As my primary Windows machine, this mini‑PC packs a serious punch and works well as my gaming PC. It handles even demanding titles like Star Citizen without too many issues. I use my MacBook more for coding, but this compact system is my go‑to when I need Windows for work.`,
+      },
+      {
+        title: 'GIGABYTE M27Q PRO: 27" 165Hz 1440p',
+        description: `A great low‑cost companion for both the MacBook and the HX80G. With a 2560×1440 resolution, 165Hz refresh rate, and FreeSync support, it delivers a smooth, detailed experience. The IPS panel gives accurate colors and wide viewing angles for both work and play.`,
+      },
+      {
+        title: 'Kinesis Advantage 360 Pro',
+        description: `This ergonomic split keyboard uses a contoured key‑well and a columnar layout to reduce strain and lateral finger movement. The Pro model runs ZMK and is highly customizable. I use Box White switches for a satisfying tactile feel. After a short adjustment period, it's one of the best purchases I've made.`,
+      },
+      {
+        title: 'Sennheiser HD 560 S',
+        description: `My trusty open‑back headphones for music, calls, gaming, and casual listening. Neutral tuning with a wide soundstage makes them great for long sessions, and they're very comfortable.`,
+      },
+    ],
+  },
+  {
+    title: 'Development tools',
+    items: [
+      {
+        title: 'VS Code',
+        description: `While I like Vim, VS Code is my daily driver. The extensions ecosystem and customization make it indispensable—and honestly enjoyable—to use for everything from quick edits to large projects.`,
+      },
+      {
+        title: 'Codeium',
+        description: `My favorite AI code generation tool for VS Code. I prefer it over GitHub Copilot, and it's free for individuals—seriously underrated.`,
+      },
+      {
+        title: 'Poimandres',
+        description: `My favorite dark theme for VS Code.`,
+      },
+      {
+        title: 'Monaspace',
+        description: `A superfamily of fonts from GitHub designed for programming. Its texture healing evens out density while preserving the grid. I like the Neon face (a neo‑grotesque sans).`,
+      },
+      {
+        title: 'Pretty TypeScript Errors',
+        description: `A standout VS Code extension that makes TypeScript errors much easier to understand at a glance.`,
+      },
+      {
+        title: 'Obsidian',
+        description: `My note‑taking app. I mostly use it as a simple Markdown editor, and I love that all notes are just local Markdown files.`,
+      },
+      {
+        title: 'iTerm2',
+        description: `My terminal of choice on macOS.`,
+      },
+      {
+        title: 'Rectangle',
+        description: `Window management on macOS using keyboard shortcuts and snap areas.`,
+      },
+    ],
+  },
+  {
+    title: 'Design',
+    items: [
+      {
+        title: 'Figma',
+        description: `Industry‑standard design tool. It's fast, collaborative, and I can't imagine using anything else.`,
+      },
+      {
+        title: 'Excalidraw',
+        description: `Open‑source, web‑based drawing app built with React. I use it for quick diagrams and wireframes.`,
+      },
+    ],
+  },
+  {
+    title: 'Productivity',
+    items: [
+      {
+        title: 'Notion',
+        description: `I track tasks, projects, and more in Notion. I still prefer Obsidian for notes, but Notion is my hub for everything else.`,
+      },
+      {
+        title: '1Password',
+        description: `Securely stores passwords and sensitive info—payment details, licenses, crypto wallets, SSH keys, and secure notes—with excellent autofill and cross‑app integration.`,
+      },
+      {
+        title: 'Perplexity',
+        description: `An essential research and brainstorming assistant. Concise, well‑cited responses save time over traditional web searches.`,
+      },
+      {
+        title: 'Raindrop',
+        description: `An all‑in‑one bookmark manager. Robust search helps me quickly surface relevant bookmarks—even when I don't remember exact titles or URLs.`,
+      },
+    ],
+  },
+]
+---
+
+<Layout class="max-w-3xl">
+  <PageHead
+    slot="head"
+    title="Uses"
+    description="Software I use, devices I love, and other things I recommend."
+  />
+
+  <Breadcrumbs items={[{ label: 'Uses', icon: 'lucide:laptop' }]} />
+
+  <section class="space-y-10">
+    {
+      sections.map((section) => (
+        <div class="flex flex-col gap-y-4">
+          <h2 class="text-2xl font-medium">{section.title}</h2>
+          <p class="text-foreground/80 text-sm">
+            {section.title === 'Workstation' &&
+              'Hardware and setup I use daily.'}
+            {section.title === 'Development tools' &&
+              'Editors, extensions, and utilities in my workflow.'}
+            {section.title === 'Design' && 'Tools for UI/UX and diagramming.'}
+            {section.title === 'Productivity' &&
+              'Apps and services that keep me organized.'}
+          </p>
+          <ul class="grid gap-4">
+            {section.items.map((item) => (
+              <li>
+                <Card className="bg-card h-full">
+                  <CardHeader>
+                    <CardTitle className="text-base">{item.title}</CardTitle>
+                    <CardDescription className="text-foreground/80">
+                      {item.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+</Layout>
