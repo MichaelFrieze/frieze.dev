@@ -70,8 +70,6 @@ export default function ContactForm({ className }: { className?: string }) {
       site: 'frieze.dev',
     }
 
-    console.log(payload)
-
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -101,17 +99,20 @@ export default function ContactForm({ className }: { className?: string }) {
   if (isSuccess) {
     return (
       <div
-        className={cn('flex flex-col items-start gap-4 rounded-lg', className)}
+        className={cn(
+          'flex w-full flex-col items-stretch gap-6 rounded-lg',
+          className,
+        )}
       >
         <div className="flex items-center gap-2">
-          <CheckCircle2 className="size-5 text-green-600" />
-          <p className="font-medium">
+          <CheckCircle2 className="text-primary size-6" />
+          <p className="text-base font-medium">
             Thanks{submittedName ? `, ${submittedName}` : ''}! Your message has
             been sent.
           </p>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <a
             href="/"
             className={buttonVariants({
