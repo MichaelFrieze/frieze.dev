@@ -150,7 +150,7 @@ export default function ContactForm({ className }: { className?: string }) {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input {...field} autoComplete="name" placeholder="Your name" />
+                <Input {...field} autoComplete="name" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -164,12 +164,7 @@ export default function ContactForm({ className }: { className?: string }) {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input
-                  {...field}
-                  type="email"
-                  autoComplete="email"
-                  placeholder="you@example.com"
-                />
+                <Input {...field} type="email" autoComplete="email" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -183,7 +178,7 @@ export default function ContactForm({ className }: { className?: string }) {
             <FormItem>
               <FormLabel>Subject</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Whats this about?" />
+                <Input {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -197,7 +192,7 @@ export default function ContactForm({ className }: { className?: string }) {
             <FormItem>
               <FormLabel>Message</FormLabel>
               <FormControl>
-                <Textarea {...field} rows={6} placeholder="How can I help?" />
+                <Textarea {...field} rows={6} />
               </FormControl>
               <FormMessage />
             </FormItem>
