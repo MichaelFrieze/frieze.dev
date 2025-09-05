@@ -159,3 +159,36 @@ body {
     @apply border-border outline-ring/50 tracking-tight;
   }
 }
+
+/* 
+1Password autofill + OKLCH bug (Feb 2025)
+- The 1Password extension can mis-detect theme when a control’s computed color uses OKLCH,
+  tagging fields as data-com-onepassword-filled="light" even in dark mode and painting a light bg.
+- Workaround: ensure form controls compute to sRGB (rgb/hex) by using rgb(...) tokens on inputs only.
+  This leaves the rest of the app on OKLCH.
+- Reference: 1Password community report – https://www.1password.community/discussions/developers/1pw-extension-bug-autofill-theme-detection-fails-when-using-oklch-color-scheme/161487
+- Remove these overrides once the extension fixes theme detection.
+*/
+/* sRGB tokens */
+:root {
+  --foreground-rgb: 20 20 20;
+  --input-rgb: 240 240 240;
+}
+[data-theme='dark'] {
+  --foreground-rgb: 239 239 241;
+  --input-rgb: 45 45 45;
+}
+
+/* apply sRGB colors only to controls */
+@layer base {
+  input,
+  textarea,
+  select {
+    color: rgb(var(--foreground-rgb));
+    background-color: rgb(var(--input-rgb));
+  }
+  ::placeholder {
+    color: inherit;
+    opacity: 0.6;
+  }
+}

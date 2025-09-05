@@ -37,11 +37,10 @@ const { links, bgVariant = 'background' } = Astro.props
       ))}
       <li>
         <Link
-          href={'mailto:michael@frieze.dev'}
+          href={'/contact'}
           aria-label={'Email'}
           title={'Email'}
           class={buttonVariants({ variant: 'outline', size: 'icon' })}
-          external
         >
           <Icon
             name={
@@ -80,7 +79,7 @@ const { links, bgVariant = 'background' } = Astro.props
       ))}
       <li>
         <Link
-          href={'mailto:michael@frieze.dev'}
+          href={'/contact'}
           aria-label={'Email'}
           title={'Email'}
           class={buttonVariants({
@@ -88,7 +87,6 @@ const { links, bgVariant = 'background' } = Astro.props
             size: 'icon',
             className: 'bg-card text-foreground',
           })}
-          external
         >
           <Icon
             name={
