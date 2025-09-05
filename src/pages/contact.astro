@@ -1,0 +1,37 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import ContactForm from '@/components/ContactForm'
+import PageHead from '@/components/PageHead.astro'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import Layout from '@/layouts/Layout.astro'
+---
+
+<Layout class="max-w-3xl">
+  <PageHead
+    slot="head"
+    title="Contact"
+    description="Get in touch with Michael Frieze."
+  />
+
+  <Breadcrumbs items={[{ label: 'Contact', icon: 'lucide:mail' }]} />
+
+  <section class="space-y-6">
+    <Card className="bg-card">
+      <CardHeader>
+        <CardTitle className="text-2xl font-medium">Get In Touch</CardTitle>
+        <CardDescription className="text-foreground/80">
+          Have a question, feedback, idea, or project?
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="pt-0">
+        <ContactForm client:load />
+      </CardContent>
+    </Card>
+  </section>
+</Layout>
