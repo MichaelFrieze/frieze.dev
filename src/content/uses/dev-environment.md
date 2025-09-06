@@ -15,9 +15,8 @@ items:
     description: My favorite dark theme for VS Code.
   - title: Monaspace
     description: >-
-      A superfamily of fonts from GitHub designed for programming. Its
-      texture healing evens out density while preserving the grid. My favorite is Neon.
+      A superfamily of fonts from GitHub that are designed for programming. My favorite font is Neon.
   - title: Ghostty
     description: >-
-      My terminal of choice. It’s fast, lightweight, and has a modern feel without getting in the way. I like that it’s GPU‑accelerated, supports multiplexing, and has thoughtful defaults that make it easy to use right away. It’s also open source, so I can tweak and configure it as much as I want.
+      My terminal of choice. It’s fast, lightweight, and has a modern feel without getting in the way. I like that it’s GPU‑accelerated and has thoughtful defaults that make it easy to use right away. It’s also open source.
 ---

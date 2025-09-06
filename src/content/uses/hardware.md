@@ -4,7 +4,7 @@ order: 1
 items:
   - title: MacBook Pro, M1, 16GB RAM
     description: >-
-      This is my main machine for development and writing. The M1 chip is still fast and efficient, and 16GB of RAM has been plenty for my workflow. It’s quiet, reliable, and has strong battery life. I enjoy working in macOS, and the hardware itself is well‑designed and enjoyable to use. It also handles music production without issues, which is another hobby of mine. On top of that, it fits right into the Apple ecosystem, which I rely on since I use other Apple devices and so does my family.
+      This is my main machine for development and everyday use. The M1 chip is still fast and efficient, and 16GB of RAM has been plenty for my workflow. It’s quiet, reliable, and has excellent battery life. I enjoy working in macOS, and the hardware itself is well‑designed and enjoyable to use. On top of that, it fits right into the Apple ecosystem, which I rely on since I use other Apple devices and so does my family.
   - title: MINISFORUM HX80G, Ryzen 7 5800H, 32GB RAM, RX 6600M
     description: >-
       My main Windows machine. Despite its compact size, it’s powerful enough to handle demanding games like Star Citizen and runs smoothly for any Windows‑specific work I need to do. I use my MacBook more for development, but this system is my go‑to when I want to game or need access to Windows.
@@ -22,7 +22,7 @@ items:
       Runs on a single AAA battery with excellent battery life.
   - title: Sennheiser HD 560 S
     description: >-
-      My go‑to open‑back headphones for music, calls, gaming, and casual listening. They have a neutral tuning with a wide soundstage, which makes them great for long sessions, and the lightweight design keeps them comfortable to wear.
+      My favorite headphones for music, calls, gaming, and casual listening. They are open‑back with a neutral tuning and wide soundstage, which makes them great for the kind of music I enjoy and even suitable for music production. They’re also extremely comfortable and lightweight, so I can wear them for hours without fatigue.
   - title: Apple AirPods Pro (2nd Generation)
     description: >-
       Wireless earbuds with excellent noise cancellation and a natural‑sounding transparency mode. They’re comfortable enough for long sessions, switch seamlessly between my devices, and the sound quality is pretty good.

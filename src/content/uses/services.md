@@ -13,7 +13,7 @@ items:
   - title: Cloudflare
     description: I use Cloudflare for DNS and CDN, and sometimes Workers.
   - title: PlanetScale
-    description: A reliable and high‑performance serverless MySQL platform built on Vitess, the same technology that powers YouTube. I especially like the branching feature for development and testing, as well as non‑blocking schema changes that make migrations easier.
+    description: A reliable and high‑performance serverless MySQL platform built on Vitess, the same technology that powers YouTube. One of my favorite features is database branching, which makes it easy to create preview deployments.
   - title: Upstash
     description: A serverless data platform I mainly use for Redis, rate limiting, workflow, and search. It’s fast, pay‑as‑you‑go, and easy to integrate into modern React apps without managing infrastructure.
   - title: Convex
@@ -21,11 +21,11 @@ items:
   - title: Clerk
     description: A hosted auth solution I reach for when I want something full-featured and easy to integrate.
   - title: PostHog
-    description: My go-to for product analytics and event tracking. I like that it’s open source and self-hostable.
+    description: My go-to for long-term product analytics like page views, conversions, and onboarding success. I like that it’s open source and self-hostable.
+  - title: Axiom
+    description: A logging and analytics platform I use for short‑lived, high‑volume data like function response times, uptime, and request counts.
   - title: Sentry
     description: What I use for error tracking and performance monitoring. It’s reliable and easy to integrate.
-  - title: Axiom
-    description: A logging and observability platform I use for structured logs and metrics.
   - title: Inngest
     description: A tool I use for background jobs and event-driven workflows. Makes async tasks much easier.
   - title: Cloudinary
