@@ -1,0 +1,62 @@
+---
+import Breadcrumbs from '@/components/Breadcrumbs.astro'
+import PageHead from '@/components/PageHead.astro'
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+import Layout from '@/layouts/Layout.astro'
+import { getCollection } from 'astro:content'
+
+const entries = await getCollection('uses')
+const sections = entries
+  .map((e) => ({
+    title: e.data.title,
+    order: e.data.order ?? 999,
+    description: e.data.description,
+    items: e.data.items,
+  }))
+  .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title))
+---
+
+<Layout class="max-w-3xl">
+  <PageHead
+    slot="head"
+    title="Uses"
+    description="Software I use, devices I love, and other things I recommend."
+  />
+  <Breadcrumbs items={[{ label: 'Uses', icon: 'lucide:laptop' }]} />
+
+  <section class="space-y-8">
+    <p class="text-foreground/80">
+      Software I use, devices I love, and other things I recommend.
+    </p>
+
+    {
+      sections.map((section) => (
+        <div class="flex flex-col gap-y-4">
+          <h2 class="text-2xl font-medium">{section.title}</h2>
+          {section.description && (
+            <p class="text-foreground/80 text-sm">{section.description}</p>
+          )}
+          <ul class="grid gap-4">
+            {section.items.map((item) => (
+              <li>
+                <Card className="bg-card h-full">
+                  <CardHeader>
+                    <CardTitle className="text-base">{item.title}</CardTitle>
+                    <CardDescription className="text-foreground/80">
+                      {item.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </section>
+</Layout>
