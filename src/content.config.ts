@@ -52,6 +52,7 @@ const uses = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/uses' }),
   schema: z.object({
     title: z.string(),
+    order: z.number().optional(),
     description: z.string().optional(),
     items: z.array(
       z.object({

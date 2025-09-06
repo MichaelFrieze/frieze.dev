@@ -14,10 +14,11 @@ const entries = await getCollection('uses')
 const sections = entries
   .map((e) => ({
     title: e.data.title,
+    order: e.data.order ?? 999,
     description: e.data.description,
     items: e.data.items,
   }))
-  .sort((a, b) => a.title.localeCompare(b.title))
+  .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title))
 ---
 
 <Layout class="max-w-3xl">

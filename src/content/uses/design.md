@@ -1,5 +1,6 @@
 ---
 title: Design
+order: 4
 description: Tools for UI/UX and diagramming.
 items:
   - title: Figma

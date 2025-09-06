@@ -1,6 +1,7 @@
 ---
-title: Workstation
-description: Hardware and setup I use daily.
+title: Gear
+order: 3
+description: The computers, devices, and accessories I use the most.
 items:
   - title: MacBook Air, M1, 16GB RAM
     description: >-
@@ -26,9 +27,21 @@ items:
       ZMK and is highly customizable. I use Box White switches for a
       satisfying tactile feel. After a short adjustment period, it's one of
       the best purchases I've made.
+  - title: Logitech Lift Vertical Ergonomic Mouse
+    description: >-
+      Ergonomic vertical mouse that reduces wrist pronation and improves
+      comfort. Compact and precise, it connects via Bluetooth or USB
+      receiver and is comfortable for long sessions with quiet buttons.
+      Runs on a single AAA battery with excellent battery life.
   - title: Sennheiser HD 560 S
     description: >-
       My trusty open‑back headphones for music, calls, gaming, and casual
       listening. Neutral tuning with a wide soundstage makes them great for
       long sessions, and they're very comfortable.
+  - title: Apple AirPods Pro (2nd Generation)
+    description: >-
+      Wireless earbuds with excellent noise cancellation and a natural‑sounding transparency mode. They’re comfortable enough for long sessions, switch seamlessly between my devices, and the sound quality is pretty good.
+  - title: Apple iPhone 16 Pro
+    description: >-
+      The phone I use for communication, photos, and apps. I stick with the iPhone because it integrates well with my other Apple devices, and it makes everyday things like syncing, sharing, and staying connected with my family simple. It’s fast, reliable, and well-designed.
 ---
