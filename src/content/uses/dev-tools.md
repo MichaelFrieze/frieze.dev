@@ -1,28 +1,41 @@
 ---
 title: Dev Tools
-order: 1
-description: The editors, terminals, and tools I rely on for development.
+order: 4
 items:
-  - title: Cursor
-    description: >-
-      My main code editor. It’s very similar to VS Code, so it feels familiar, but it adds AI features that make a big difference in my workflow. The tab completion is the best I’ve used, and I like that the agentic mode lets me choose between different models depending on the task. I often use Claude Sonnet 4, GPT‑5, and GPT‑5 Mini.
-  - title: OpenCode
-    description: >-
-      A tool I use in the terminal that works a lot like agentic mode in Cursor, but for command‑line tasks. It’s open source, has a nice terminal UI, and lets me choose from many different models depending on what I need.
-  - title: Zed
-    description: >-
-      Another editor I’ve been exploring. It’s designed for speed and has a really well‑thought‑out UI. The tab completion isn’t as strong as Cursor, but the overall editing experience feels better than both Cursor and VS Code. I don’t mind giving up Cursor’s agentic mode here since I can cover that with OpenCode in the terminal.
-  - title: Poimandres
-    description: My favorite dark theme for VS Code.
-  - title: Monaspace
-    description: >-
-      A superfamily of fonts from GitHub designed for programming. Its
-      texture healing evens out density while preserving the grid. My favorite is Neon.
-  - title: Pretty TypeScript Errors
-    description: >-
-      A standout VS Code extension that makes TypeScript errors much easier
-      to understand at a glance.
-  - title: Ghostty
-    description: >-
-      My terminal of choice. It’s fast, lightweight, and has a modern feel without getting in the way. I like that it’s GPU‑accelerated, supports multiplexing, and has thoughtful defaults that make it easy to use right away. It’s also open source, so I can tweak and configure it as much as I want.
+  - title: React
+    description: The foundation of most of my projects. I like its component model and the ecosystem around it.
+  - title: Next.js
+    description: My go-to React framework for production apps (for now). Features like file-based routing, dynamic HTML streaming, React Server Components, SSR, and the Image component make it hard to beat. It works seamlessly with Vercel, and the large ecosystem and active community make it easy to find solutions and learn from others.
+  - title: Astro
+    description: Great for content-focused sites like this one. I like that it ships less JavaScript by default and integrates easily with React when I need it. The Content Collections feature makes working with Markdown and other content types straightforward, and the built-in Image component is very handy.
+  - title: TanStack Start
+    description: My current favorite React framework. It has isomorphic loaders, server functions with middleware, and a client‑first SSR model that only runs on the initial page load. It uses Vite, which I consider the best bundler, and TanStack Router, which is the most type‑safe and feature‑rich router I’ve used. Since I already rely heavily on TanStack Query, it fits perfectly into my workflow and can be deployed almost anywhere.
+  - title: TanStack Query
+    description: My go-to library for managing server state in React apps. It handles queries and mutations with caching, deduplication, prefetching, background updates, and automatic refetching, which removes a lot of the boilerplate around data fetching. It also makes loading and error states much easier to manage, and the built-in devtools are excellent for debugging. I use it in almost every project.
+  - title: TypeScript
+    description: I use TypeScript for almost everything. Strong typing makes refactoring safer and helps catch issues early, and the autocomplete in editors is a huge productivity boost. It makes working with modern frameworks and libraries much smoother.
+  - title: tRPC
+    description: My preferred way to build type-safe APIs. It provides end-to-end type safety between server and client, so I don’t have to write or maintain separate types. In the editor, I can click on a function in the client code and jump straight to its matching procedure on the server, which makes navigation much easier. It also provides useful middleware, and I like the clear organization that comes from structuring logic into procedures. It keeps things simple while still being powerful, and it fits naturally into a TypeScript stack.
+  - title: Tailwind CSS
+    description: My preferred way to style apps. The utility-first approach makes it fast to build UIs without constantly switching between CSS and components. It works especially well with React and a component-oriented architecture, since the styles live directly in the component code. Tailwind also comes with great defaults for spacing, colors, and responsive design, and it’s easy to customize when I need to. The ecosystem around it is excellent.
+  - title: shadcn/ui
+    description: A collection of prebuilt components I use to save time while keeping full flexibility. They also look great out of the box. Unlike monolithic component libraries, you own the code, which makes long-term maintenance easier and removes the need for escape hatches. They’re just React components built with Radix and styled with Tailwind, so they’re easy to customize and fit naturally into my projects.
+  - title: tweakcn
+    description: A tool I use to quickly tweak and generate Tailwind styles. Handy for experimenting with design tokens.
+  - title: Biome.js
+    description: A fast formatter and linter I use instead of Prettier and ESLint.
+  - title: Git
+    description: Version control I use for everything.
+  - title: GitHub
+    description: Where I host my code and collaborate on projects.
+  - title: Zsh (Oh My Zsh)
+    description: My shell of choice.
+  - title: Better Auth
+    description: A comprehensive auth framework for TypeScript. It’s self-hosted, so I own the logic and avoid vendor lock-in, and it includes features like SSO and password reset out of the box. The API is simple, works with modern frameworks, and adapts to different databases.
+  - title: Drizzle ORM
+    description: A lightweight, type-safe ORM with the schema defined in TypeScript, giving you autocomplete and strong typing. It supports serverless runtimes and HTTP-based drivers, which makes it a great fit for PlanetScale.
+  - title: Unpic
+    description: A tool I use for responsive images across frameworks.
+  - title: Payload CMS
+    description: A self-hosted, TypeScript-based headless CMS with collections and fields defined in code for type safety and autocomplete. It includes features like auth, access control, file uploads, and APIs. Since it’s built on top of Next.js, it can run directly inside a Next app and be deployed to Vercel alongside it.
 ---
