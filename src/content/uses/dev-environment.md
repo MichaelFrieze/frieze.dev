@@ -1,6 +1,6 @@
 ---
 title: Dev Environment
-order: 1
+order: 3
 items:
   - title: Cursor
     description: >-

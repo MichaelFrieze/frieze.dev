@@ -1,6 +1,6 @@
 ---
 title: Hardware
-order: 3
+order: 1
 items:
   - title: MacBook Pro, M1, 16GB RAM
     description: >-
