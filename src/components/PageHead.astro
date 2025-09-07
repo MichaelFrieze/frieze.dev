@@ -5,22 +5,32 @@ interface Props {
   title?: string
   description?: string
   noindex?: boolean
+  ogTitle?: string
 }
 
 const {
-  title = SITE.title,
+  title,
   description = SITE.description,
   noindex = false,
+  ogTitle,
 } = Astro.props
 const image = new URL('/static/1200x630.png', Astro.site)
+const computedTitle = title ? `${title} | ${SITE.title}` : SITE.title
+const computedOgTitle =
+  ogTitle ??
+  (typeof title === 'string' && title.toLowerCase() === 'home'
+    ? SITE.defaultOgTitle
+    : `${title} | ${SITE.title}`)
+
+console.log(computedOgTitle)
 ---
 
-<title>{`${title} | ${SITE.title}`}</title>
+<title>{computedTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={SITE.href} />
 {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-<meta property="og:title" content={title} />
+<meta property="og:title" content={computedOgTitle} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={image} />
 <meta property="og:image:alt" content={title} />
@@ -29,7 +39,7 @@ const image = new URL('/static/1200x630.png', Astro.site)
 <meta property="og:site_name" content={SITE.title} />
 <meta property="og:url" content={Astro.url} />
 
-<meta name="twitter:title" content={title} />
+<meta name="twitter:title" content={computedOgTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={image} />
 <meta name="twitter:image:alt" content={title} />
