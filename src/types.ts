@@ -4,6 +4,7 @@ export type Site = {
   href: string
   author: string
   locale: string
+  defaultOgTitle?: string
   featuredPostCount: number
   postsPerPage: number
 }

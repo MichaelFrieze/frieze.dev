@@ -23,7 +23,7 @@ items:
   - title: Perplexity
     description: >-
       Another AI chat assistant I use occasionally for exploring topics, answering technical questions, and summarizing articles or documentation. I like that it provides citations, which makes it easy to verify information or dig deeper when I need more context.
-  - title: Chrome
+  - title: Google Chrome
     description: >-
       After trying many browsers, I’ve ended up sticking with Chrome. I used Arc for a while but it’s no longer supported, Firefox often lags behind in supporting newer features and feels a little dated, Vivaldi is too busy for my taste, and Edge has features that seem useful at first but don’t hold up over time. Chrome may not have the most bells and whistles, but it’s fast, reliable, and consistent.
 ---
