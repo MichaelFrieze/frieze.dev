@@ -3,11 +3,10 @@ import type { IconMap, SocialLink, Site } from '@/types'
 export const SITE: Site = {
   title: 'Frieze.DEV',
   description:
-    "Hi, I'm Michael Frieze. A web developer based in Metro Detroit.",
+    "I'm Michael Frieze, a web developer in Metro Detroit. This site is where I share the nerdy stuff I'm into and projects I'm working on.",
   href: 'https://frieze.dev',
   author: 'Michael Frieze',
-  defaultOgTitle:
-    'Frieze.DEV | Web Developer in Metro Detroit | Michael Frieze',
+  defaultOgTitle: 'Frieze.DEV | Web Developer | Michael Frieze',
   locale: 'en-US',
   featuredPostCount: 2,
   postsPerPage: 3,
