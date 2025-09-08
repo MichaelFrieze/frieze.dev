@@ -21,8 +21,6 @@ const computedOgTitle =
   (typeof title === 'string' && title.toLowerCase() === 'home'
     ? SITE.defaultOgTitle
     : `${title} | ${SITE.title}`)
-
-console.log(computedOgTitle)
 ---
 
 <title>{computedTitle}</title>
