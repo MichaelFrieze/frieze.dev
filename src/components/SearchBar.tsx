@@ -1,107 +1,114 @@
-import Fuse from "fuse.js";
-import { useEffect, useRef, useState, useMemo, type FormEvent } from "react";
-import SearchCard from "./SearchCard";
-import type { CollectionEntry } from "astro:content";
+import Fuse from 'fuse.js'
+import { useEffect, useRef, useState, useMemo, type FormEvent } from 'react'
+import SearchCard from './SearchCard'
+import type { CollectionEntry } from 'astro:content'
+import { Input } from './ui/input'
+import { Search as SearchIcon } from 'lucide-react'
 
 export type SearchItem = {
-  title: string;
-  description: string;
-  data: CollectionEntry<"blog">["data"];
-  id: string;
-};
+  title: string
+  description: string
+  data: CollectionEntry<'blog'>['data']
+  id: string
+}
 
 interface Props {
-  searchList: SearchItem[];
+  searchList: SearchItem[]
 }
 
 interface SearchResult {
-  item: SearchItem;
-  refIndex: number;
+  item: SearchItem
+  refIndex: number
 }
 
 export default function SearchBar({ searchList }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  const [inputVal, setInputVal] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null)
+  const [inputVal, setInputVal] = useState('')
   const [searchResults, setSearchResults] = useState<SearchResult[] | null>(
     null,
-  );
+  )
 
   const handleChange = (e: FormEvent<HTMLInputElement>) => {
-    setInputVal(e.currentTarget.value);
-  };
+    setInputVal(e.currentTarget.value)
+  }
 
   const fuse = useMemo(
     () =>
       new Fuse(searchList, {
-        keys: ["title", "description"],
+        keys: ['title', 'description'],
         includeMatches: true,
         minMatchCharLength: 2,
         threshold: 0.5,
       }),
     [searchList],
-  );
+  )
 
   useEffect(() => {
     // if URL has search query,
     // insert that search query in input field
-    const searchUrl = new URLSearchParams(window.location.search);
-    const searchStr = searchUrl.get("q");
-    if (searchStr) setInputVal(searchStr);
+    const searchUrl = new URLSearchParams(window.location.search)
+    const searchStr = searchUrl.get('q')
+    if (searchStr) setInputVal(searchStr)
 
     // put focus cursor at the end of the string
     setTimeout(function () {
       inputRef.current!.selectionStart = inputRef.current!.selectionEnd =
-        searchStr?.length || 0;
-    }, 50);
-  }, []);
+        searchStr?.length || 0
+    }, 50)
+  }, [])
 
   useEffect(() => {
     // Add search result only if
     // input value is more than one character
-    const inputResult = inputVal.length > 1 ? fuse.search(inputVal) : [];
-    setSearchResults(inputResult);
+    const inputResult = inputVal.length > 1 ? fuse.search(inputVal) : []
+    setSearchResults(inputResult)
 
     // Update search string in URL
     if (inputVal.length > 0) {
-      const searchParams = new URLSearchParams(window.location.search);
-      searchParams.set("q", inputVal);
+      const searchParams = new URLSearchParams(window.location.search)
+      searchParams.set('q', inputVal)
       const newRelativePathQuery =
-        window.location.pathname + "?" + searchParams.toString();
-      history.replaceState(history.state, "", newRelativePathQuery);
+        window.location.pathname + '?' + searchParams.toString()
+      history.replaceState(history.state, '', newRelativePathQuery)
     } else {
-      history.replaceState(history.state, "", window.location.pathname);
+      history.replaceState(history.state, '', window.location.pathname)
     }
-  }, [inputVal]);
+  }, [inputVal])
 
   useEffect(() => {
     // focus on text input when search bar is displayed
     if (inputRef.current) {
-      inputRef.current.focus();
+      inputRef.current.focus()
     }
-  }, [inputVal]);
+  }, [inputVal])
 
   return (
     <>
-      <label>
-        <input
-          className="focus:border-skin-accent block w-full rounded border bg-background py-3 pl-10 pr-3 placeholder:italic focus:outline-none"
+      <div className="relative">
+        <SearchIcon
+          className="text-muted-foreground absolute top-1/2 left-3 size-4 -translate-y-1/2"
+          aria-hidden="true"
+        />
+        <Input
+          className="pl-10 placeholder:italic"
           placeholder="Search for any blog post..."
           type="text"
           name="search"
           value={inputVal}
           onChange={handleChange}
           autoComplete="off"
+          aria-label="Search posts"
           // autoFocus
           ref={inputRef}
         />
-      </label>
+      </div>
 
       {inputVal.length > 1 && (
         <div className="mt-8">
           Found {searchResults?.length}
           {searchResults?.length && searchResults?.length === 1
-            ? " result"
-            : " results"}{" "}
+            ? ' result'
+            : ' results'}{' '}
           for '{inputVal}'
         </div>
       )}
@@ -117,5 +124,5 @@ export default function SearchBar({ searchList }: Props) {
           ))}
       </ul>
     </>
-  );
+  )
 }
