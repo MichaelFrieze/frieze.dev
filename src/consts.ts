@@ -6,7 +6,7 @@ export const SITE: Site = {
     "I'm Michael Frieze, a web developer in Metro Detroit. This site is where I share the nerdy stuff I'm into and projects I'm working on.",
   href: 'https://frieze.dev',
   author: 'Michael Frieze',
-  defaultOgTitle: 'Frieze.DEV | Web Developer | Michael Frieze',
+  defaultOgTitle: 'Frieze.DEV — Michael Frieze | Web Developer',
   locale: 'en-US',
   featuredPostCount: 2,
   postsPerPage: 3,
