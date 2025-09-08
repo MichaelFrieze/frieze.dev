@@ -43,9 +43,10 @@ Other scripts:
 - `src/styles` – Global styles and typography
 - `src/lib` – Utilities
 - `src/content` – Content collections defined by `src/content.config.ts`
-  - `blog` – Blog posts (`.md`/`.mdx`)
   - `authors` – Author profiles
+  - `blog` – Blog posts (`.md`/`.mdx`)
   - `projects` – Project entries
+  - `uses` – Things I use and recommend
 - `public` – Static assets (favicons, fonts, manifest, images)
 
 ## Authoring content
