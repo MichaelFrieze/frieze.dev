@@ -116,3 +116,7 @@ Client-side search uses Fuse.js over a generated index. See `src/components/Sear
 ## Favicons & PWA basics
 
 Favicons and web manifest are in `public`. The `<Head>` component preloads variable fonts and includes manifest, RSS, and sitemap. PWA is “basic” (standalone display, icons); there is no service worker.
+
+## Credits
+
+This Astro site was started using the [`astro-erudite`](https://github.com/jktrn/astro-erudite) template by [@jktrn](https://github.com/jktrn). Thank you for the excellent foundation.
