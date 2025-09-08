@@ -53,6 +53,8 @@ Other scripts:
 
 Content types and schema are defined in `src/content.config.ts` using Astro Content Collections. Files can be Markdown or MDX.
 
+Content collections: `blog`, `authors`, `projects`, `uses` (schemas in `src/content.config.ts`).
+
 ### Blog posts
 
 Location: `src/content/blog/**/index.mdx`
@@ -106,7 +108,11 @@ Set the site URL in `astro.config.ts` (`site: 'https://frieze.dev'`) for correct
 
 ## Search
 
-Client-side search uses Fuse.js over a generated index. See `src/components/SearchBar.tsx` and related components for implementation details.
+Client-side search uses Fuse.js over an in-memory list of published posts (title and description only). The search page is `/blog/search` (`src/pages/blog/search/index.astro`), which pulls posts via `getAllPosts()` and passes them to the `SearchBar` island. See `src/components/SearchBar.tsx` and `src/components/SearchCard.tsx` for implementation details.
+
+## Contact
+
+The contact page at `/contact` renders a React `ContactForm` using shadcn/ui components, `zod` for validation, and `react-hook-form` for form state. Submissions are sent directly to Web3Forms (temporarily) and show inline success confirmation. The Web3Forms public access key is currently configured inside `src/components/ContactForm.tsx`.
 
 ## Code fences & math
 
@@ -117,6 +123,10 @@ Client-side search uses Fuse.js over a generated index. See `src/components/Sear
 ## Favicons & PWA basics
 
 Favicons and web manifest are in `public`. The `<Head>` component preloads variable fonts and includes manifest, RSS, and sitemap. PWA is “basic” (standalone display, icons); there is no service worker.
+
+## Patches
+
+This project uses `patch-package` (runs on `postinstall`) to apply small dependency fixes. Custom patches live in `patches/` (e.g., `rehype-pretty-code+0.14.1.patch`). If dependencies are upgraded and a patch no longer applies, re-generate the patch as needed.
 
 ## Credits
 
