@@ -245,7 +245,7 @@ const tocSections = await getTOCSections(currentPostId)
 
           scrollToTopButton.classList.toggle(
             'hidden',
-            window.scrollY <= 300 || isFooterVisible
+            window.scrollY <= 300 || isFooterVisible,
           )
         })
       }

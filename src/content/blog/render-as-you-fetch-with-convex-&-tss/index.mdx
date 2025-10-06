@@ -1,0 +1,122 @@
+---
+title: 'Render as You Fetch with Convex & TanStack Start'
+description: 'A look at how TanStack Start’s isomorphic route loaders unlock render‑as‑you‑fetch behavior for Convex queries.'
+date: 2025-10-06
+tags:
+  [
+    'convex',
+    'tanstack-start',
+    'tanstack-query',
+    'react',
+  ]
+image: './hero-image.jpg'
+authors: ['frieze']
+---
+
+# Render as You Fetch with Convex and TanStack Start
+
+In a [previous post](#), I explored how React Server Components (RSCs) blur the line between fetch on render and render as you fetch. They can behave like both depending on how data fetching is structured across components and RSCs always move the waterfall to the server where it's not nearly as bad.
+
+When I started using Convex, I wanted to solve the client-side waterfall problem and began experimenting with ways to achieve render as you fetch in a Convex app. The answer turned out to be a combination of TanStack Start and TanStack Query, rather than Convex’s default React hooks.
+
+In this post, I want to revisit that idea from a new angle. Instead of looking at RSCs, I’ll show how TanStack Start and Convex work together to enable render as you fetch while keeping your data logic colocated.
+
+---
+
+## What "Render as You Fetch" Means
+
+Traditionally, React apps wait for components to render before fetching data. The classic `useEffect()` pattern is a textbook example of **fetch on render**. In other words, "render triggers fetch".
+This approach keeps data logic inside the component, but it can also lead to client-side network waterfalls.
+
+**Render as you fetch** reverses that relationship by starting data fetching as early as possible, often in a route loader. By the time React renders, the data is already cached and ready for use. In other words, "fetch triggers render". This enables parallelization between fetching and rendering, but it typically requires moving data logic out of components.
+
+---
+
+## The Problem with Fetch on Render in Convex
+
+Convex makes client-side data fetching simple, but by default it behaves like fetch on render. Each query begins only after the component mounts.
+
+```tsx
+const { data } = useQuery(api.countdowns.getById, { id })
+```
+
+This colocated style is great, but it can become slow when multiple components need data at once. Each query waits for rendering to start, which causes a network waterfall effect.
+
+Ideally, we could keep colocated queries while also kicking them off before rendering begins. That’s exactly what TanStack Start makes possible with Convex.
+
+---
+
+## Prefetching in TanStack Start Loaders
+
+Every route file in TanStack Start can export a loader, an isomorphic function that runs on both the server (during SSR) and the client (on navigation). You can use these loaders to prefetch Convex queries, warming up the cache before React starts rendering.
+
+Here’s an example from my app that displays individual countdowns:
+
+```tsx
+import { CountdownView } from '@/modules/countdown/ui/views/countdown-view'
+import { convexQuery } from '@convex-dev/react-query'
+import { createFileRoute } from '@tanstack/react-router'
+import { api } from 'convex/_generated/api'
+import type { Id } from 'convex/_generated/dataModel'
+
+export const Route = createFileRoute('/(countdown)/countdown/$countdownId/')({
+  loader: (opts) => {
+    // Non-blocking prefetch — starts fetching but does not wait
+    opts.context.queryClient.prefetchQuery(
+      convexQuery(api.countdowns.getById, {
+        id: opts.params.countdownId as Id<'countdowns'>,
+      }),
+    )
+  },
+  component: CountdownRoute,
+})
+
+function CountdownRoute() {
+  const { countdownId } = Route.useParams()
+  return <CountdownView countdownId={countdownId} />
+}
+```
+
+### What happens
+
+- The loader runs before React renders `CountdownRoute`.
+- It triggers a Convex query using `prefetchQuery`.
+- The call is **non-blocking**; it won’t delay navigation or render.
+- When the component runs `useSuspenseQuery()` for the same query, the data is already in cache.
+
+This is what render as you fetch looks like in practice.
+
+---
+
+## Using Prefetched Data in Components
+
+The component-level experience does not change. You can keep using colocated queries and Suspense exactly as before:
+
+```tsx
+import { useSuspenseQuery } from '@tanstack/react-query'
+import { convexQuery } from '@convex-dev/react-query'
+import { api } from 'convex/_generated/api'
+import type { Id } from 'convex/_generated/dataModel'
+
+function CountdownHeaderSection({ countdownId }: { countdownId: string }) {
+  const { data: countdown } = useSuspenseQuery(
+    convexQuery(api.countdowns.getById, {
+      id: countdownId as Id<'countdowns'>,
+    }),
+  )
+
+  return <h1>{countdown.name}</h1>
+}
+```
+
+This pattern keeps colocation intact. Queries stay in your components, and TanStack Start loaders simply prefetch them ahead of time.
+
+---
+
+## Wrapping Up
+
+The biggest reason to use Convex with TanStack Query is to gain access to useSuspenseQuery. Even without prefetching, Suspense support makes data loading with Convex much smoother and better integrated with React. Convex’s default hooks do not provide a Suspense-based API, so this combination fills that gap perfectly.
+
+On top of that, TanStack Start adds the ability to prefetch Convex queries in isomorphic loaders, enabling render‑as‑you‑fetch behavior.
+
+Together, these tools keep data fetching colocated and optimized, which is what we should expect in our modern React apps.
