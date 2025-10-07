@@ -5,9 +5,9 @@ date: 2025-10-06
 tags:
   [
     'convex',
-    'tanstack-start',
-    'tanstack-query',
+    'tanstack',
     'react',
+		'data-fetching',
   ]
 image: './hero-image.jpg'
 authors: ['frieze']
@@ -15,7 +15,7 @@ authors: ['frieze']
 
 # Render as You Fetch with Convex and TanStack Start
 
-In a [previous post](#), I explored how React Server Components (RSCs) blur the line between fetch on render and render as you fetch. They can behave like both depending on how data fetching is structured across components and RSCs always move the waterfall to the server where it's not nearly as bad.
+In a [previous post](/blog/rscs-render-as-you-fetch-or-fetch-on-render/), I explored how React Server Components (RSCs) blur the line between fetch on render and render as you fetch. They can behave like both depending on how data fetching is structured across components and RSCs always move the waterfall to the server where it's not nearly as bad.
 
 When I started using Convex, I wanted to solve the client-side waterfall problem and began experimenting with ways to achieve render as you fetch in a Convex app. The answer turned out to be a combination of TanStack Start and TanStack Query, rather than Convex’s default React hooks.
 
