@@ -14,55 +14,43 @@ authors: ['frieze']
 
 # RSCs: Render-as-you-Fetch or Fetch-on-Render?
 
-When it comes to data fetching in React Server Components (RSCs), the question arises: are they truly "render-as-you-fetch" as commonly described, or do they sometimes behave more like "fetch-on-render"? Let's explore this nuanced topic and examine how RSCs handle data fetching.
+I remember reading that React Server Components (RSCs) are often described as 'render-as-you-fetch,' and it got me curious. As I dug in, I realized there’s some nuance in how RSCs handles data fetching. I wanted to explore some of that here.
 
-## The Traditional Client-Side Perspective
+## The Traditional Client-Side View
 
-In client-side React, we typically think of data fetching strategies in two main categories:
+In classic client-side React, we usually think about data fetching in two main styles:
 
-1. **Render-as-you-fetch**: In this pattern, data fetching is initiated before rendering begins. The idea here is that "fetch triggers render." Data fetching is typically hoisted to the top of the component tree, allowing for parallel data loading and rendering. Components can start rendering immediately, potentially showing loading states while waiting for data.
-2. **Fetch-on-render**: This pattern is characterized by the idea that "render triggers fetch." Each component is responsible for its own data fetching, and the component's rendering logic initiates the data fetch. Data fetching is colocated within the client component, making the code more modular and self-contained. However, this can potentially lead to waterfall effects, especially in nested component structures.
+1. **Render-as-you-fetch**: In this approach, fetching starts _before_ rendering does. Think of it as “fetch triggers render.” The data fetch usually happens higher up in the component tree so multiple requests can run at the same time. Components can start showing up right away, maybe with loading states until the data arrives.
 
-## Server Components: A Hybrid Approach
+2. **Fetch-on-render**: This one is more like “render triggers fetch.” Each component takes care of its own data fetching, usually inside its own logic. That makes the code modular and self-contained, but it can cause a network waterfall on the client. This waterfall is even worse when you’ve got several nested components that depend on each other’s data.
 
-When we look closely at how RSCs operate, we can see characteristics of both patterns:
+## Where RSCs Fit In
 
-### Fetch-on-render Characteristics:
+I don't think RSCs fit neatly into one category or the other. They combine traits from both approaches.
 
-- **Colocated Data Fetching**: RSCs allow (and often encourage) colocating data fetching within components, similar to client-side fetch-on-render patterns.
-- **Potential for Server-side Waterfalls**: Nested components that each fetch their own data can create sequential data fetching on the server, resembling a waterfall effect.
+### How They Behave Like Fetch-on-render
 
-### Render-as-you-fetch Characteristics:
+- **Colocated Fetching**: You can (and often should) place your data fetching logic inside individual RSCs, just like in fetch-on-render.
+- **Possible Server Waterfalls**: If nested components each fetch their own data, you will end up with a server-side waterfall. However, this is usually less severe than a client-side waterfall.
 
-- **Parallel Rendering**: Layouts and pages in the App Router are rendered in parallel, enabling concurrent data requests.
-- **Single Client Request**: From the client's perspective, all server-side data fetching happens in a single request, eliminating client-side waterfalls.
+### How They Behave Like Render-as-you-fetch
 
-## The Power of Colocated Data Fetching in RSCs
+- **Parallel Rendering**: When using the App Router, layouts and pages can render at the same time, which means their data is fetched in parallel too.  
+- **Option to Hoist Fetching**: While RSCs encourage colocating data fetching within components, you can hoist the fetching higher up in the tree when it makes sense.  
+- **Single Request From the Client**: Even if multiple server components are fetching data, the waterfall stays on the server. There are no more client-side waterfall effects, so it feels like render-as-you-fetch from the client's perspective.
 
-Colocating data fetching within server components is not only okay but often recommended. Unlike client-side waterfalls, server-side waterfalls are generally less problematic for several reasons:
 
-1. **Server Performance**: Servers typically have faster processing power and network connections, minimizing the impact of sequential data fetching. Additionally, servers are physically closer to the database, resulting in lower latency for data retrieval.
-2. **Single Round Trip**: All server-side operations happen in a single request-response cycle from the client's perspective.
-3. **Improved Code Organization**: Colocated data fetching often leads to more maintainable and understandable code.
+## Why Server-Side Waterfalls Usually Aren’t a Problem
 
-While it's good to be aware of potential server-side waterfalls, in most cases, the benefits of colocated data fetching outweigh the drawbacks. The server's proximity to data sources and the ability to optimize server-side connections make these waterfalls less impactful on overall performance compared to client-side waterfalls.
+Colocating data fetching in server components is not only fine, it's recommended most of the time. While server components can still create waterfalls, those waterfalls are much less of a concern on the server. Servers typically have better hardware, faster networks, and are closer to the database. 
 
-## Optimizing Data Fetching in RSCs
+So while you should be aware of potential waterfalls, the benefits of colocated fetching usually outweigh the downsides. The server’s proximity to data sources and better connection handling make a big difference.
 
-For cases where you do want to optimize and avoid server-side waterfalls, consider these strategies:
+## Tips for Optimizing Data Fetching in RSCs
 
-1. **Use Promise.all**: Within a single component, leverage `Promise.all` to fetch multiple data sources in parallel.
-2. **Hoist Data Fetching**: When necessary, consider fetching data higher in the component tree and passing it down as props.
-3. **Leverage Layout and Page Parallelism**: Take advantage of the App Router's ability to render layouts and pages concurrently.
+* **Hoist Fetching Higher Up**: If server-side waterfalls are a problem, you can move data fetching to a parent component and pass data down as props. This is similar to hoisting data fetching to a route loader to enable render-as-you-fetch on the client. 
+* **Use `Promise.all` or `allSettled`**: Fetch multiple data sources in parallel inside one component.
+* **Kick Off Fetches as Promises**: You can start data requests without awaiting them by passing the promises along as props. This keeps rendering non-blocking and these same promises can also be used on the client with the `use()` hook.
+* **Use `Suspense` Boundaries**: Wrap parts of your UI with `Suspense` to control when components reveal themselves as their data becomes available. Suspense works whether you’re awaiting fetches or just passing promises around.
+* **Take Advantage of Parallel Rendering**: Next.js App Router can render layouts and pages at the same time, so make sure you’re using that feature.
 
-## The Client-Side Perspective
-
-It's crucial to remember that regardless of the server-side implementation, the client experiences RSCs differently:
-
-- RSCs arrive at the client as pre-executed components.
-- They don't block the execution of client components.
-- From the client's view, it's more accurate to say that "fetch triggers render" rather than "render triggers fetch."
-
-## Conclusion
-
-So, are React Server Components fetch-on-render or render-as-you-fetch? The answer is: they can be both, depending on how you implement them. RSCs provide the flexibility to colocate data fetching for better code organization while also offering tools to optimize and parallelize data loading when needed.
