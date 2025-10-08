@@ -20,9 +20,9 @@ I remember reading that React Server Components (RSCs) are often described as 'r
 
 In classic client-side React, we usually think about data fetching in two main styles:
 
-1. **Render-as-you-fetch**: In this approach, fetching starts _before_ rendering does. Think of it as “fetch triggers render.” The data fetch usually happens higher up in the component tree so multiple requests can run at the same time. Components can start showing up right away, maybe with loading states until the data arrives.
+1. **Render-as-you-fetch**: In this approach, data fetching starts before rendering begins. Think of it as "fetch triggers render." The data fetching is hoisted out of components, often in a route loader, which allows multiple fetches to run in parallel. 
 
-2. **Fetch-on-render**: This one is more like “render triggers fetch.” Each component takes care of its own data fetching, usually inside its own logic. That makes the code modular and self-contained, but it can cause a network waterfall on the client. This waterfall is even worse when you’ve got several nested components that depend on each other’s data.
+2. **Fetch-on-render**: In this approach, each component takes care of its own data fetching. Think of it as "render triggers fetch." The benefit of this approach is that it makes code more modular and self-contained, but it can cause a network waterfall on the client. This waterfall can be even worse when you’ve got several nested components that depend on each other’s data.
 
 ## Where RSCs Fit In
 
