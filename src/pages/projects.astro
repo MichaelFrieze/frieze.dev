@@ -10,22 +10,22 @@ const projects = await getAllProjects()
 ---
 
 <Layout class="max-w-3xl">
-	<PageHead slot="head" title="Projects" />
-	<Breadcrumbs items={[{ label: 'Projects', icon: 'lucide:folder' }]} />
+  <PageHead slot="head" title="Projects" />
+  <Breadcrumbs items={[{ label: 'Projects', icon: 'lucide:folder' }]} />
 
-	<section class="space-y-8">
-		<p class="text-foreground/80">
-			I'm always learning and building, so I usually have a side project or two
-			in the works. Browse my featured GitHub repositories below or <Link
-				href="https://github.com/MichaelFrieze"
-				class="text-foreground font-semibold transition hover:underline"
-				external>check out my GitHub profile</Link
-			> to discover the applications and websites I've been developing in public.
-		</p>
+  <section class="space-y-8">
+    <p class="text-foreground/80">
+      I'm always learning and building, so I usually have a side project or two
+      in the works. Browse my featured GitHub repositories below or <Link
+        href="https://github.com/MichaelFrieze"
+        class="text-foreground font-semibold transition hover:underline"
+        external>check out my GitHub profile</Link
+      > to discover the applications and websites I've been developing in public.
+    </p>
 
-		<h2 class="mb-4 text-2xl font-medium">My Projects</h2>
-		<div class="flex flex-col gap-4">
-			{projects.map((project) => <ProjectCard project={project} />)}
-		</div>
-	</section>
+    <h2 class="mb-4 text-2xl font-medium">My Projects</h2>
+    <div class="flex flex-col gap-4">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
 </Layout>
