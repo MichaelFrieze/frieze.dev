@@ -16,296 +16,296 @@ const blog = await getRecentPosts(SITE.featuredPostCount)
 ---
 
 <Layout class="max-w-3xl">
-	<PageHead slot="head" />
+  <PageHead slot="head" />
 
-	<section class="space-y-6 md:hidden">
-		<Image
-			src={portrait}
-			alt="Portrait of Michael Frieze"
-			width={280}
-			height={280}
-			class="rounded-xl shadow-md"
-		/>
+  <section class="space-y-6 md:hidden">
+    <Image
+      src={portrait}
+      alt="Portrait of Michael Frieze"
+      width={280}
+      height={280}
+      class="rounded-xl shadow-md"
+    />
 
-		<Card className="bg-card w-full p-4">
-			<div>
-				<h1 class="text-2xl font-bold">Hi, I'm Michael Frieze</h1>
-				<p class="text-foreground/80 italic">
-					Web Developer based in Metro Detroit
-				</p>
-			</div>
+    <Card className="bg-card w-full p-4">
+      <div>
+        <h1 class="text-2xl font-bold">Hi, I'm Michael Frieze</h1>
+        <p class="text-foreground/80 italic">
+          Web Developer based in Metro Detroit
+        </p>
+      </div>
 
-			<div class="text-foreground/80 space-y-3">
-				<p>
-					My journey in web development <Link
-						href="/blog/from-pc-building-to-web-dev"
-						class="text-foreground font-semibold transition hover:underline"
-						external
-					>
-						began in high school
-					</Link> and has led me through various roles, from Java on the back-end
-					to my current focus on front-end. These days, I'm building with JavaScript,
-					TypeScript, React, and frameworks like Next.js, TanStack Start, and Astro.
-					This site is my space to share what I'm learning, what I'm building, and
-					occasionally just whatever's on my mind.
-				</p>
+      <div class="text-foreground/80 space-y-3">
+        <p>
+          My journey in web development <Link
+            href="/blog/from-pc-building-to-web-dev"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            began in high school
+          </Link> and has led me through various roles, from Java on the back-end
+          to my current focus on front-end. These days, I'm building with JavaScript,
+          TypeScript, React, and frameworks like Next.js, TanStack Start, and Astro.
+          This site is my space to share what I'm learning, what I'm building, and
+          occasionally just whatever's on my mind.
+        </p>
 
-				<p>
-					When I'm not coding, I enjoy <Link
-						href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
-						class="text-foreground font-semibold transition hover:underline"
-						external
-					>
-						playing guitar
-					</Link> and <Link
-						href="https://www.youtube.com/watch?v=JIbXZKE5yJg"
-						class="text-foreground font-semibold transition hover:underline"
-						external
-					>
-						collaborating with other musicians
-					</Link>. I also like immersing myself in PC games like "Star Citizen"
-					and "Crusader Kings 3".
-				</p>
+        <p>
+          When I'm not coding, I enjoy <Link
+            href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            playing guitar
+          </Link> and <Link
+            href="https://www.youtube.com/watch?v=JIbXZKE5yJg"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            collaborating with other musicians
+          </Link>. I also like immersing myself in PC games like "Star Citizen"
+          and "Crusader Kings 3".
+        </p>
 
-				<p>
-					At home, I live with my partner <Link
-						href="https://kaylafoister.weebly.com/"
-						class="text-foreground font-semibold transition hover:underline"
-						external
-					>
-						Kayla
-					</Link>, a kindergarten teacher and avid reader, along with our
-					10-year-old chihuahua named <Link
-						href="https://f8duhkpzb6.ufs.sh/f/qF009i75eUMjBba9Vt1FQqndVa9rvyhc2Ji7fEbsu0PmSleo"
-						class="text-foreground font-semibold transition hover:underline"
-						external
-					>
-						Atticus
-					</Link>.
-				</p>
+        <p>
+          At home, I live with my partner <Link
+            href="https://kaylafoister.weebly.com/"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            Kayla
+          </Link>, a kindergarten teacher and avid reader, along with our
+          10-year-old chihuahua named <Link
+            href="https://f8duhkpzb6.ufs.sh/f/qF009i75eUMjBba9Vt1FQqndVa9rvyhc2Ji7fEbsu0PmSleo"
+            class="text-foreground font-semibold transition hover:underline"
+            external
+          >
+            Atticus
+          </Link>.
+        </p>
 
-				<p>
-					Curious about how we can work together or just want to chat? Send me
-					an email or connect with me on platforms like Reddit, X, or Bluesky.
-				</p>
-			</div>
+        <p>
+          Curious about how we can work together or just want to chat? Send me
+          an email or connect with me on platforms like Reddit, X, or Bluesky.
+        </p>
+      </div>
 
-			<SocialIcons links={SOCIAL_LINKS} bgVariant="card" />
-		</Card>
-	</section>
+      <SocialIcons links={SOCIAL_LINKS} bgVariant="card" />
+    </Card>
+  </section>
 
-	<section class="hidden md:block">
-		<div class="flex flex-row items-start gap-4">
-			<Card className="bg-card w-full p-4">
-				<div>
-					<h1 class="text-2xl font-bold">Hi, I'm Michael Frieze</h1>
-					<p class="text-foreground/80 italic">
-						Web Developer based in Metro Detroit
-					</p>
-				</div>
+  <section class="hidden md:block">
+    <div class="flex flex-row items-start gap-4">
+      <Card className="bg-card w-full p-4">
+        <div>
+          <h1 class="text-2xl font-bold">Hi, I'm Michael Frieze</h1>
+          <p class="text-foreground/80 italic">
+            Web Developer based in Metro Detroit
+          </p>
+        </div>
 
-				<div class="text-foreground/80 space-y-3 pb-0.5">
-					<p>
-						My journey in web development <Link
-							href="/blog/from-pc-building-to-web-dev"
-							class="text-foreground font-semibold transition hover:underline"
-							external
-						>
-							began in high school
-						</Link> and has led me through various roles, from Java on the back-end
-						to my current focus on front-end. These days, I'm building with JavaScript,
-						TypeScript, React, and frameworks like Next.js, TanStack Start, and Astro.
-						This site is my space to share what I'm learning, what I'm building,
-						and occasionally just whatever's on my mind.
-					</p>
+        <div class="text-foreground/80 space-y-3 pb-0.5">
+          <p>
+            My journey in web development <Link
+              href="/blog/from-pc-building-to-web-dev"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              began in high school
+            </Link> and has led me through various roles, from Java on the back-end
+            to my current focus on front-end. These days, I'm building with JavaScript,
+            TypeScript, React, and frameworks like Next.js, TanStack Start, and Astro.
+            This site is my space to share what I'm learning, what I'm building,
+            and occasionally just whatever's on my mind.
+          </p>
 
-					<p>
-						When I'm not coding, I enjoy <Link
-							href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
-							class="text-foreground font-semibold transition hover:underline"
-							external
-						>
-							playing guitar
-						</Link> and <Link
-							href="https://www.youtube.com/watch?v=JIbXZKE5yJg"
-							class="text-foreground font-semibold transition hover:underline"
-							external
-						>
-							collaborating with other musicians
-						</Link>. I also like immersing myself in PC games like "Star
-						Citizen" and "Crusader Kings 3".
-					</p>
+          <p>
+            When I'm not coding, I enjoy <Link
+              href="https://soundcloud.com/mikefrieze88/something-i-made-in-2016"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              playing guitar
+            </Link> and <Link
+              href="https://www.youtube.com/watch?v=JIbXZKE5yJg"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              collaborating with other musicians
+            </Link>. I also like immersing myself in PC games like "Star
+            Citizen" and "Crusader Kings 3".
+          </p>
 
-					<p>
-						At home, I live with my partner <Link
-							href="https://kaylafoister.weebly.com/"
-							class="text-foreground font-semibold transition hover:underline"
-							external
-						>
-							Kayla
-						</Link>, a kindergarten teacher and avid reader, along with our
-						10-year-old chihuahua named <Link
-							href="https://f8duhkpzb6.ufs.sh/f/qF009i75eUMjBba9Vt1FQqndVa9rvyhc2Ji7fEbsu0PmSleo"
-							class="text-foreground font-semibold transition hover:underline"
-							external
-						>
-							Atticus
-						</Link>.
-					</p>
+          <p>
+            At home, I live with my partner <Link
+              href="https://kaylafoister.weebly.com/"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              Kayla
+            </Link>, a kindergarten teacher and avid reader, along with our
+            10-year-old chihuahua named <Link
+              href="https://f8duhkpzb6.ufs.sh/f/qF009i75eUMjBba9Vt1FQqndVa9rvyhc2Ji7fEbsu0PmSleo"
+              class="text-foreground font-semibold transition hover:underline"
+              external
+            >
+              Atticus
+            </Link>.
+          </p>
 
-					<p>
-						Curious about how we can work together or just want to chat? Send me
-						an email or connect with me on platforms like Reddit, X, or Bluesky.
-					</p>
-				</div>
-			</Card>
+          <p>
+            Curious about how we can work together or just want to chat? Send me
+            an email or connect with me on platforms like Reddit, X, or Bluesky.
+          </p>
+        </div>
+      </Card>
 
-			<div class="flex w-2/3 flex-col gap-y-4">
-				<Image
-					src={portrait}
-					alt="Portrait of Michael Frieze"
-					width={280}
-					height={280}
-					class="rounded-xl shadow-md"
-				/>
+      <div class="flex w-2/3 flex-col gap-y-4">
+        <Image
+          src={portrait}
+          alt="Portrait of Michael Frieze"
+          width={280}
+          height={280}
+          class="rounded-xl shadow-md"
+        />
 
-				<Card className="gap-0 p-0 text-sm">
-					<CardContent className="text-foreground/80 mb-0.5 px-0 py-4">
-						<ul class="pb-4">
-							<li>
-								<Link
-									href="https://github.com/michaelfrieze"
-									external
-									aria-label="Follow on GitHub"
-									class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
-								>
-									<span class="inline-flex items-center gap-2">
-										<Icon name={'lucide:github'} class="size-4" />
-										Follow on GitHub
-									</span>
-									<Icon
-										name={'lucide:arrow-up-right'}
-										class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-									/>
-								</Link>
-							</li>
+        <Card className="gap-0 p-0 text-sm">
+          <CardContent className="text-foreground/80 mb-0.5 px-0 py-4">
+            <ul class="pb-4">
+              <li>
+                <Link
+                  href="https://github.com/michaelfrieze"
+                  external
+                  aria-label="Follow on GitHub"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
+                >
+                  <span class="inline-flex items-center gap-2">
+                    <Icon name={'lucide:github'} class="size-4" />
+                    Follow on GitHub
+                  </span>
+                  <Icon
+                    name={'lucide:arrow-up-right'}
+                    class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+              </li>
 
-							<li>
-								<Link
-									href="https://reddit.com/u/michaelfrieze"
-									external
-									aria-label="Follow on Reddit"
-									class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
-								>
-									<span class="inline-flex items-center gap-2">
-										<Icon name={'ri:reddit-line'} class="size-4" />
-										Follow on Reddit
-									</span>
-									<Icon
-										name={'lucide:arrow-up-right'}
-										class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-									/>
-								</Link>
-							</li>
+              <li>
+                <Link
+                  href="https://reddit.com/u/michaelfrieze"
+                  external
+                  aria-label="Follow on Reddit"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
+                >
+                  <span class="inline-flex items-center gap-2">
+                    <Icon name={'ri:reddit-line'} class="size-4" />
+                    Follow on Reddit
+                  </span>
+                  <Icon
+                    name={'lucide:arrow-up-right'}
+                    class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+              </li>
 
-							<li>
-								<Link
-									href="https://x.com/michaelfrieze"
-									external
-									aria-label="Follow on Twitter"
-									class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
-								>
-									<span class="inline-flex items-center gap-2">
-										<Icon name={'lucide:twitter'} class="size-4" />
-										Follow on Twitter
-									</span>
-									<Icon
-										name={'lucide:arrow-up-right'}
-										class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-									/>
-								</Link>
-							</li>
+              <li>
+                <Link
+                  href="https://x.com/michaelfrieze"
+                  external
+                  aria-label="Follow on Twitter"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
+                >
+                  <span class="inline-flex items-center gap-2">
+                    <Icon name={'lucide:twitter'} class="size-4" />
+                    Follow on Twitter
+                  </span>
+                  <Icon
+                    name={'lucide:arrow-up-right'}
+                    class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+              </li>
 
-							<li>
-								<Link
-									href="https://bsky.app/profile/frieze.dev"
-									external
-									aria-label="Follow on Bluesky"
-									class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
-								>
-									<span class="inline-flex items-center gap-2">
-										<Icon name={'ri:bluesky-line'} class="size-4" />
-										Follow on Bluesky
-									</span>
-									<Icon
-										name={'lucide:arrow-up-right'}
-										class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-									/>
-								</Link>
-							</li>
+              <li>
+                <Link
+                  href="https://bsky.app/profile/frieze.dev"
+                  external
+                  aria-label="Follow on Bluesky"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
+                >
+                  <span class="inline-flex items-center gap-2">
+                    <Icon name={'ri:bluesky-line'} class="size-4" />
+                    Follow on Bluesky
+                  </span>
+                  <Icon
+                    name={'lucide:arrow-up-right'}
+                    class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+              </li>
 
-							<li>
-								<Link
-									href="/rss.xml"
-									external
-									aria-label="Follow on Bluesky"
-									class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
-								>
-									<span class="inline-flex items-center gap-2">
-										<Icon name={'lucide:rss'} class="size-4" />
-										Subscribe via RSS
-									</span>
-									<Icon
-										name={'lucide:arrow-up-right'}
-										class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-									/>
-								</Link>
-							</li>
-						</ul>
+              <li>
+                <Link
+                  href="/rss.xml"
+                  external
+                  aria-label="Follow on Bluesky"
+                  class="group hover:bg-muted hover:text-foreground inline-flex w-full items-center justify-between px-4 py-2 transition-colors"
+                >
+                  <span class="inline-flex items-center gap-2">
+                    <Icon name={'lucide:rss'} class="size-4" />
+                    Subscribe via RSS
+                  </span>
+                  <Icon
+                    name={'lucide:arrow-up-right'}
+                    class="size-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </Link>
+              </li>
+            </ul>
 
-						<div class="px-4">
-							<Link
-								href="/contact"
-								class={buttonVariants({
-									variant: 'outline',
-									size: 'sm',
-									className: 'bg-card text-foreground w-full cursor-pointer',
-								})}
-							>
-								<Icon name={'lucide:mail'} class="size-4" />
-								Contact Me
-							</Link>
-						</div>
-					</CardContent>
-				</Card>
-			</div>
-		</div>
-	</section>
+            <div class="px-4">
+              <Link
+                href="/contact"
+                class={buttonVariants({
+                  variant: 'outline',
+                  size: 'sm',
+                  className: 'bg-card text-foreground w-full cursor-pointer',
+                })}
+              >
+                <Icon name={'lucide:mail'} class="size-4" />
+                Contact Me
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>
 
-	<section class="flex flex-col gap-y-4">
-		<h2 class="text-2xl font-medium">Latest posts</h2>
-		<ul class="flex flex-col gap-y-4">
-			{
-				blog.map((post) => (
-					<li>
-						<BlogCard entry={post} />
-					</li>
-				))
-			}
-		</ul>
-		<div class="flex justify-center">
-			<Link
-				href="/blog"
-				class={buttonVariants({
-					variant: 'ghost',
-					className: 'hover:text-primary',
-				}) + ' group'}
-			>
-				See all posts <span
-					class="ml-1.5 transition-transform group-hover:translate-x-1"
-					>&rarr;</span
-				>
-			</Link>
-		</div>
-	</section>
+  <section class="flex flex-col gap-y-4">
+    <h2 class="text-2xl font-medium">Latest posts</h2>
+    <ul class="flex flex-col gap-y-4">
+      {
+        blog.map((post) => (
+          <li>
+            <BlogCard entry={post} />
+          </li>
+        ))
+      }
+    </ul>
+    <div class="flex justify-center">
+      <Link
+        href="/blog"
+        class={buttonVariants({
+          variant: 'ghost',
+          className: 'hover:text-primary',
+        }) + ' group'}
+      >
+        See all posts <span
+          class="ml-1.5 transition-transform group-hover:translate-x-1"
+          >&rarr;</span
+        >
+      </Link>
+    </div>
+  </section>
 </Layout>

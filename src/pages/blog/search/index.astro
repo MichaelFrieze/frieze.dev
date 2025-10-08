@@ -10,25 +10,25 @@ const allPosts = await getAllPosts()
 
 // List of items to search in
 const searchList = allPosts.map(({ data, id }) => ({
-	title: data.title,
-	description: data.description,
-	data,
-	id,
+  title: data.title,
+  description: data.description,
+  data,
+  id,
 }))
 ---
 
 <Layout class="max-w-3xl">
-	<PageHead slot="head" title="Search" noindex />
-	<Breadcrumbs
-		items={[
-			{ label: 'Blog', href: '/blog', icon: 'lucide:library-big' },
-			{ label: `Search`, icon: 'lucide:search' },
-		]}
-	/>
+  <PageHead slot="head" title="Search" noindex />
+  <Breadcrumbs
+    items={[
+      { label: 'Blog', href: '/blog', icon: 'lucide:library-big' },
+      { label: `Search`, icon: 'lucide:search' },
+    ]}
+  />
 
-	<section>
-		<div class="min-w-full">
-			<SearchBar client:load searchList={searchList} />
-		</div>
-	</section>
+  <section>
+    <div class="min-w-full">
+      <SearchBar client:load searchList={searchList} />
+    </div>
+  </section>
 </Layout>

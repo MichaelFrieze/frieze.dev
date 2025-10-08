@@ -20,7 +20,7 @@ I remember reading that React Server Components (RSCs) are often described as 'r
 
 In classic client-side React, we usually think about data fetching in two main styles:
 
-1. **Render-as-you-fetch**: In this approach, data fetching starts before rendering begins. Think of it as "fetch triggers render." The data fetching is hoisted out of components, often in a route loader, which allows multiple fetches to run in parallel. 
+1. **Render-as-you-fetch**: In this approach, data fetching starts before rendering begins. Think of it as "fetch triggers render." The data fetching is hoisted out of components, often in a route loader, which allows multiple fetches to run in parallel.
 
 2. **Fetch-on-render**: In this approach, each component takes care of its own data fetching. Think of it as "render triggers fetch." The benefit of this approach is that it makes code more modular and self-contained, but it can cause a network waterfall on the client. This waterfall can be even worse when you’ve got several nested components that depend on each other’s data.
 
@@ -35,22 +35,20 @@ I don't think RSCs fit neatly into one category or the other. They combine trait
 
 ### How They Behave Like Render-as-you-fetch
 
-- **Parallel Rendering**: When using the App Router, layouts and pages can render at the same time, which means their data is fetched in parallel too.  
-- **Option to Hoist Fetching**: While RSCs encourage colocating data fetching within components, you can hoist the fetching higher up in the tree when it makes sense.  
+- **Parallel Rendering**: When using the App Router, layouts and pages can render at the same time, which means their data is fetched in parallel too.
+- **Option to Hoist Fetching**: While RSCs encourage colocating data fetching within components, you can hoist the fetching higher up in the tree when it makes sense.
 - **Single Request From the Client**: Even if multiple server components are fetching data, the waterfall stays on the server. There are no more client-side waterfall effects, so it feels like render-as-you-fetch from the client's perspective.
-
 
 ## Why Server-Side Waterfalls Usually Aren’t a Problem
 
-Colocating data fetching in server components is not only fine, it's recommended most of the time. While server components can still create waterfalls, those waterfalls are much less of a concern on the server. Servers typically have better hardware, faster networks, and are closer to the database. 
+Colocating data fetching in server components is not only fine, it's recommended most of the time. While server components can still create waterfalls, those waterfalls are much less of a concern on the server. Servers typically have better hardware, faster networks, and are closer to the database.
 
 So while you should be aware of potential waterfalls, the benefits of colocated fetching usually outweigh the downsides. The server’s proximity to data sources and better connection handling make a big difference.
 
 ## Tips for Optimizing Data Fetching in RSCs
 
-* **Hoist Fetching Higher Up**: If server-side waterfalls are a problem, you can move data fetching to a parent component and pass data down as props. This is similar to hoisting data fetching to a route loader to enable render-as-you-fetch on the client. 
-* **Use `Promise.all` or `allSettled`**: Fetch multiple data sources in parallel inside one component.
-* **Kick Off Fetches as Promises**: You can start data requests without awaiting them by passing the promises along as props. This keeps rendering non-blocking and these same promises can also be used on the client with the `use()` hook.
-* **Use `Suspense` Boundaries**: Wrap parts of your UI with `Suspense` to control when components reveal themselves as their data becomes available. Suspense works whether you’re awaiting fetches or just passing promises around.
-* **Take Advantage of Parallel Rendering**: Next.js App Router can render layouts and pages at the same time, so make sure you’re using that feature.
-
+- **Hoist Fetching Higher Up**: If server-side waterfalls are a problem, you can move data fetching to a parent component and pass data down as props. This is similar to hoisting data fetching to a route loader to enable render-as-you-fetch on the client.
+- **Use `Promise.all` or `allSettled`**: Fetch multiple data sources in parallel inside one component.
+- **Kick Off Fetches as Promises**: You can start data requests without awaiting them by passing the promises along as props. This keeps rendering non-blocking and these same promises can also be used on the client with the `use()` hook.
+- **Use `Suspense` Boundaries**: Wrap parts of your UI with `Suspense` to control when components reveal themselves as their data becomes available. Suspense works whether you’re awaiting fetches or just passing promises around.
+- **Take Advantage of Parallel Rendering**: Next.js App Router can render layouts and pages at the same time, so make sure you’re using that feature.
