@@ -1,16 +1,16 @@
-import { useMemo, useState } from 'react'
-import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
 import { useForm, type Resolver } from 'react-hook-form'
+import { z } from 'zod'
 
 import { Button, buttonVariants } from '@/components/ui/button'
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+	Form,
+	FormControl,
+	FormField,
+	FormItem,
+	FormLabel,
+	FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
@@ -53,7 +53,6 @@ export default function ContactForm({ className }: { className?: string }) {
 
   const [isSuccess, setIsSuccess] = useState(false)
   const [submittedName, setSubmittedName] = useState<string | null>(null)
-  // const accessKey = useMemo(() => import.meta.env.PUBLIC_WEB3FORMS_KEY, [])
 
   async function onSubmit(values: FormValues) {
     if (values.botcheck?.trim() !== '') {

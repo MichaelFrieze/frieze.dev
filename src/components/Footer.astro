@@ -1,21 +1,19 @@
 ---
 import { SOCIAL_LINKS } from '@/consts'
 import SocialIcons from './SocialIcons.astro'
-import ThemeToggle from './ThemeToggle.astro'
 ---
 
 <footer class="py-4">
-  <div
-    class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-y-2 px-4 sm:flex-row sm:justify-between"
-  >
-    <div class="flex flex-wrap items-center justify-center gap-x-2 text-center">
-      <span class="text-foreground/60 text-sm">
-        &copy; {new Date().getFullYear()} Frieze.DEV. All rights reserved.
-      </span>
-    </div>
-    <div class="flex items-center gap-2">
-      <SocialIcons links={SOCIAL_LINKS} />
-      <!-- <ThemeToggle transition:persist /> -->
-    </div>
-  </div>
+	<div
+		class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-y-2 px-4 sm:flex-row sm:justify-between"
+	>
+		<div class="flex flex-wrap items-center justify-center gap-x-2 text-center">
+			<span class="text-foreground/60 text-sm">
+				&copy; {new Date().getFullYear()} Frieze.DEV. All rights reserved.
+			</span>
+		</div>
+		<div class="flex items-center gap-2">
+			<SocialIcons links={SOCIAL_LINKS} />
+		</div>
+	</div>
 </footer>

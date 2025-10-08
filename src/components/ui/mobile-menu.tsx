@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { NAV_LINKS } from '@/consts'
-import { ArrowDown, ChevronDown, Menu } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
 const MobileMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
