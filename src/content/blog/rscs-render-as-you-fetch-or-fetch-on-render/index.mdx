@@ -28,12 +28,12 @@ In classic client-side React, we usually think about data fetching in two main s
 
 I don't think RSCs fit neatly into one category or the other. They combine traits from both approaches.
 
-### How They Behave Like Fetch-on-render
+### How They Behave Like Fetch-On-Render
 
 - **Colocated Fetching**: You can (and often should) place your data fetching logic inside individual RSCs, just like in fetch-on-render.
 - **Possible Server Waterfalls**: If nested components each fetch their own data, you will end up with a server-side waterfall. However, this is usually less severe than a client-side waterfall.
 
-### How They Behave Like Render-as-you-fetch
+### How They Behave Like Render-As-You-Fetch
 
 - **Parallel Rendering**: When using the App Router, layouts and pages can render at the same time, which means their data is fetched in parallel too.
 - **Option to Hoist Fetching**: While RSCs encourage colocating data fetching within components, you can hoist the fetching higher up in the tree when it makes sense.
