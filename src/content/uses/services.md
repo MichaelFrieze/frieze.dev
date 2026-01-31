@@ -28,8 +28,6 @@ items:
     description: What I use for error tracking and performance monitoring. It’s reliable and easy to integrate.
   - title: Inngest
     description: A tool I use for background jobs and event-driven workflows. Makes async tasks much easier.
-  - title: Cloudinary
-    description: A service I use for image hosting, transformations, and delivery.
   - title: Porkbun
     description: My domain registrar of choice. Simple, affordable, and reliable.
   - title: Arcjet

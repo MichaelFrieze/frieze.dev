@@ -22,8 +22,6 @@ items:
     description: A collection of prebuilt components I use to save time while keeping full flexibility. They also look great out of the box. Unlike monolithic component libraries, you own the code, which makes long-term maintenance easier and removes the need for escape hatches. They’re just React components built with Radix and styled with Tailwind, so they’re easy to customize and fit naturally into my projects.
   - title: tweakcn
     description: A tool I use to quickly tweak and generate Tailwind styles for shadcn/ui.
-  - title: Biome.js
-    description: A fast formatter and linter I use instead of Prettier and ESLint.
   - title: Git
     description: Version control I use for everything.
   - title: GitHub

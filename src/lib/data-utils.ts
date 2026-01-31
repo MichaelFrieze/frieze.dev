@@ -24,7 +24,9 @@ export async function getAllPostsAndSubposts(): Promise<
 export async function getAllProjects(): Promise<CollectionEntry<'projects'>[]> {
   const projects = await getCollection('projects')
   return projects.sort((a, b) => {
-    const orderDiff = (a.data.order ?? Number.POSITIVE_INFINITY) - (b.data.order ?? Number.POSITIVE_INFINITY)
+    const orderDiff =
+      (a.data.order ?? Number.POSITIVE_INFINITY) -
+      (b.data.order ?? Number.POSITIVE_INFINITY)
     if (orderDiff !== 0) return orderDiff
     return a.data.name.localeCompare(b.data.name)
   })
