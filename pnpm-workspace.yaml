@@ -1,0 +1,9 @@
+# Only install versions published at least this many minutes ago (2 days).
+minimumReleaseAge: 2880
+blockExoticSubdeps: true
+verifyDepsBeforeRun: false
+frozenLockfile: true
+allowBuilds:
+  '@tailwindcss/oxide': true
+  esbuild: true
+  sharp: true

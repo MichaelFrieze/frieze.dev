@@ -9,6 +9,13 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "deps": "pnpm install",
+    "deps:update": "pnpm install --no-frozen-lockfile",
+    "clean:deps": "rm -rf node_modules",
+    "clean:build": "rm -rf dist .astro",
+    "clean:pnpm-store": "rm -rf .pnpm-store",
+    "clean:all": "pnpm clean:deps && pnpm clean:build && pnpm clean:pnpm-store",
+    "clean:install": "pnpm clean:all && pnpm deps",
     "prettier": "prettier --write **/*.{ts,tsx,css,astro,md,mdx} --ignore-path .gitignore",
     "postinstall": "patch-package"
   },
