@@ -9,6 +9,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "check": "astro check",
     "deps": "pnpm install",
     "deps:update": "pnpm install --no-frozen-lockfile",
     "clean:deps": "rm -rf node_modules",

@@ -41,7 +41,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'Reddit',
   },
   {
-    href: 'https://x.com/MichaelFrieze',
+    href: 'https://x.com/friezedev',
     label: 'Twitter',
   },
   {
